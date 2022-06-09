@@ -9,7 +9,8 @@
     "start:dev": "nodemon --files app/index.ts",
     "prettier": "find ./app -type f -name '*.ts' | xargs prettier --write",
     "lint": "eslint --ext .ts .",
-    "commit-hook": "git add ."
+    "commit-hook": "git add .",
+    "postinstall": "link-module-alias"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,9 @@
     "commit-hook"
   ],
   "homepage": "https://github.com/VestryOd/netb-be#readme",
+  "_moduleAliases": {
+    "@": "./app"
+  },
   "dependencies": {
     "axios": "^0.27.2",
     "body-parser": "^1.20.0",
@@ -47,6 +51,7 @@
     "http-status-codes": "^2.2.0",
     "joi": "^17.6.0",
     "jwt-decode": "^3.1.2",
+    "module-alias": "^2.2.2",
     "mongoose": "^6.3.5",
     "uuid": "^8.3.2"
   },
@@ -62,6 +67,7 @@
     "eslint-plugin-jsdoc": "^38.0.4",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "husky": "^8.0.1",
+    "link-module-alias": "^1.2.0",
     "nodemon": "^2.0.16",
     "pre-commit": "^1.2.2",
     "prettier": "^2.6.2",
