@@ -4,8 +4,8 @@ import { SubRoutes } from "@/common/constants";
 import {
   getAllTheoryItems,
   getOneTheoryHandler,
-} from "app/controllers/theory.controller";
-import { errorHandlerMiddleware } from "app/middlewares";
+} from "@/controllers/theory.controller";
+import { errorHandlerMiddleware } from "@/middlewares";
 import {
   theoryIdParamsSchema,
   theoryParentParamsSchema,

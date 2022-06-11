@@ -1,4 +1,4 @@
-import { theoryDb } from "./db";
+import { theoryDb } from "./theoryDB";
 
 export const getAll = async () => Promise.resolve([...theoryDb]);
 
