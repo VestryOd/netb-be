@@ -1,8 +1,9 @@
 import * as Joi from "joi";
-import { DisciplineEnum } from "@/common/enums";
+import { DisciplineEnum, TheoryComplexityEnum } from "@/common/enums";
 import { errorResponseSchema } from "@/common/validators";
 
 const validDisciplines = Object.values(DisciplineEnum).join(", ");
+const validComplexity = Object.values(TheoryComplexityEnum).join(", ");
 
 export const theoryParentParamsSchema = Joi.object({
   discipline: Joi.string()
@@ -35,11 +36,21 @@ export const theoryContentSchema = Joi.object({
 
 export const theoryObjectSchema = Joi.object({
   t__title: Joi.string().required(),
-  t__content: Joi.array().items(theoryContentSchema),
-  tags: Joi.array().items(Joi.string()).optional(),
+  t__complexity: Joi.string()
+    .valid(...Object.values(TheoryComplexityEnum))
+    .required()
+    .messages({
+      "any.only": `This kind of discipline is unknown. Discipline could be one from these: ${validComplexity}`,
+    }),
+  t__content: Joi.array().items(theoryContentSchema).default([]),
+  t__tags: Joi.array().items(Joi.string()).optional(),
 });
 
-export const theoryGetResponseSchema = Joi.array().items(theoryObjectSchema);
+export const theoryGetResponseSchema = Joi.array().items(
+  theoryObjectSchema.append({
+    id: Joi.string().required(),
+  })
+);
 
 export const theoryPostResponseSchema = Joi.alternatives().try(
   theoryGetResponseSchema,

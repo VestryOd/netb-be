@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import { theoryAllHandler, theoryOneHandler } from "@/services";
+import { createNewTheory } from "../db/local";
 
 export const getAllTheoryItems = async (
   req: Request,
@@ -24,6 +25,22 @@ export const getOneTheoryHandler = async (
   try {
     const theoryItem = await theoryOneHandler(theory_id);
     res.send(theoryItem);
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const createTheoryHandler = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const theoryItem = await createNewTheory(req.body);
+    console.log("--createTheoryHandler", theoryItem);
+    res.setHeader("Content-Type", "application/json");
+    res.statusCode = 201;
+    res.send(JSON.stringify(theoryItem));
   } catch (err) {
     next(err);
   }

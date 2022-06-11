@@ -1,10 +1,11 @@
 import { ITheory } from "@/common/interfaces/ITheory";
-import { TheoryItemEnum } from "@/common/enums";
+import { TheoryComplexityEnum, TheoryItemEnum } from "@/common/enums";
 
 export const theoryDb: ITheory[] = [
   {
     id: "ad13c892-6f39-4de0-bdff-45c5939c6978",
     t__title: "1. Как создать объект?",
+    t__complexity: TheoryComplexityEnum.Low,
     t__content: [
       {
         id: "text-0-1",
@@ -96,11 +97,12 @@ export const theoryDb: ITheory[] = [
         t__nav_description: "",
       },
     ],
-    tags: [],
+    t__tags: [],
   },
   {
     id: "91b01091-9266-4759-b257-c39b7bcceec5",
     t__title: "2. Что такое прототипы?",
+    t__complexity: TheoryComplexityEnum.Medium,
     t__content: [
       {
         id: "text-1-1",
@@ -110,6 +112,6 @@ export const theoryDb: ITheory[] = [
           "Прототипы используется для создания новых объектов на основе существующих. Такая техника называется прототипным наследованием. Прототип экземпляра объекта доступен через Object.getProtocontentTypeOf(object) или свойство __proto__ (внутреннее скрытое свойство [[ProtocontentType]]).",
       },
     ],
-    tags: [],
+    t__tags: [],
   },
 ];
