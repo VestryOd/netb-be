@@ -2,16 +2,18 @@ import * as Joi from "joi";
 import { DisciplineEnum } from "@/common/enums";
 import { errorResponseSchema } from "@/common/validators";
 
+const validDisciplines = Object.values(DisciplineEnum).join(", ");
+
 export const theoryParentParamsSchema = Joi.object({
   discipline: Joi.string()
     .valid(...Object.values(DisciplineEnum))
-    .required(),
+    .required()
+    .messages({
+      "any.only": `This kind of discipline is unknown. Discipline could be one from these: ${validDisciplines}`,
+    }),
 });
 
-export const theoryIdParamsSchema = Joi.object({
-  discipline: Joi.string()
-    .valid(...Object.values(DisciplineEnum))
-    .required(),
+export const theoryIdParamsSchema = theoryParentParamsSchema.append({
   theory_id: Joi.string().required(),
 });
 
