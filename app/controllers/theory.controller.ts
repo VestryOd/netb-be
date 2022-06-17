@@ -1,6 +1,11 @@
 import { Request, Response, NextFunction } from "express";
-import { theoryAllHandler, theoryOneHandler } from "@/services";
-import { createNewTheory } from "../db/local";
+import StatusCodes from "http-status-codes";
+import {
+  theoryAllHandler,
+  theoryOneHandler,
+  createNewTheory,
+  deleteOneTheory,
+} from "@/services";
 
 export const getAllTheoryItems = async (
   req: Request,
@@ -38,8 +43,23 @@ export const createTheoryHandler = async (
   try {
     const theoryItem = await createNewTheory(req.body);
     res.setHeader("Content-Type", "application/json");
-    res.statusCode = 201;
+    res.statusCode = StatusCodes.CREATED;
     res.send(JSON.stringify(theoryItem));
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const deleteTheoryHandler = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  const { theory_id } = req.params;
+  try {
+    const cleared = await deleteOneTheory(theory_id);
+    res.statusCode = StatusCodes.ACCEPTED;
+    res.send(cleared);
   } catch (err) {
     next(err);
   }
