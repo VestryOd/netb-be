@@ -21,20 +21,19 @@ export const theoryIdParamsSchema = theoryParentParamsSchema.append({
 export const TheoryContentNavSchema = Joi.object({
   t__nav_name: Joi.string().required(),
   t__nav_url: Joi.string().required(),
-  t__nav_description: Joi.string().optional(),
+  t__nav_description: Joi.string().optional().allow(null, ""),
 });
 
 export const theoryContentSchema = Joi.object({
   t__content_type: Joi.string().required(),
   t__content_text: Joi.string().allow(null, ""),
-  t__content_nav: Joi.array().items(TheoryContentNavSchema).optional(),
   t__content_table: Joi.array()
     .items(Joi.array().items(Joi.string()))
     .optional(),
   t__content_list: Joi.array().items(Joi.string()),
 });
 
-export const theoryObjectSchema = Joi.object({
+export const theoryObjectBasicSchema = Joi.object({
   t__title: Joi.string().required(),
   t__complexity: Joi.string()
     .valid(...Object.values(TheoryComplexityEnum))
@@ -42,17 +41,36 @@ export const theoryObjectSchema = Joi.object({
     .messages({
       "any.only": `This kind of discipline is unknown. Discipline could be one from these: ${validComplexity}`,
     }),
-  t__content: Joi.array().items(theoryContentSchema).default([]),
   t__tags: Joi.array().items(Joi.string()).optional(),
 });
 
-export const theoryGetResponseSchema = Joi.array().items(
-  theoryObjectSchema.append({
+export const theoryObjectRequestSchema = theoryObjectBasicSchema.append({
+  t__nav: Joi.array().items(TheoryContentNavSchema).optional().default([]),
+  t__content: Joi.array().items(theoryContentSchema).default([]),
+});
+
+export const theoryObjectResponseSchema = theoryObjectBasicSchema
+  .append({
     id: Joi.string().required(),
+    t__nav: Joi.array()
+      .items(
+        TheoryContentNavSchema.append({
+          id: Joi.string().required(),
+        })
+      )
+      .optional()
+      .default([]),
+    t__content: Joi.array()
+      .items(
+        theoryContentSchema.append({
+          id: Joi.string().required(),
+        })
+      )
+      .default([]),
   })
-);
+  .options({ allowUnknown: true });
 
 export const theoryPostResponseSchema = Joi.alternatives().try(
-  theoryGetResponseSchema,
+  theoryObjectResponseSchema,
   errorResponseSchema
 );

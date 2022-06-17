@@ -11,7 +11,7 @@ export interface ITheoryContent {
   id: string;
   t__content_type: TheoryItemEnum;
   t__content_text: string;
-  t__content_table?: [string[]];
+  t__content_table?: string[][];
   t__content_list?: string[];
 }
 

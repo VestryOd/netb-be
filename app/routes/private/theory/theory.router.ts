@@ -9,7 +9,7 @@ import {
 import { errorHandlerMiddleware, logger } from "@/middlewares";
 import {
   theoryIdParamsSchema,
-  theoryObjectSchema,
+  theoryObjectRequestSchema,
   theoryParentParamsSchema,
   theoryPostResponseSchema,
 } from "./theory.validators";
@@ -35,7 +35,7 @@ theoryRouter.post(
   SubRoutes.Root,
   logger,
   validator.params(theoryParentParamsSchema),
-  validator.body(theoryObjectSchema),
+  validator.body(theoryObjectRequestSchema),
   validator.response(theoryPostResponseSchema),
   createTheoryHandler,
   errorHandlerMiddleware

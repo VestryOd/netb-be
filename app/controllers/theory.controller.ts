@@ -37,7 +37,6 @@ export const createTheoryHandler = async (
 ) => {
   try {
     const theoryItem = await createNewTheory(req.body);
-    console.log("--createTheoryHandler", theoryItem);
     res.setHeader("Content-Type", "application/json");
     res.statusCode = 201;
     res.send(JSON.stringify(theoryItem));
