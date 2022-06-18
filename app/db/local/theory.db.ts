@@ -19,3 +19,10 @@ export const deleteOne = async (id: string) => {
   const filtered = DB.filter((theory) => theory.id !== id);
   return Promise.resolve(filtered);
 };
+
+export const updateOne = async (id: string, options: ITheory) => {
+  const cleared = await deleteOne(id);
+  const theory = new TheoryModel(options);
+  DB = [theory, ...cleared];
+  return Promise.resolve(DB);
+};

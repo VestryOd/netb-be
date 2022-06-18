@@ -5,6 +5,7 @@ import {
   theoryOneHandler,
   createNewTheory,
   deleteOneTheory,
+  updateOneTheory,
 } from "@/services";
 
 export const getAllTheoryItems = async (
@@ -60,6 +61,21 @@ export const deleteTheoryHandler = async (
     const cleared = await deleteOneTheory(theory_id);
     res.statusCode = StatusCodes.ACCEPTED;
     res.send(cleared);
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const updateTheoryHandler = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  const { theory_id } = req.params;
+  try {
+    const updated = await updateOneTheory(theory_id, req.body);
+    res.statusCode = StatusCodes.OK;
+    res.send(updated);
   } catch (err) {
     next(err);
   }

@@ -6,6 +6,7 @@ import {
   getAllTheoryItems,
   getOneTheoryHandler,
   deleteTheoryHandler,
+  updateTheoryHandler,
 } from "@/controllers/theory.controller";
 import { errorHandlerMiddleware, logger } from "@/middlewares";
 import {
@@ -46,6 +47,14 @@ theoryRouter.delete(
   `${SubRoutes.Root}/:theory_id`,
   validator.params(theoryIdParamsSchema),
   deleteTheoryHandler as express.RequestHandler,
+  errorHandlerMiddleware
+);
+
+theoryRouter.put(
+  `${SubRoutes.Root}/:theory_id`,
+  validator.params(theoryIdParamsSchema),
+  validator.body(theoryObjectRequestSchema),
+  updateTheoryHandler as express.RequestHandler,
   errorHandlerMiddleware
 );
 
