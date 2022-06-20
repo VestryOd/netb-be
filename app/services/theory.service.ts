@@ -1,4 +1,10 @@
-import { getAll, getById, createOne, deleteOne, updateOne } from "@/db/local";
+import {
+  getAll,
+  getById,
+  createOne,
+  deleteOne,
+  updateOne,
+} from "@/db/local/theory";
 import { ITheory } from "@/common/interfaces";
 
 export const theoryAllHandler = async () => {

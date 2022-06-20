@@ -7,21 +7,21 @@ import {
   getOneTheoryHandler,
   deleteTheoryHandler,
   updateTheoryHandler,
-} from "@/controllers/theory.controller";
+} from "@/controllers";
 import { errorHandlerMiddleware, logger } from "@/middlewares";
 import {
   theoryIdParamsSchema,
   theoryObjectRequestSchema,
-  theoryParentParamsSchema,
   theoryPostResponseSchema,
 } from "./theory.validators";
+import { parentParamSchema } from "@/common/validators";
 
 const theoryRouter = express.Router({ mergeParams: true });
 const validator = createValidator();
 
 theoryRouter.get(
   SubRoutes.Root,
-  validator.params(theoryParentParamsSchema),
+  validator.params(parentParamSchema),
   getAllTheoryItems as express.RequestHandler,
   errorHandlerMiddleware
 );
@@ -36,7 +36,7 @@ theoryRouter.get(
 theoryRouter.post(
   SubRoutes.Root,
   logger,
-  validator.params(theoryParentParamsSchema),
+  validator.params(parentParamSchema),
   validator.body(theoryObjectRequestSchema),
   validator.response(theoryPostResponseSchema),
   createTheoryHandler,

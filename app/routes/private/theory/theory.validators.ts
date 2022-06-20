@@ -1,20 +1,10 @@
 import * as Joi from "joi";
-import { DisciplineEnum, TheoryComplexityEnum } from "@/common/enums";
-import { errorResponseSchema } from "@/common/validators";
+import { TheoryComplexityEnum } from "@/common/enums";
+import { errorResponseSchema, parentParamSchema } from "@/common/validators";
 
-const validDisciplines = Object.values(DisciplineEnum).join(", ");
 const validComplexity = Object.values(TheoryComplexityEnum).join(", ");
 
-export const theoryParentParamsSchema = Joi.object({
-  discipline: Joi.string()
-    .valid(...Object.values(DisciplineEnum))
-    .required()
-    .messages({
-      "any.only": `This kind of discipline is unknown. Discipline could be one from these: ${validDisciplines}`,
-    }),
-});
-
-export const theoryIdParamsSchema = theoryParentParamsSchema.append({
+export const theoryIdParamsSchema = parentParamSchema.append({
   theory_id: Joi.string().required(),
 });
 

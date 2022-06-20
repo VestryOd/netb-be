@@ -1,65 +1,65 @@
 import { Request, Response, NextFunction } from "express";
 import StatusCodes from "http-status-codes";
 import {
-  theoryAllHandler,
-  theoryOneHandler,
-  createNewTheory,
-  deleteOneTheory,
-  updateOneTheory,
+  practiceAllHandler,
+  practiceOneHandler,
+  createNewPractice,
+  deleteOnePractice,
+  updateOnePractice,
 } from "@/services";
 
-export const getAllTheoryItems = async (
+export const getAllPracticeItems = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   try {
-    const theoryItems = await theoryAllHandler();
-    res.send(theoryItems);
+    const practiceItems = await practiceAllHandler();
+    res.send(practiceItems);
   } catch (err) {
     console.error(err);
     next(err);
   }
 };
 
-export const getOneTheoryHandler = async (
+export const getOnePracticeHandler = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
-  const { theory_id } = req.params;
+  const { practice_id } = req.params;
   try {
-    const theoryItem = await theoryOneHandler(theory_id);
-    res.statusCode = theoryItem ? StatusCodes.OK : StatusCodes.NOT_FOUND;
-    res.send(theoryItem);
+    const practiceItem = await practiceOneHandler(practice_id);
+    res.statusCode = practiceItem ? StatusCodes.OK : StatusCodes.NOT_FOUND;
+    res.send(practiceItem);
   } catch (err) {
     next(err);
   }
 };
 
-export const createTheoryHandler = async (
+export const createPracticeHandler = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   try {
-    const theoryItem = await createNewTheory(req.body);
+    const practiceItem = await createNewPractice(req.body);
     res.setHeader("Content-Type", "application/json");
     res.statusCode = StatusCodes.CREATED;
-    res.send(JSON.stringify(theoryItem));
+    res.send(JSON.stringify(practiceItem));
   } catch (err) {
     next(err);
   }
 };
 
-export const deleteTheoryHandler = async (
+export const deletePracticeHandler = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
-  const { theory_id } = req.params;
+  const { practice_id } = req.params;
   try {
-    const cleared = await deleteOneTheory(theory_id);
+    const cleared = await deleteOnePractice(practice_id);
     res.statusCode = cleared ? StatusCodes.ACCEPTED : StatusCodes.NOT_FOUND;
     res.send(cleared);
   } catch (err) {
@@ -67,14 +67,14 @@ export const deleteTheoryHandler = async (
   }
 };
 
-export const updateTheoryHandler = async (
+export const updatePracticeHandler = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
-  const { theory_id } = req.params;
+  const { practice_id } = req.params;
   try {
-    const updated = await updateOneTheory(theory_id, req.body);
+    const updated = await updateOnePractice(practice_id, req.body);
     res.statusCode = StatusCodes.OK;
     res.send(updated);
   } catch (err) {
