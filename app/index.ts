@@ -2,14 +2,20 @@ import "module-alias/register";
 import * as express from "express";
 import * as fileUpload from "express-fileupload";
 import * as httpContext from "express-http-context";
-// import { join } from "path";
 import * as config from "@/config";
-// import { LocalDataService } from "@/services/localData.service";
 import * as path from "path";
 import protectedRouter from "./routes/private";
 import { composePublicMiddleware } from "./middlewares";
+import {
+  uncaughtExceptionHandler,
+  unhandledPromiseRejectionHandler,
+} from "./common/helpers";
 
-// const dataService = new LocalDataService(join(__dirname, "db/db.json"));
+process
+  .on("unhandledRejection", unhandledPromiseRejectionHandler)
+  .on("uncaughtException", uncaughtExceptionHandler)
+  .on("SIGINT", () => process.exit(1))
+  .on("beforeExit", () => console.log("Exit server"));
 
 const app: express.Application = express();
 
@@ -19,8 +25,6 @@ app.use(httpContext.middleware);
 
 app.use("/static", express.static(path.join(__dirname, "public")));
 app.use(express.json());
-
-process.on("SIGINT", () => process.exit(1));
 
 app.use("/:discipline", composePublicMiddleware, protectedRouter);
 
