@@ -1,4 +1,6 @@
 import { Request, Response, NextFunction } from "express";
+// import { HttpError } from "http-errors";
+import { errorLogger } from "@/common/helpers";
 
 export interface IError {
   status?: number;
@@ -7,18 +9,11 @@ export interface IError {
 
 export const errorHandlerMiddleware = (
   err: IError,
-  _: Request,
+  req: Request,
   res: Response,
   next: NextFunction
 ) => {
+  errorLogger(err, req, res, next);
   const { status = 500 } = err;
-  console.log("--errorHandlerMiddleware", err);
   err ? res.status(status).json(err) : next();
-};
-
-export const logger = (req: Request, _: Response, next: NextFunction) => {
-  const { params, body } = req;
-  console.log("--REQUEST params:", params);
-  console.log("--REQUEST body:", body);
-  next();
 };

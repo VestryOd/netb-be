@@ -8,7 +8,7 @@ import {
   deleteTheoryHandler,
   updateTheoryHandler,
 } from "@/controllers";
-import { errorHandlerMiddleware, logger } from "@/middlewares";
+import { errorHandlerMiddleware } from "@/middlewares";
 import {
   theoryIdParamsSchema,
   theoryObjectRequestSchema,
@@ -35,7 +35,6 @@ theoryRouter.get(
 
 theoryRouter.post(
   SubRoutes.Root,
-  logger,
   validator.params(parentParamSchema),
   validator.body(theoryObjectRequestSchema),
   validator.response(theoryPostResponseSchema),
