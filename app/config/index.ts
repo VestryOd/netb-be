@@ -38,3 +38,5 @@ export const envConf = config[process.env.NODE_ENV || "development"];
 
 export const env = envVars.NODE_ENV;
 export const port = envVars.PORT;
+
+export const mongoConnect = process.env.MONGO_CONNECTION_STRING;
