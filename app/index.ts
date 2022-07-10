@@ -10,12 +10,15 @@ import {
   uncaughtExceptionHandler,
   unhandledPromiseRejectionHandler,
 } from "./common/helpers";
+import { closeConnection, connectToDB } from "./db";
 
 process
   .on("unhandledRejection", unhandledPromiseRejectionHandler)
   .on("uncaughtException", uncaughtExceptionHandler)
   .on("SIGINT", () => process.exit(1))
-  .on("beforeExit", () => console.log("Exit server"));
+  .on("beforeExit", () => {
+    closeConnection().catch((err) => console.log(err));
+  });
 
 const app: express.Application = express();
 
@@ -28,6 +31,8 @@ app.use(express.json());
 
 app.use("/:discipline", composePublicMiddleware, protectedRouter);
 
-app.listen(config.port, () =>
-  console.log("Server is started!", `PORT: ${config.port}`)
-);
+connectToDB(() => {
+  app.listen(config.port, () =>
+    console.log("Server is started!", `PORT: ${config.port}`)
+  );
+});

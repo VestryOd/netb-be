@@ -1,11 +1,11 @@
-import {
-  getAll,
-  getById,
-  createOne,
-  deleteOne,
-  updateOne,
-} from "@/db/local/theory";
 import { ITheory } from "@/common/interfaces";
+import {
+  createOne,
+  updateOne,
+  getById,
+  getAll,
+  deleteOne,
+} from "../db/theory.db";
 
 export const theoryAllHandler = async () => {
   return await getAll();
@@ -17,7 +17,7 @@ export const theoryOneHandler = async (id: string) => {
 
 export const createNewTheory = async (
   options: Omit<ITheory, "id">
-): Promise<ITheory[]> => {
+): Promise<ITheory> => {
   return await createOne(options);
 };
 
