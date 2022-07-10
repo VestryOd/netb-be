@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "module": "CommonJS",
+    "lib": ["ES2021"],
+    "baseUrl": "./",
+    "outDir": "dist",
+    "rootDir": "app",
+    "noImplicitAny": true,
+    "types": ["node"],
+    "sourceMap": true
+  },
+  "exclude": ["node_modules"]
+}
