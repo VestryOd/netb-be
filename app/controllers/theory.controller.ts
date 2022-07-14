@@ -13,8 +13,9 @@ export const getAllTheoryItems = async (
   res: Response,
   next: NextFunction
 ) => {
+  const { discipline } = req.params;
   try {
-    const theoryItems = await theoryAllHandler();
+    const theoryItems = await theoryAllHandler({ discipline });
     res.send(theoryItems);
   } catch (err) {
     console.error(err);
@@ -27,9 +28,9 @@ export const getOneTheoryHandler = async (
   res: Response,
   next: NextFunction
 ) => {
-  const { theory_id } = req.params;
+  const { theory_id, discipline } = req.params;
   try {
-    const theoryItem = await theoryOneHandler(theory_id);
+    const theoryItem = await theoryOneHandler({ discipline, theory_id });
     res.statusCode = theoryItem ? StatusCodes.OK : StatusCodes.NOT_FOUND;
     res.send(theoryItem);
   } catch (err) {
@@ -42,8 +43,9 @@ export const createTheoryHandler = async (
   res: Response,
   next: NextFunction
 ) => {
+  const { discipline } = req.params;
   try {
-    const theoryItem = await createNewTheory(req.body);
+    const theoryItem = await createNewTheory({ discipline, body: req.body });
     res.setHeader("Content-Type", "application/json");
     res.statusCode = StatusCodes.CREATED;
     res.send(JSON.stringify(theoryItem));
@@ -57,9 +59,9 @@ export const deleteTheoryHandler = async (
   res: Response,
   next: NextFunction
 ) => {
-  const { theory_id } = req.params;
+  const { theory_id, discipline } = req.params;
   try {
-    const cleared = await deleteOneTheory(theory_id);
+    const cleared = await deleteOneTheory({ discipline, theory_id });
     res.statusCode = cleared ? StatusCodes.ACCEPTED : StatusCodes.NOT_FOUND;
     res.send(cleared);
   } catch (err) {
@@ -72,9 +74,13 @@ export const updateTheoryHandler = async (
   res: Response,
   next: NextFunction
 ) => {
-  const { theory_id } = req.params;
+  const { theory_id, discipline } = req.params;
   try {
-    const updated = await updateOneTheory(theory_id, req.body);
+    const updated = await updateOneTheory({
+      discipline,
+      theory_id,
+      body: req.body,
+    });
     res.statusCode = StatusCodes.OK;
     res.send(updated);
   } catch (err) {

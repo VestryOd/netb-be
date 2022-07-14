@@ -6,5 +6,5 @@ export const eventLoggerMiddleware = expressWinston.logger({
   statusLevels: true,
   meta: false,
   // eslint-disable-next-line max-len
-  msg: "HTTP ({{res.statusCode}}) {{req.method}}: {{req.path}}, params: {{JSON.stringify(req.query)}}, body: {{JSON.stringify(req.body)}}",
+  msg: "HTTP ({{res.statusCode}}) {{req.method}}: {{req.path}}, params: {{JSON.stringify(req.params)}}, body: {{JSON.stringify(req.body)}}",
 });

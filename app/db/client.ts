@@ -1,26 +1,24 @@
-import * as mongoose from "mongoose";
-import { mongoConnect } from "@/config";
+import { connection, disconnect, connect, set } from "mongoose";
 import { loggerHelper } from "../common/helpers";
+import { mongoConnect } from "@/config";
 
-export const closeConnection = () => mongoose.disconnect();
+export const closeConnection = () => disconnect();
 
 export const connectToDB = (cb: () => any) => {
   try {
-    mongoose
-      .connect(mongoConnect)
+    connect(mongoConnect)
       .then(() => console.log("connected!"))
       .catch((err) => console.log("connection problem", err));
 
-    mongoose.set("toJSON", {
+    set("toJSON", {
       virtuals: true,
       transform: (doc, converted) => {
         delete converted._id;
       },
     });
 
-    const db = mongoose.connection;
-    db.on("error", console.error.bind(console, "connection error:"));
-    db.once("open", () => cb());
+    connection.on("error", console.error.bind(console, "connection error:"));
+    connection.once("open", () => cb());
   } catch (err) {
     loggerHelper.log({
       level: "error",

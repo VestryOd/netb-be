@@ -1,4 +1,4 @@
-import { ITheory } from "@/common/interfaces";
+import { ITheory, ITheoryService } from "@/common/interfaces";
 import {
   createOne,
   updateOne,
@@ -7,24 +7,35 @@ import {
   deleteOne,
 } from "../db/theory.db";
 
-export const theoryAllHandler = async () => {
-  return await getAll();
+export const theoryAllHandler = async ({ discipline }: ITheoryService) => {
+  return await getAll({ discipline });
 };
 
-export const theoryOneHandler = async (id: string) => {
-  return await getById(id);
+export const theoryOneHandler = async ({
+  discipline,
+  theory_id,
+}: ITheoryService) => {
+  return await getById({ discipline, theory_id });
 };
 
-export const createNewTheory = async (
-  options: Omit<ITheory, "id">
-): Promise<ITheory> => {
-  return await createOne(options);
+export const createNewTheory = async ({
+  discipline,
+  body,
+}: ITheoryService): Promise<ITheory> => {
+  return await createOne({ discipline, body });
 };
 
-export const deleteOneTheory = async (id: string) => {
-  return await deleteOne(id);
+export const deleteOneTheory = async ({
+  discipline,
+  theory_id,
+}: ITheoryService) => {
+  return await deleteOne({ discipline, theory_id });
 };
 
-export const updateOneTheory = async (id: string, options: ITheory) => {
-  return await updateOne(id, options);
+export const updateOneTheory = async ({
+  discipline,
+  theory_id,
+  body,
+}: ITheoryService) => {
+  return await updateOne({ discipline, theory_id, body });
 };

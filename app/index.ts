@@ -6,28 +6,30 @@ import * as config from "@/config";
 import * as path from "path";
 import protectedRouter from "./routes/private";
 import { composePublicMiddleware } from "./middlewares";
+import { connectToDB, closeConnection } from "@/db";
 import {
   uncaughtExceptionHandler,
   unhandledPromiseRejectionHandler,
 } from "./common/helpers";
-import { closeConnection, connectToDB } from "./db";
 
 process
   .on("unhandledRejection", unhandledPromiseRejectionHandler)
   .on("uncaughtException", uncaughtExceptionHandler)
-  .on("SIGINT", () => process.exit(1))
+  .on("SIGINT", () => {
+    closeConnection().catch((e) => console.log(e));
+    process.exit(1);
+  })
   .on("beforeExit", () => {
-    closeConnection().catch((err) => console.log(err));
+    closeConnection().catch((e) => console.log(e));
   });
 
 const app: express.Application = express();
 
 app.use(fileUpload());
 
-app.use(httpContext.middleware);
-
 app.use("/static", express.static(path.join(__dirname, "public")));
 app.use(express.json());
+app.use(httpContext.middleware);
 
 app.use("/:discipline", composePublicMiddleware, protectedRouter);
 
