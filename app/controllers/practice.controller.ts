@@ -13,8 +13,9 @@ export const getAllPracticeItems = async (
   res: Response,
   next: NextFunction
 ) => {
+  const { discipline } = req.params;
   try {
-    const practiceItems = await practiceAllHandler();
+    const practiceItems = await practiceAllHandler({ discipline });
     res.send(practiceItems);
   } catch (err) {
     console.error(err);
@@ -27,9 +28,9 @@ export const getOnePracticeHandler = async (
   res: Response,
   next: NextFunction
 ) => {
-  const { practice_id } = req.params;
+  const { discipline, practice_id } = req.params;
   try {
-    const practiceItem = await practiceOneHandler(practice_id);
+    const practiceItem = await practiceOneHandler({ discipline, practice_id });
     res.statusCode = practiceItem ? StatusCodes.OK : StatusCodes.NOT_FOUND;
     res.send(practiceItem);
   } catch (err) {
@@ -42,8 +43,12 @@ export const createPracticeHandler = async (
   res: Response,
   next: NextFunction
 ) => {
+  const { discipline } = req.params;
   try {
-    const practiceItem = await createNewPractice(req.body);
+    const practiceItem = await createNewPractice({
+      discipline,
+      body: req.body,
+    });
     res.setHeader("Content-Type", "application/json");
     res.statusCode = StatusCodes.CREATED;
     res.send(JSON.stringify(practiceItem));
@@ -57,9 +62,9 @@ export const deletePracticeHandler = async (
   res: Response,
   next: NextFunction
 ) => {
-  const { practice_id } = req.params;
+  const { discipline, practice_id } = req.params;
   try {
-    const cleared = await deleteOnePractice(practice_id);
+    const cleared = await deleteOnePractice({ discipline, practice_id });
     res.statusCode = cleared ? StatusCodes.ACCEPTED : StatusCodes.NOT_FOUND;
     res.send(cleared);
   } catch (err) {
@@ -72,9 +77,13 @@ export const updatePracticeHandler = async (
   res: Response,
   next: NextFunction
 ) => {
-  const { practice_id } = req.params;
+  const { discipline, practice_id } = req.params;
   try {
-    const updated = await updateOnePractice(practice_id, req.body);
+    const updated = await updateOnePractice({
+      discipline,
+      practice_id,
+      body: req.body,
+    });
     res.statusCode = StatusCodes.OK;
     res.send(updated);
   } catch (err) {
