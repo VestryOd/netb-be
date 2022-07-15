@@ -1,6 +1,7 @@
 import * as dotenv from "dotenv";
 import * as joi from "joi";
 import { ValidationResult } from "joi";
+import { DisciplineEnum } from "../common/enums";
 
 dotenv.config();
 
@@ -38,5 +39,7 @@ export const envConf = config[process.env.NODE_ENV || "development"];
 
 export const env = envVars.NODE_ENV;
 export const port = envVars.PORT;
+
+export const dbsConfig = Object.values(DisciplineEnum);
 
 export const mongoConnect = process.env.MONGO_CONNECTION_STRING;

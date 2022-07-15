@@ -1,9 +1,10 @@
 import { v4 as uuidv4 } from "uuid";
-import mongoose from "mongoose";
+import { Schema } from "mongoose";
 import { TheoryComplexityEnum, TheoryItemEnum } from "@/common/enums";
-const { Schema } = mongoose;
+import { generateModels } from "@/common/helpers";
+import { SchemaNames } from "@/common/constants";
 
-const theorySchema = new Schema(
+export const theoryModel = new Schema(
   {
     t__title: { type: String, default: "" },
     t__complexity: {
@@ -44,6 +45,4 @@ const theorySchema = new Schema(
   { versionKey: false }
 );
 
-const jsDB = mongoose.connection.useDb("js");
-
-export const Theory = jsDB.model("Theory", theorySchema);
+export const TheoryModels = generateModels(SchemaNames.Theory, theoryModel);

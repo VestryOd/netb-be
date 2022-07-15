@@ -1,21 +1,28 @@
-import { ITheory } from "@/common/interfaces";
-import { Theory } from "./models";
+import { ITheoryService } from "@/common/interfaces";
+import { TheoryModels } from "./models";
 
-export const getAll = async () => await Theory.find({});
+export const getAll = async ({ discipline }: ITheoryService) => {
+  return await TheoryModels[discipline].find({});
+};
 
-export const getById = async (id: string) => await Theory.findById(id);
+export const getById = async ({ discipline, theory_id }: ITheoryService) =>
+  await TheoryModels[discipline].findById(theory_id);
 
-export const createOne = async (options: Omit<ITheory, "id">) => {
-  const newTheory = new Theory(options);
+export const createOne = async ({ discipline, body }: ITheoryService) => {
+  const newTheory = new TheoryModels[discipline](body);
   await newTheory.save();
   return newTheory;
 };
 
-export const updateOne = async (id: string, options: ITheory) => {
-  const exist = await Theory.findById(id);
+export const updateOne = async ({
+  discipline,
+  theory_id,
+  body,
+}: ITheoryService) => {
+  const exist = await TheoryModels[discipline].findById(theory_id);
   if (!exist) return null;
 
-  Object.entries(options).forEach(([key, value]) => {
+  Object.entries(body).forEach(([key, value]) => {
     if (key) {
       exist[key] = value;
     }
@@ -24,8 +31,8 @@ export const updateOne = async (id: string, options: ITheory) => {
   return exist;
 };
 
-export const deleteOne = async (id: string) => {
-  const theory = await Theory.findById(id);
+export const deleteOne = async ({ discipline, theory_id }: ITheoryService) => {
+  const theory = await TheoryModels[discipline].findById(theory_id);
   if (!theory) return null;
 
   await theory.remove();

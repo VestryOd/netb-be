@@ -4,25 +4,38 @@ import {
   createOne,
   deleteOne,
   updateOne,
-} from "@/db/local/practice";
-import { IPractice } from "@/common/interfaces";
+} from "@/db/practice.db";
+import { IPracticeService } from "@/common/interfaces";
 
-export const practiceAllHandler = async () => {
-  return await getAll();
+export const practiceAllHandler = async ({ discipline }: IPracticeService) => {
+  return await getAll({ discipline });
 };
 
-export const practiceOneHandler = async (id: string) => {
-  return await getById(id);
+export const practiceOneHandler = async ({
+  discipline,
+  practice_id,
+}: IPracticeService) => {
+  return await getById({ discipline, practice_id });
 };
 
-export const createNewPractice = async (options: Omit<IPractice, "id">) => {
-  return await createOne(options);
+export const createNewPractice = async ({
+  discipline,
+  body,
+}: IPracticeService) => {
+  return await createOne({ discipline, body });
 };
 
-export const deleteOnePractice = async (id: string) => {
-  return await deleteOne(id);
+export const deleteOnePractice = async ({
+  discipline,
+  practice_id,
+}: IPracticeService) => {
+  return await deleteOne({ discipline, practice_id });
 };
 
-export const updateOnePractice = async (id: string, options: IPractice) => {
-  return await updateOne(id, options);
+export const updateOnePractice = async ({
+  discipline,
+  practice_id,
+  body,
+}: IPracticeService) => {
+  return await updateOne({ discipline, practice_id, body });
 };

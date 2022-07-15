@@ -4,3 +4,4 @@ export * from "./loggerHelper";
 export * from "./errorLogger";
 export * from "./unhandledPromiseRejectionHandler";
 export * from "./uncaughtExceptionHandler";
+export * from "./generateModels";
