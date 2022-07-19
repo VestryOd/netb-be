@@ -7,10 +7,19 @@ export interface ITheoryNav {
   t__nav_description?: string;
 }
 
+export interface ITheoryImage {
+  id: string;
+  t__image_key: string;
+  t__image_name: string;
+  t__image_url: string;
+  t__image_etag: string;
+}
+
 export interface ITheoryContent {
   id: string;
   t__content_type: TheoryItemEnum;
   t__content_text: string;
+  t__content_image?: ITheoryImage;
   t__content_table?: string[][];
   t__content_list?: string[];
 }

@@ -8,6 +8,7 @@ dotenv.config();
 interface IEnvVarsSchema {
   NODE_ENV: string;
   PORT: string;
+  AWS_REGION: string;
 }
 
 const envVarsSchema = joi
@@ -18,6 +19,7 @@ const envVarsSchema = joi
       .valid("production", "development", "test")
       .required(),
     PORT: joi.number().positive().required(),
+    AWS_REGION: joi.string().default("eu-west-1"),
   })
   .unknown();
 
@@ -39,6 +41,7 @@ export const envConf = config[process.env.NODE_ENV || "development"];
 
 export const env = envVars.NODE_ENV;
 export const port = envVars.PORT;
+export const region = envVars.AWS_REGION;
 
 export const dbsConfig = Object.values(DisciplineEnum);
 
