@@ -6,16 +6,18 @@ import {
   PutObjectCommand,
   S3Client,
 } from "@aws-sdk/client-s3";
+import { StatusCodes } from "http-status-codes";
 import {
   generateImageUrl,
   getBucketNameByDiscipline,
   getErrorInfo,
   getS3PoliciesObject,
 } from "@/common/constants";
-import { loggerHelper } from "@/common/helpers";
+import { allSettledHandler, loggerHelper } from "@/common/helpers";
 import { region } from "@/config";
 import { WinstonLevelEnum } from "@/common/enums";
-import { IAwsError, IMetadata } from "@/common/interfaces";
+import { IAwsError } from "@/common/interfaces";
+import { UploadedFile } from "express-fileupload";
 
 export class StorageSdkService {
   private s3Client: S3Client;
@@ -25,11 +27,12 @@ export class StorageSdkService {
 
   protected async checkIfBucketExist(bucketName: string) {
     try {
-      await this.s3Client.send(new GetBucketAclCommand({ Bucket: bucketName }));
-      return true;
+      return await this.s3Client.send(
+        new GetBucketAclCommand({ Bucket: bucketName })
+      );
     } catch (err) {
       this.errorLogger(err);
-      return false;
+      return err;
     }
   }
 
@@ -72,7 +75,9 @@ export class StorageSdkService {
       );
 
       const updated = await this.updatePolicies(bucketName);
-      return updated.$metadata.httpStatusCode === 204 ? bucket : null;
+      return updated.$metadata.httpStatusCode === StatusCodes.NO_CONTENT
+        ? bucket
+        : null;
     } catch (err) {
       this.errorLogger(err);
       return err;
@@ -101,17 +106,13 @@ export class StorageSdkService {
     fileName,
     code,
     ETag,
-    bucket,
   }: {
     bucketName: string;
     fileName: string;
     code: number;
     ETag: string;
-    bucket: { Location: string; $metadata: IMetadata } | null;
   }) {
-    const imageUrl = bucket?.Location
-      ? `${bucket?.Location}${fileName}`
-      : generateImageUrl(bucketName, fileName);
+    const imageUrl = generateImageUrl(bucketName, fileName);
     return {
       httpStatusCode: code,
       imageUrl,
@@ -121,30 +122,52 @@ export class StorageSdkService {
     };
   }
 
-  async saveImageToStorage(
-    discipline: string,
-    file: { name: string; data: Buffer }
-  ) {
-    let bucket = null;
-    const bucketName = getBucketNameByDiscipline(discipline);
-    const isBucketExisting = await this.checkIfBucketExist(bucketName);
+  protected async prepareBucket(bucketName: string) {
+    const existingBucket = await this.checkIfBucketExist(bucketName);
+    if (existingBucket.$metadata.httpStatusCode !== StatusCodes.OK) {
+      return await this.createNewBucket(bucketName);
+    }
+    return existingBucket;
+  }
 
-    !isBucketExisting && (bucket = await this.createNewBucket(bucketName));
+  protected async sendData(bucketName: string, file: UploadedFile) {
     const uploaded = await this.uploadData(bucketName, file);
     const {
       $metadata: { httpStatusCode },
       ETag,
     } = uploaded;
-    if (httpStatusCode === 200) {
+    if (httpStatusCode === StatusCodes.OK) {
       return this.generateNewImageResponse({
         bucketName,
         fileName: file.name,
         code: httpStatusCode,
         ETag,
-        bucket,
       });
     } else {
-      return null;
+      return uploaded;
+    }
+  }
+
+  async saveImagesToStorage(
+    discipline: string,
+    file: UploadedFile | UploadedFile[]
+  ) {
+    const bucketName = getBucketNameByDiscipline(discipline);
+    const bucket = await this.prepareBucket(bucketName);
+    if (bucket.$metadata.httpStatusCode !== StatusCodes.OK) {
+      return bucket;
+    }
+
+    if (Array.isArray(file)) {
+      if (!file.length) return [];
+      const promises = file.map(
+        async (fileItem) => await this.sendData(bucketName, fileItem)
+      );
+      return await Promise.allSettled(promises).then((res) =>
+        allSettledHandler(res)
+      );
+    } else {
+      return await this.sendData(bucketName, file);
     }
   }
 
@@ -161,5 +184,15 @@ export class StorageSdkService {
       this.errorLogger(err);
       return err;
     }
+  }
+
+  async deleteImages(discipline: string, fileNames: string[]) {
+    if (!fileNames.length) return [];
+    const promises = fileNames.map(
+      async (fileName) => await this.deleteImage(discipline, fileName)
+    );
+    return await Promise.allSettled(promises).then((res) =>
+      allSettledHandler(res)
+    );
   }
 }
