@@ -1,41 +1,37 @@
 import { ITheory, ITheoryService } from "@/common/interfaces";
-import {
-  createOne,
-  updateOne,
-  getById,
-  getAll,
-  deleteOne,
-} from "../db/theory.db";
+import { createOne, getById, getAll, deleteOne } from "../db/theory.db";
+import { MediaService } from "./Media.service";
 
-export const theoryAllHandler = async ({ discipline }: ITheoryService) => {
-  return await getAll({ discipline });
-};
+export class TheoryService {
+  private mediaService: MediaService;
+  constructor() {
+    this.mediaService = new MediaService();
+  }
 
-export const theoryOneHandler = async ({
-  discipline,
-  theory_id,
-}: ITheoryService) => {
-  return await getById({ discipline, theory_id });
-};
+  async getAll({ discipline }: ITheoryService): Promise<ITheory[]> {
+    return await getAll({ discipline });
+  }
 
-export const createNewTheory = async ({
-  discipline,
-  body,
-}: ITheoryService): Promise<ITheory> => {
-  return await createOne({ discipline, body });
-};
+  async getOne({ discipline, theory_id }: ITheoryService): Promise<ITheory> {
+    return await getById({ discipline, theory_id });
+  }
 
-export const deleteOneTheory = async ({
-  discipline,
-  theory_id,
-}: ITheoryService) => {
-  return await deleteOne({ discipline, theory_id });
-};
+  async createOne({ discipline, theory }: ITheoryService): Promise<ITheory> {
+    return await createOne({ discipline, theory });
+  }
 
-export const updateOneTheory = async ({
-  discipline,
-  theory_id,
-  body,
-}: ITheoryService) => {
-  return await updateOne({ discipline, theory_id, body });
-};
+  async deleteOne({ discipline, theory_id }: ITheoryService) {
+    const theory = await this.getOne({ discipline, theory_id });
+    const deleted = await this.mediaService.clearMediaFromTheory(
+      discipline,
+      theory
+    );
+    console.log("--deleted images", deleted, theory);
+    return await deleteOne({ discipline, theory_id });
+  }
+
+  async updateOne({ discipline, theory_id, theory, files }: ITheoryService) {
+    await this.deleteOne({ discipline, theory_id });
+    return await this.createOne({ discipline, theory, files });
+  }
+}

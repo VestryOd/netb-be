@@ -1,12 +1,8 @@
 import { Request, Response, NextFunction } from "express";
 import StatusCodes from "http-status-codes";
-import {
-  theoryAllHandler,
-  theoryOneHandler,
-  createNewTheory,
-  deleteOneTheory,
-  updateOneTheory,
-} from "@/services";
+import { TheoryService } from "@/services";
+
+const theoryService = new TheoryService();
 
 export const getAllTheoryItems = async (
   req: Request,
@@ -15,7 +11,7 @@ export const getAllTheoryItems = async (
 ) => {
   const { discipline } = req.params;
   try {
-    const theoryItems = await theoryAllHandler({ discipline });
+    const theoryItems = await theoryService.getAll({ discipline });
     res.send(theoryItems);
   } catch (err) {
     console.error(err);
@@ -30,7 +26,7 @@ export const getOneTheoryHandler = async (
 ) => {
   const { theory_id, discipline } = req.params;
   try {
-    const theoryItem = await theoryOneHandler({ discipline, theory_id });
+    const theoryItem = await theoryService.getOne({ discipline, theory_id });
     res.statusCode = theoryItem ? StatusCodes.OK : StatusCodes.NOT_FOUND;
     res.send(theoryItem);
   } catch (err) {
@@ -43,9 +39,13 @@ export const createTheoryHandler = async (
   res: Response,
   next: NextFunction
 ) => {
+  const { body } = req;
   const { discipline } = req.params;
   try {
-    const theoryItem = await createNewTheory({ discipline, body: req.body });
+    const theoryItem = await theoryService.createOne({
+      discipline,
+      theory: body,
+    });
     res.setHeader("Content-Type", "application/json");
     res.statusCode = StatusCodes.CREATED;
     res.send(JSON.stringify(theoryItem));
@@ -61,7 +61,7 @@ export const deleteTheoryHandler = async (
 ) => {
   const { theory_id, discipline } = req.params;
   try {
-    const cleared = await deleteOneTheory({ discipline, theory_id });
+    const cleared = await theoryService.deleteOne({ discipline, theory_id });
     res.statusCode = cleared ? StatusCodes.ACCEPTED : StatusCodes.NOT_FOUND;
     res.send(cleared);
   } catch (err) {
@@ -75,11 +75,13 @@ export const updateTheoryHandler = async (
   next: NextFunction
 ) => {
   const { theory_id, discipline } = req.params;
+  const { body, files } = req;
   try {
-    const updated = await updateOneTheory({
+    const updated = await theoryService.updateOne({
       discipline,
       theory_id,
-      body: req.body,
+      theory: { ...body },
+      files,
     });
     res.statusCode = StatusCodes.OK;
     res.send(updated);

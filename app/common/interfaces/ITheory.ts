@@ -9,10 +9,9 @@ export interface ITheoryNav {
 
 export interface ITheoryImage {
   id: string;
-  t__image_key: string;
-  t__image_name: string;
+  t__image_filename: string;
   t__image_url: string;
-  t__image_etag: string;
+  t__image_description?: string;
 }
 
 export interface ITheoryContent {

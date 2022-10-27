@@ -8,8 +8,8 @@ export const getAll = async ({ discipline }: ITheoryService) => {
 export const getById = async ({ discipline, theory_id }: ITheoryService) =>
   await TheoryModels[discipline].findById(theory_id);
 
-export const createOne = async ({ discipline, body }: ITheoryService) => {
-  const newTheory = new TheoryModels[discipline](body);
+export const createOne = async ({ discipline, theory }: ITheoryService) => {
+  const newTheory = new TheoryModels[discipline](theory);
   await newTheory.save();
   return newTheory;
 };
@@ -17,12 +17,12 @@ export const createOne = async ({ discipline, body }: ITheoryService) => {
 export const updateOne = async ({
   discipline,
   theory_id,
-  body,
+  theory,
 }: ITheoryService) => {
   const exist = await TheoryModels[discipline].findById(theory_id);
   if (!exist) return null;
 
-  Object.entries(body).forEach(([key, value]) => {
+  Object.entries(theory).forEach(([key, value]) => {
     if (key) {
       exist[key] = value;
     }

@@ -3,6 +3,7 @@ import { region } from "../../config";
 
 export const apiVersion = "2006-03-01";
 export const bucketPrefix = "quiz";
+export const defaultAWSRegion = "eu-west-1";
 
 export const getS3PoliciesObject = (bucketName: string) => ({
   Version: "2012-10-17",
@@ -33,6 +34,9 @@ export const getErrorInfo = (error: IAwsError) => {
   };
 };
 
-export const generateImageUrl = (bucketName: string, imageName: string) => {
+export const generateImageUrl = (
+  bucketName: string,
+  imageName: string
+): string => {
   return `https://${bucketName}.s3.${region}.amazonaws.com/${imageName}`;
 };

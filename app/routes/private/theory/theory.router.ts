@@ -15,6 +15,8 @@ import {
   theoryPostResponseSchema,
 } from "./theory.validators";
 import { parentParamSchema } from "@/common/validators";
+import { customBodyParseMiddleware } from "../../../middlewares";
+import { saveMediaMiddleware } from "../../../middlewares/saveMedia.middleware";
 
 const theoryRouter = express.Router({ mergeParams: true });
 const validator = createValidator();
@@ -35,6 +37,8 @@ theoryRouter.get(
 
 theoryRouter.post(
   SubRoutes.Root,
+  customBodyParseMiddleware,
+  saveMediaMiddleware,
   validator.params(parentParamSchema),
   validator.body(theoryObjectRequestSchema),
   validator.response(theoryPostResponseSchema),
@@ -51,6 +55,8 @@ theoryRouter.delete(
 
 theoryRouter.put(
   `${SubRoutes.Root}/:theory_id`,
+  customBodyParseMiddleware,
+  saveMediaMiddleware,
   validator.params(theoryIdParamsSchema),
   validator.body(theoryObjectRequestSchema),
   updateTheoryHandler as express.RequestHandler,

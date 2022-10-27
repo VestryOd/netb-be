@@ -1,7 +1,9 @@
 import { ITheory } from "./ITheory";
+import { FileArray } from "express-fileupload";
 
 export interface ITheoryService {
   discipline: string;
   theory_id?: string;
-  body?: Omit<ITheory, "id"> | ITheory;
+  theory?: Omit<ITheory, "id"> | ITheory;
+  files?: FileArray;
 }

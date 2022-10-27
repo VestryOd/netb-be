@@ -1,11 +1,15 @@
 import {
   CreateBucketCommand,
+  CreateBucketCommandOutput,
   DeleteObjectCommand,
-  GetBucketAclCommand,
+  DeleteObjectCommandOutput,
   PutBucketPolicyCommand,
+  PutBucketPolicyCommandOutput,
   PutObjectCommand,
+  PutObjectCommandOutput,
   S3Client,
 } from "@aws-sdk/client-s3";
+import { v4 as uuidv4 } from "uuid";
 import { StatusCodes } from "http-status-codes";
 import {
   generateImageUrl,
@@ -16,24 +20,18 @@ import {
 import { allSettledHandler, loggerHelper } from "@/common/helpers";
 import { region } from "@/config";
 import { WinstonLevelEnum } from "@/common/enums";
-import { IAwsError } from "@/common/interfaces";
-import { UploadedFile } from "express-fileupload";
+import { IAwsError, IImageResponse } from "@/common/interfaces";
+import { FileArray } from "express-fileupload";
+
+export type SaveImageToStorageType =
+  | IImageResponse
+  | PutObjectCommandOutput
+  | IAwsError;
 
 export class StorageSdkService {
   private s3Client: S3Client;
   constructor() {
     this.s3Client = new S3Client({ region });
-  }
-
-  protected async checkIfBucketExist(bucketName: string) {
-    try {
-      return await this.s3Client.send(
-        new GetBucketAclCommand({ Bucket: bucketName })
-      );
-    } catch (err) {
-      this.errorLogger(err);
-      return err;
-    }
   }
 
   protected preparePolicies(bucketName: string) {
@@ -52,7 +50,9 @@ export class StorageSdkService {
     });
   }
 
-  protected async updatePolicies(bucketName: string) {
+  protected async updatePolicies(
+    bucketName: string
+  ): Promise<PutBucketPolicyCommandOutput> {
     const bucketPolicyParams = this.preparePolicies(bucketName);
     try {
       return await this.s3Client.send(
@@ -64,7 +64,9 @@ export class StorageSdkService {
     }
   }
 
-  protected async createNewBucket(bucketName: string) {
+  protected async createNewBucket(
+    bucketName: string
+  ): Promise<CreateBucketCommandOutput> {
     try {
       const bucket = await this.s3Client.send(
         new CreateBucketCommand({
@@ -76,28 +78,39 @@ export class StorageSdkService {
 
       const updated = await this.updatePolicies(bucketName);
       return updated.$metadata.httpStatusCode === StatusCodes.NO_CONTENT
-        ? bucket
-        : null;
+        ? updated
+        : bucket;
     } catch (err) {
       this.errorLogger(err);
       return err;
     }
   }
 
+  protected generateFileName = () => {
+    const random = uuidv4();
+    return random.replaceAll("-", "");
+  };
+
   protected async uploadData(
     bucketName: string,
-    file: { name: string; data: Buffer }
-  ) {
+    file: { name: string; data: Buffer },
+    fileName: string
+  ): Promise<PutObjectCommandOutput> {
     const bucketParams = {
       Bucket: bucketName,
-      Key: file.name,
+      Key: fileName,
       Body: file.data,
     };
     try {
       return await this.s3Client.send(new PutObjectCommand(bucketParams));
     } catch (err) {
       this.errorLogger(err);
-      return err;
+      if (err?.$metadata.httpStatusCode === StatusCodes.NOT_FOUND) {
+        const bucket = await this.createNewBucket(bucketName);
+        return bucket.$metadata.httpStatusCode !== StatusCodes.OK
+          ? bucket
+          : await this.s3Client.send(new PutObjectCommand(bucketParams));
+      }
     }
   }
 
@@ -105,43 +118,37 @@ export class StorageSdkService {
     bucketName,
     fileName,
     code,
-    ETag,
+    inputName,
   }: {
     bucketName: string;
     fileName: string;
     code: number;
-    ETag: string;
-  }) {
+    inputName: string;
+  }): IImageResponse {
     const imageUrl = generateImageUrl(bucketName, fileName);
     return {
       httpStatusCode: code,
       imageUrl,
       fileName,
-      key: fileName,
-      ETag: ETag.slice(1, ETag.length - 1),
+      inputName,
     };
   }
 
-  protected async prepareBucket(bucketName: string) {
-    const existingBucket = await this.checkIfBucketExist(bucketName);
-    if (existingBucket.$metadata.httpStatusCode !== StatusCodes.OK) {
-      return await this.createNewBucket(bucketName);
-    }
-    return existingBucket;
-  }
-
-  protected async sendData(bucketName: string, file: UploadedFile) {
-    const uploaded = await this.uploadData(bucketName, file);
+  protected async sendData(
+    bucketName: string,
+    file: any
+  ): Promise<SaveImageToStorageType> {
+    const fileName = this.generateFileName();
+    const uploaded = await this.uploadData(bucketName, file, fileName);
     const {
       $metadata: { httpStatusCode },
-      ETag,
     } = uploaded;
     if (httpStatusCode === StatusCodes.OK) {
       return this.generateNewImageResponse({
         bucketName,
-        fileName: file.name,
+        fileName,
         code: httpStatusCode,
-        ETag,
+        inputName: file.name,
       });
     } else {
       return uploaded;
@@ -150,28 +157,25 @@ export class StorageSdkService {
 
   async saveImagesToStorage(
     discipline: string,
-    file: UploadedFile | UploadedFile[]
-  ) {
+    files: FileArray
+  ): Promise<SaveImageToStorageType[]> {
     const bucketName = getBucketNameByDiscipline(discipline);
-    const bucket = await this.prepareBucket(bucketName);
-    if (bucket.$metadata.httpStatusCode !== StatusCodes.OK) {
-      return bucket;
-    }
 
-    if (Array.isArray(file)) {
-      if (!file.length) return [];
-      const promises = file.map(
-        async (fileItem) => await this.sendData(bucketName, fileItem)
-      );
-      return await Promise.allSettled(promises).then((res) =>
-        allSettledHandler(res)
-      );
-    } else {
-      return await this.sendData(bucketName, file);
-    }
+    const images = Object.values(files);
+
+    if (!images.length) return [];
+    const promises = images.map(
+      async (fileItem) => await this.sendData(bucketName, fileItem)
+    );
+    return await Promise.allSettled(promises).then((res) =>
+      allSettledHandler(res)
+    );
   }
 
-  async deleteImage(discipline: string, fileName: string) {
+  async deleteImage(
+    discipline: string,
+    fileName: string
+  ): Promise<DeleteObjectCommandOutput> {
     const bucketName = getBucketNameByDiscipline(discipline);
     try {
       return await this.s3Client.send(
@@ -186,7 +190,10 @@ export class StorageSdkService {
     }
   }
 
-  async deleteImages(discipline: string, fileNames: string[]) {
+  async deleteImages(
+    discipline: string,
+    fileNames: string[]
+  ): Promise<DeleteObjectCommandOutput[]> {
     if (!fileNames.length) return [];
     const promises = fileNames.map(
       async (fileName) => await this.deleteImage(discipline, fileName)
