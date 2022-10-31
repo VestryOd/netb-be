@@ -2,7 +2,11 @@ import { v4 as uuidv4 } from "uuid";
 import { Schema } from "mongoose";
 import { TheoryComplexityEnum, TheoryItemEnum } from "@/common/enums";
 import { generateModels } from "@/common/helpers";
-import { SchemaNames } from "@/common/constants";
+import {
+  SchemaNames,
+  urlValidateMessage,
+  urlValidateRegexp,
+} from "@/common/constants";
 
 export const theoryModel = new Schema(
   {
@@ -29,7 +33,14 @@ export const theoryModel = new Schema(
               id: { type: String, default: uuidv4() },
               t__image_filename: String,
               t__image_description: String,
-              t__image_url: String,
+              t__image_url: {
+                type: String,
+                required: true,
+                validate: {
+                  validator: (str: string) => urlValidateRegexp.test(str),
+                  message: urlValidateMessage,
+                },
+              },
             },
             default: null,
             _id: false,
