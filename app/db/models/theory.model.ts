@@ -24,6 +24,16 @@ export const theoryModel = new Schema(
           t__content_text: { type: String, default: "" },
           t__content_table: { type: [[Number]] },
           t__content_list: [String],
+          t__content_image: {
+            type: {
+              id: { type: String, default: uuidv4() },
+              t__image_filename: String,
+              t__image_description: String,
+              t__image_url: String,
+            },
+            default: null,
+            _id: false,
+          },
         },
       ],
       default: [],

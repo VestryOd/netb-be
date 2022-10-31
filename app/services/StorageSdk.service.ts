@@ -86,9 +86,11 @@ export class StorageSdkService {
     }
   }
 
-  protected generateFileName = () => {
+  protected generateFileName = (inputName: string) => {
+    const ext = inputName.split(".").pop();
     const random = uuidv4();
-    return random.replaceAll("-", "");
+    const name = random.replaceAll("-", "");
+    return `${name}.${ext}`;
   };
 
   protected async uploadData(
@@ -138,7 +140,7 @@ export class StorageSdkService {
     bucketName: string,
     file: any
   ): Promise<SaveImageToStorageType> {
-    const fileName = this.generateFileName();
+    const fileName = this.generateFileName(file.name);
     const uploaded = await this.uploadData(bucketName, file, fileName);
     const {
       $metadata: { httpStatusCode },

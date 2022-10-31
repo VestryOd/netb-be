@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/indent,indent */
 import {
   SaveImageToStorageType,
   StorageSdkService,
@@ -52,13 +53,15 @@ export class MediaService {
     const { t__content } = theory;
     const updatedContent = t__content.map((item) => {
       const { t__content_image } = item;
-      const contentImage = this.normalizeImageContent(
-        images[t__content_image.t__image_filename],
-        t__content_image
-      );
       return !t__content_image
         ? item
-        : { ...item, t__content_image: contentImage };
+        : {
+            ...item,
+            t__content_image: this.normalizeImageContent(
+              images[t__content_image.t__image_filename],
+              t__content_image
+            ),
+          };
     });
     return {
       ...theory,
@@ -80,9 +83,7 @@ export class MediaService {
     discipline: string,
     files: FileArray
   ): Promise<SaveImageToStorageType[]> {
-    const created = await this.storage.saveImagesToStorage(discipline, files);
-    console.log("--images was created", created);
-    return created;
+    return await this.storage.saveImagesToStorage(discipline, files);
   }
 
   async saveMediaAndUpdateTheory(
