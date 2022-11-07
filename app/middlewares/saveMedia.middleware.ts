@@ -15,12 +15,16 @@ export const saveMediaMiddleware = async (
   if (files && Object.keys(files).length !== 0) {
     const mediaService = new MediaService();
 
-    const updatedTheory = await mediaService.saveMediaAndUpdateTheory(
-      discipline,
-      body,
-      files
-    );
-    req.body = { ...updatedTheory };
+    try {
+      const updatedTheory = await mediaService.saveMediaAndUpdateTheory(
+        discipline,
+        body,
+        files
+      );
+      req.body = { ...updatedTheory };
+    } catch (e) {
+      next(e);
+    }
   }
   next();
 };

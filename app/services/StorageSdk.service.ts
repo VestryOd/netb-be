@@ -16,8 +16,13 @@ import {
   getBucketNameByDiscipline,
   getErrorInfo,
   getS3PoliciesObject,
+  UNKNOWN_ERROR,
 } from "@/common/constants";
-import { allSettledHandler, loggerHelper } from "@/common/helpers";
+import {
+  allSettledHandler,
+  imagesResponseValidator,
+  loggerHelper,
+} from "@/common/helpers";
 import { region } from "@/config";
 import { WinstonLevelEnum } from "@/common/enums";
 import { IAwsError, IImageResponse } from "@/common/interfaces";
@@ -112,7 +117,7 @@ export class StorageSdkService {
         return bucket.$metadata.httpStatusCode !== StatusCodes.OK
           ? bucket
           : await this.s3Client.send(new PutObjectCommand(bucketParams));
-      }
+      } else throw err;
     }
   }
 
@@ -169,9 +174,19 @@ export class StorageSdkService {
     const promises = images.map(
       async (fileItem) => await this.sendData(bucketName, fileItem)
     );
-    return await Promise.allSettled(promises).then((res) =>
+    const uploadedImages = await Promise.allSettled(promises).then((res) =>
       allSettledHandler(res)
     );
+    const isImagesValidate = imagesResponseValidator(uploadedImages);
+    if (isImagesValidate) {
+      return uploadedImages;
+    } else {
+      const imageNames = uploadedImages
+        .filter((el) => el.fileName)
+        .map((elem) => elem.fileName);
+      await this.deleteImages(discipline, imageNames);
+      throw UNKNOWN_ERROR(uploadedImages.find((el) => el.$metadata));
+    }
   }
 
   async deleteImage(
