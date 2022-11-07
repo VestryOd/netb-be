@@ -27,8 +27,8 @@ const app: express.Application = express();
 
 app.use(fileUpload());
 
-app.use("/static", express.static(path.join(__dirname, "public")));
 app.use(express.json());
+app.use("/static", express.static(path.join(__dirname, "public")));
 app.use(httpContext.middleware);
 
 app.use("/:discipline", composePublicMiddleware, protectedRouter);

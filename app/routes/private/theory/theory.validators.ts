@@ -14,9 +14,16 @@ export const TheoryContentNavSchema = Joi.object({
   t__nav_description: Joi.string().optional().allow(null, ""),
 });
 
+export const TheoryContentImageSchema = Joi.object({
+  t__image_filename: Joi.string(),
+  t__image_description: Joi.string().optional(),
+  t__image_url: Joi.string().optional().allow(""),
+}).optional();
+
 export const theoryContentSchema = Joi.object({
   t__content_type: Joi.string().required(),
   t__content_text: Joi.string().allow(null, ""),
+  t__content_image: TheoryContentImageSchema,
   t__content_table: Joi.array()
     .items(Joi.array().items(Joi.string()))
     .optional(),

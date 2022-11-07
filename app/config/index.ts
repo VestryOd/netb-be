@@ -1,3 +1,4 @@
+import { defaultAWSRegion, devDefaultUrl, MODE } from "@/common/constants";
 import * as dotenv from "dotenv";
 import * as joi from "joi";
 import { ValidationResult } from "joi";
@@ -8,6 +9,7 @@ dotenv.config();
 interface IEnvVarsSchema {
   NODE_ENV: string;
   PORT: string;
+  AWS_REGION: string;
 }
 
 const envVarsSchema = joi
@@ -15,9 +17,10 @@ const envVarsSchema = joi
   .keys({
     NODE_ENV: joi
       .string()
-      .valid("production", "development", "test")
+      .valid(...Object.values(MODE))
       .required(),
     PORT: joi.number().positive().required(),
+    AWS_REGION: joi.string().default(defaultAWSRegion),
   })
   .unknown();
 
@@ -31,14 +34,15 @@ if (error) {
 
 const config: { [key: string]: { server_url: string } } = {
   development: {
-    server_url: "http://localhost",
+    server_url: devDefaultUrl,
   },
 };
 
-export const envConf = config[process.env.NODE_ENV || "development"];
+export const envConf = config[process.env.NODE_ENV || MODE.DEV];
 
 export const env = envVars.NODE_ENV;
 export const port = envVars.PORT;
+export const region = envVars.AWS_REGION;
 
 export const dbsConfig = Object.values(DisciplineEnum);
 

@@ -2,7 +2,7 @@ export enum TheoryItemEnum {
   Text = "text",
   Code = "code",
   Nav = "nav",
-  Img = "img",
+  Img = "image",
   Table = "table",
   List = "list",
 }

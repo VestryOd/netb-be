@@ -7,7 +7,7 @@
   "scripts": {
     "start": "NODE_ENV=production nodemon app/index.ts",
     "start:dev": "nodemon --files app/index.ts",
-    "prettier": "find ./app -type f -name '*.ts' | xargs prettier --write",
+    "prettier": "find app -type f -name '*.ts' | xargs prettier --write",
     "lint": "eslint --ext .ts .",
     "commit-hook": "git add .",
     "postinstall": "link-module-alias"
@@ -38,7 +38,9 @@
     "@": "./app"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.131.0",
     "@types/http-errors": "^1.8.2",
+    "aws-sdk": "^2.1176.0",
     "axios": "^0.27.2",
     "body-parser": "^1.20.0",
     "compose-middleware": "^5.0.1",
