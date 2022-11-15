@@ -10,7 +10,8 @@
     "prettier": "find app -type f -name '*.ts' | xargs prettier --write",
     "lint": "eslint --ext .ts .",
     "commit-hook": "git add .",
-    "postinstall": "link-module-alias"
+    "before:module_alias": "which link-module-alias && link-module-alias clean || echo",
+    "after:module_alias": "link-module-alias"
   },
   "repository": {
     "type": "git",
@@ -42,6 +43,7 @@
     "@types/http-errors": "^1.8.2",
     "aws-sdk": "^2.1176.0",
     "axios": "^0.27.2",
+    "bcrypt": "^5.1.0",
     "body-parser": "^1.20.0",
     "compose-middleware": "^5.0.1",
     "cors": "^2.8.5",
@@ -55,9 +57,13 @@
     "http-errors": "^2.0.0",
     "http-status-codes": "^2.2.0",
     "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^3.1.2",
     "module-alias": "^2.2.2",
     "mongoose": "^6.3.5",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.0",
+    "swagger-ui-express": "^4.6.0",
     "uuid": "^8.3.2",
     "winston": "^3.7.2"
   },
