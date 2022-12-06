@@ -10,6 +10,7 @@ interface IEnvVarsSchema {
   NODE_ENV: string;
   PORT: string;
   AWS_REGION: string;
+  JWT_SECRET_KEY: string;
 }
 
 const envVarsSchema = joi
@@ -21,6 +22,7 @@ const envVarsSchema = joi
       .required(),
     PORT: joi.number().positive().required(),
     AWS_REGION: joi.string().default(defaultAWSRegion),
+    JWT_SECRET_KEY: joi.string().required(),
   })
   .unknown();
 
@@ -43,6 +45,7 @@ export const envConf = config[process.env.NODE_ENV || MODE.DEV];
 export const env = envVars.NODE_ENV;
 export const port = envVars.PORT;
 export const region = envVars.AWS_REGION;
+export const jwtSecret = envVars.JWT_SECRET_KEY;
 
 export const dbsConfig = Object.values(DisciplineEnum);
 

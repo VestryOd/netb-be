@@ -1,10 +1,13 @@
 export enum MainRoutes {
   Theory = "/theory",
   Practice = "/practice",
+  User = "/user",
 }
 
 export enum SubRoutes {
   Root = "",
+  Login = "/login",
+  SignUp = "/sign-up",
 }
 
 export enum QueryParams {
