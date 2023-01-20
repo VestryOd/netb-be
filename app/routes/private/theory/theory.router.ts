@@ -15,8 +15,8 @@ import {
   theoryPostResponseSchema,
 } from "./theory.validators";
 import { parentParamSchema } from "@/common/validators";
-import { customBodyParseMiddleware } from "../../../middlewares";
-import { saveMediaMiddleware } from "../../../middlewares/saveMedia.middleware";
+import { customBodyParseMiddleware } from "@/middlewares";
+import { saveMediaMiddleware } from "@/middlewares/saveMedia.middleware";
 
 const theoryRouter = express.Router({ mergeParams: true });
 const validator = createValidator();

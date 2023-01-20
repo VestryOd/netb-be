@@ -1,5 +1,11 @@
 import { IUser } from "@/common/interfaces/IUser";
-import { getByEmail, createUser, getOneById } from "../db/user.db";
+import {
+  getByEmail,
+  createUser,
+  getOneById,
+  removeUser,
+  updateUser,
+} from "../db/user.db";
 
 export class UserService {
   public async getByEmail(email: string): Promise<IUser> {
@@ -12,5 +18,13 @@ export class UserService {
 
   async getUserById(id: string) {
     return await getOneById(id);
+  }
+
+  async deleteUser(id: string) {
+    return await removeUser(id);
+  }
+
+  async updateOneUser(user: IUser) {
+    return await updateUser(user);
   }
 }

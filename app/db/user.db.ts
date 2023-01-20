@@ -21,3 +21,26 @@ export const createUser = async (user: Omit<IUser, "id">): Promise<IUser> => {
 };
 
 export const getOneById = async (id: string) => await userModel.findById(id);
+
+export const removeUser = async (id: string) => {
+  const user = await userModel.findById(id);
+
+  if (!user) return null;
+
+  await user.remove();
+  return user;
+};
+
+export const updateUser = async (user: IUser) => {
+  const existingUser = await userModel.findById(user.id);
+
+  if (!existingUser) return null;
+
+  Object.entries(user).forEach(([key, value]) => {
+    if (key) {
+      existingUser[key] = value;
+    }
+  });
+  existingUser.save();
+  return existingUser;
+};

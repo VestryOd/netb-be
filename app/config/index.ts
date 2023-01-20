@@ -2,7 +2,7 @@ import { defaultAWSRegion, devDefaultUrl, MODE } from "@/common/constants";
 import * as dotenv from "dotenv";
 import * as joi from "joi";
 import { ValidationResult } from "joi";
-import { DisciplineEnum } from "../common/enums";
+import { DisciplineEnum, RolesEnum } from "../common/enums";
 
 dotenv.config();
 
@@ -48,5 +48,7 @@ export const region = envVars.AWS_REGION;
 export const jwtSecret = envVars.JWT_SECRET_KEY;
 
 export const dbsConfig = Object.values(DisciplineEnum);
+
+export const rolesConfig = Object.values(RolesEnum);
 
 export const mongoConnect = process.env.MONGO_CONNECTION_STRING;
