@@ -22,11 +22,7 @@ export class TheoryService {
 
   async deleteOne({ discipline, theory_id }: ITheoryService) {
     const theory = await this.getOne({ discipline, theory_id });
-    const deleted = await this.mediaService.clearMediaFromTheory(
-      discipline,
-      theory
-    );
-    console.log("--deleted images", deleted, theory);
+    await this.mediaService.clearMediaFromTheory(discipline, theory);
     return await deleteOne({ discipline, theory_id });
   }
 

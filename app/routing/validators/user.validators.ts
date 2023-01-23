@@ -18,6 +18,10 @@ export const userBasicSchema = Joi.object({
     .valid(...Object.values(RolesEnum)),
 });
 
+export const userParamsSchema = Joi.object({
+  userId: Joi.string().required(),
+});
+
 export const userRequestSchema = userBasicSchema.append({
   user_password: Joi.string().required().min(userPasswordMinLength),
 });

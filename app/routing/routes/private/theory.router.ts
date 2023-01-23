@@ -3,8 +3,6 @@ import { createValidator } from "express-joi-validation";
 import { SubRoutes } from "@/common/constants";
 import {
   createTheoryHandler,
-  getAllTheoryItems,
-  getOneTheoryHandler,
   deleteTheoryHandler,
   updateTheoryHandler,
 } from "@/controllers";
@@ -13,29 +11,15 @@ import {
   theoryIdParamsSchema,
   theoryObjectRequestSchema,
   theoryPostResponseSchema,
-} from "./theory.validators";
+} from "../../validators/theory.validators";
 import { parentParamSchema } from "@/common/validators";
 import { customBodyParseMiddleware } from "@/middlewares";
 import { saveMediaMiddleware } from "@/middlewares/saveMedia.middleware";
 
-const theoryRouter = express.Router({ mergeParams: true });
+const protectedTheoryRouter = express.Router({ mergeParams: true });
 const validator = createValidator();
 
-theoryRouter.get(
-  SubRoutes.Root,
-  validator.params(parentParamSchema),
-  getAllTheoryItems as express.RequestHandler,
-  errorHandlerMiddleware
-);
-
-theoryRouter.get(
-  `${SubRoutes.Root}/:theory_id`,
-  validator.params(theoryIdParamsSchema),
-  getOneTheoryHandler as express.RequestHandler,
-  errorHandlerMiddleware
-);
-
-theoryRouter.post(
+protectedTheoryRouter.post(
   SubRoutes.Root,
   customBodyParseMiddleware,
   saveMediaMiddleware,
@@ -46,14 +30,14 @@ theoryRouter.post(
   errorHandlerMiddleware
 );
 
-theoryRouter.delete(
+protectedTheoryRouter.delete(
   `${SubRoutes.Root}/:theory_id`,
   validator.params(theoryIdParamsSchema),
   deleteTheoryHandler as express.RequestHandler,
   errorHandlerMiddleware
 );
 
-theoryRouter.put(
+protectedTheoryRouter.put(
   `${SubRoutes.Root}/:theory_id`,
   customBodyParseMiddleware,
   saveMediaMiddleware,
@@ -63,4 +47,4 @@ theoryRouter.put(
   errorHandlerMiddleware
 );
 
-export default theoryRouter;
+export default protectedTheoryRouter;

@@ -1,31 +1,42 @@
 import { Request, Response, NextFunction } from "express";
-import { StatusCodes } from "http-status-codes";
 import { AuthService } from "@/services/Auth.service";
-import { rolesConfig } from "@/config";
+import { accessLevelByRole } from "@/common/constants";
+import { catchErrorHandler } from "@/common/helpers";
+import { ExpressCallbackType } from "@/common/types";
 
-export const authMiddleware = async (
+const authService = new AuthService();
+
+export const authMiddleware = (
   req: Request,
   res: Response,
   next: NextFunction
-) => {
-  const { user_email, user_password } = req.body;
-
+): void => {
   try {
-    const token = await AuthService.authenticate({ user_email, user_password });
-    res.status(StatusCodes.OK).json({ token });
-  } catch (e) {
-    next(e);
+    authService.validateToken(req.headers.authorization);
+    next();
+  } catch (err) {
+    catchErrorHandler(err, next);
   }
 };
 
-const generateAuthByRoleMiddlewares = () => {
-  const authByRoles = {} as Record<string, AuthService>;
-
-  Object.values(rolesConfig).forEach((role) => {
-    authByRoles[role] = new AuthService(role);
+const generateAuthMiddleware = () => {
+  const authByRoles = {} as Record<string, ExpressCallbackType>;
+  Object.entries(accessLevelByRole).forEach(([key, level]) => {
+    authByRoles[key] = async (
+      req: Request,
+      res: Response,
+      next: NextFunction
+    ) => {
+      try {
+        await authService.validateUserRole(req, level);
+        next();
+      } catch (err) {
+        catchErrorHandler(err, next);
+      }
+    };
   });
 
   return authByRoles;
 };
 
-export const authMiddlewareByRole = generateAuthByRoleMiddlewares();
+export const authMiddlewareByRole = generateAuthMiddleware();

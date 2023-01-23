@@ -2,11 +2,14 @@ import * as bcrypt from "bcrypt";
 import { userModel } from "./models";
 import { IUser } from "@/common/interfaces/IUser";
 import { ALREADY_EXIST } from "@/common/constants";
+import { RolesEnum } from "../common/enums";
+
+export const getAllUsers = async () => await userModel.find({});
 
 export const getByEmail = async (user_email: string) =>
   await userModel.findOne({ user_email });
 
-export const createUser = async (user: Omit<IUser, "id">): Promise<IUser> => {
+export const createUser = async (user: Partial<IUser>): Promise<IUser> => {
   const { user_password, user_email } = user;
 
   const candidate = await getByEmail(user_email);
@@ -31,8 +34,8 @@ export const removeUser = async (id: string) => {
   return user;
 };
 
-export const updateUser = async (user: IUser) => {
-  const existingUser = await userModel.findById(user.id);
+export const updateUser = async (userId: string, user: IUser) => {
+  const existingUser = await userModel.findById(userId);
 
   if (!existingUser) return null;
 
@@ -41,6 +44,17 @@ export const updateUser = async (user: IUser) => {
       existingUser[key] = value;
     }
   });
+  existingUser.save();
+  return existingUser;
+};
+
+export const updateUserRole = async (userId: string, role: RolesEnum) => {
+  const existingUser = await userModel.findById(userId);
+
+  if (!existingUser) return null;
+
+  existingUser.user_role = role;
+
   existingUser.save();
   return existingUser;
 };

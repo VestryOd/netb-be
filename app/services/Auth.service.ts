@@ -1,22 +1,22 @@
 import * as bcrypt from "bcrypt";
 import * as jwt from "jsonwebtoken";
 import jwt_decode from "jwt-decode";
+import { Request } from "express";
 import { IUser } from "@/common/interfaces/IUser";
 import { UserService } from "./User.service";
 import {
+  accessLevelByRole,
   PERMISSION_DENIED,
   UNAUTHORIZED,
   USER_NOT_EXIST,
 } from "@/common/constants";
 import { jwtSecret } from "@/config";
-import { RolesEnum } from "@/common/enums";
+import { RolesEnum } from "../common/enums";
 
 export class AuthService {
   private userService: UserService;
-  private readonly routeRole: RolesEnum;
-  constructor(routeRole: RolesEnum) {
+  constructor() {
     this.userService = new UserService();
-    this.routeRole = routeRole;
   }
 
   static async authenticate(userInfo: Partial<IUser>) {
@@ -35,30 +35,32 @@ export class AuthService {
     return { token: jwt.sign({ user_name, user_email, id }, jwtSecret) };
   }
 
-  private async validateUserRole(token: string, routeRole: RolesEnum) {
-    const { id } = jwt_decode<Partial<IUser>>(token);
+  public async validateUserRole(
+    req: Request,
+    routeAccessLevel: number
+  ): Promise<void> {
+    const { authorization } = req.headers;
+    const { userId } = req.params;
+    const authHeaderData = authorization.split(" ");
+    const { id } = jwt_decode<Partial<IUser>>(authHeaderData[1]);
 
     const user = await this.userService.getUserById(id);
 
-    return routeRole === user.user_role;
+    const isUserRoleValid =
+      (routeAccessLevel === accessLevelByRole[RolesEnum.USER] &&
+        userId &&
+        userId === id) ||
+      user.user_role >= routeAccessLevel;
+
+    if (!isUserRoleValid) throw PERMISSION_DENIED;
   }
 
-  private validateToken(authHeaderData: string[]) {
-    return (
-      authHeaderData[0] === "Bearer" && jwt.verify(authHeaderData[1], jwtSecret)
-    );
-  }
-
-  public async validateUser(headerAuthorization: string) {
+  public validateToken(headerAuthorization: string): void {
     const authHeaderData = headerAuthorization.split(" ");
+    const isAuthorized =
+      authHeaderData[0] === "Bearer" &&
+      jwt.verify(authHeaderData[1], jwtSecret);
 
-    if (!this.validateToken(authHeaderData)) throw PERMISSION_DENIED;
-
-    const isRoleValid = await this.validateUserRole(
-      authHeaderData[1],
-      this.routeRole
-    );
-    if (!isRoleValid) throw UNAUTHORIZED();
-    return { success: true };
+    if (!isAuthorized) throw UNAUTHORIZED();
   }
 }

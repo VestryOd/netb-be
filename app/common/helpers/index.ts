@@ -10,3 +10,4 @@ export * from "./saveRequestBodyToFile";
 export * from "./imagesResponseValidator";
 export * from "./userToResponse";
 export * from "./commonErrorLogger";
+export * from "./catchErrorHandler";

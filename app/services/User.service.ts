@@ -5,14 +5,20 @@ import {
   getOneById,
   removeUser,
   updateUser,
+  getAllUsers,
+  updateUserRole,
 } from "../db/user.db";
+import { RolesEnum } from "../common/enums";
 
 export class UserService {
+  public async getAllUsers(): Promise<IUser[]> {
+    return getAllUsers();
+  }
   public async getByEmail(email: string): Promise<IUser> {
     return await getByEmail(email);
   }
 
-  async createUser(user: Omit<IUser, "id">) {
+  async createUser(user: Partial<IUser>) {
     return await createUser(user);
   }
 
@@ -24,7 +30,11 @@ export class UserService {
     return await removeUser(id);
   }
 
-  async updateOneUser(user: IUser) {
-    return await updateUser(user);
+  async updateOneUser(userId: string, user: IUser) {
+    return await updateUser(userId, user);
+  }
+
+  async updateUserRole(userId: string, role: RolesEnum) {
+    return await updateUserRole(userId, role);
   }
 }
