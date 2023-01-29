@@ -13,13 +13,16 @@ export const userBasicSchema = Joi.object({
     .min(userNameMinLength)
     .max(userNameMaxLength),
   user_email: Joi.string().required().email(),
-  user_role: Joi.string()
-    .required()
-    .valid(...Object.values(RolesEnum)),
 });
 
 export const userParamsSchema = Joi.object({
   userId: Joi.string().required(),
+});
+
+export const userRoleRequestSchema = Joi.object({
+  user_role: Joi.string()
+    .required()
+    .valid(...Object.values(RolesEnum)),
 });
 
 export const userRequestSchema = userBasicSchema.append({

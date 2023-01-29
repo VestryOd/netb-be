@@ -32,7 +32,10 @@ export class AuthService {
 
     const { user_name, id } = candidate;
 
-    return { token: jwt.sign({ user_name, user_email, id }, jwtSecret) };
+    return {
+      type: "token",
+      data: jwt.sign({ user_name, user_email, id }, jwtSecret),
+    };
   }
 
   public async validateUserRole(
@@ -50,7 +53,7 @@ export class AuthService {
       (routeAccessLevel === accessLevelByRole[RolesEnum.USER] &&
         userId &&
         userId === id) ||
-      user.user_role >= routeAccessLevel;
+      accessLevelByRole[user.user_role] >= routeAccessLevel;
 
     if (!isUserRoleValid) throw PERMISSION_DENIED;
   }

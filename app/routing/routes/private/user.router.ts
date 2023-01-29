@@ -13,6 +13,7 @@ import { RolesEnum } from "@/common/enums";
 import {
   userParamsSchema,
   userPostResponse,
+  userRoleRequestSchema,
 } from "../../validators/user.validators";
 
 export const protectedUserRouter = express.Router({ mergeParams: true });
@@ -54,6 +55,7 @@ protectedUserRouter.put(
   `${SubRoutes.UpdateRole}/:userId`,
   authMiddlewareByRole[RolesEnum.ADMIN],
   validator.params(userParamsSchema),
+  validator.body(userRoleRequestSchema),
   updateUserRole as express.RequestHandler,
   errorHandlerMiddleware
 );

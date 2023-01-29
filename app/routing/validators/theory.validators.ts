@@ -18,12 +18,18 @@ export const TheoryContentImageSchema = Joi.object({
   t__image_filename: Joi.string(),
   t__image_description: Joi.string().optional(),
   t__image_url: Joi.string().optional().allow(""),
-}).optional();
+})
+  .required()
+  .allow(null);
 
 export const theoryContentSchema = Joi.object({
   t__content_type: Joi.string().required(),
   t__content_text: Joi.string().allow(null, ""),
-  t__content_image: TheoryContentImageSchema,
+  t__content_image: Joi.alternatives().conditional("t__content_type", {
+    is: "text",
+    then: Joi.forbidden(),
+    otherwise: TheoryContentImageSchema,
+  }),
   t__content_table: Joi.array()
     .items(Joi.array().items(Joi.string()))
     .optional(),

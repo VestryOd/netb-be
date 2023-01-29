@@ -5,6 +5,7 @@ import {
   userEmailValidateRegexp,
   userEmailMessage,
   userPasswordMinLength,
+  userModelName,
 } from "@/common/constants";
 import { RolesEnum } from "../../common/enums";
 
@@ -39,5 +40,4 @@ export const userSchema = new Schema(
   },
   { versionKey: false }
 );
-
-export const userModel = model("user", userSchema);
+export const userModel = model(userModelName, userSchema);

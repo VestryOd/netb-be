@@ -47,6 +47,7 @@ export const port = envVars.PORT;
 export const region = envVars.AWS_REGION;
 export const jwtSecret = envVars.JWT_SECRET_KEY;
 
-export const dbsConfig = Object.values(DisciplineEnum);
+export const disciplineDbsConfig = Object.values(DisciplineEnum);
 
 export const mongoConnect = process.env.MONGO_CONNECTION_STRING;
+export const mongoDbName = process.env.MONGO_DB_NAME;
