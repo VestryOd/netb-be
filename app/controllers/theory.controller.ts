@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import StatusCodes from "http-status-codes";
 import { TheoryService } from "@/services";
+import { catchErrorHandler } from "@/common/helpers";
 
 const theoryService = new TheoryService();
 
@@ -14,8 +15,7 @@ export const getAllTheoryItems = async (
     const theoryItems = await theoryService.getAll({ discipline });
     res.send(theoryItems);
   } catch (err) {
-    console.error(err);
-    next(err);
+    catchErrorHandler(err, next);
   }
 };
 
@@ -30,7 +30,7 @@ export const getOneTheoryHandler = async (
     res.statusCode = theoryItem ? StatusCodes.OK : StatusCodes.NOT_FOUND;
     res.send(theoryItem);
   } catch (err) {
-    next(err);
+    catchErrorHandler(err, next);
   }
 };
 
@@ -50,7 +50,7 @@ export const createTheoryHandler = async (
     res.statusCode = StatusCodes.CREATED;
     res.send(JSON.stringify(theoryItem));
   } catch (err) {
-    next(err);
+    catchErrorHandler(err, next);
   }
 };
 
@@ -65,7 +65,7 @@ export const deleteTheoryHandler = async (
     res.statusCode = cleared ? StatusCodes.ACCEPTED : StatusCodes.NOT_FOUND;
     res.send(cleared);
   } catch (err) {
-    next(err);
+    catchErrorHandler(err, next);
   }
 };
 
@@ -86,6 +86,6 @@ export const updateTheoryHandler = async (
     res.statusCode = StatusCodes.OK;
     res.send(updated);
   } catch (err) {
-    next(err);
+    catchErrorHandler(err, next);
   }
 };

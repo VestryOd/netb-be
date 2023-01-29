@@ -26,8 +26,8 @@ export const theoryModel = new Schema(
             default: TheoryItemEnum.Text,
           },
           t__content_text: { type: String, default: "" },
-          t__content_table: { type: [[Number]] },
-          t__content_list: [String],
+          t__content_table: { type: [[Number]], default: undefined },
+          t__content_list: { type: [String], default: undefined },
           t__content_image: {
             type: {
               id: { type: String, default: uuidv4() },
@@ -37,12 +37,13 @@ export const theoryModel = new Schema(
                 type: String,
                 required: true,
                 validate: {
-                  validator: (str: string) => urlValidateRegexp.test(str),
+                  validator: (str: string) =>
+                    str && urlValidateRegexp.test(str),
                   message: urlValidateMessage,
                 },
               },
             },
-            default: null,
+            default: undefined,
             _id: false,
           },
         },
@@ -61,6 +62,7 @@ export const theoryModel = new Schema(
         },
       ],
       _id: false,
+      default: undefined,
     },
   },
   { versionKey: false }

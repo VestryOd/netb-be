@@ -1,12 +1,12 @@
 import { connection, disconnect, connect, set } from "mongoose";
 import { loggerHelper } from "../common/helpers";
-import { mongoConnect } from "@/config";
+import { mongoConnect, mongoDbName } from "@/config";
 
 export const closeConnection = () => disconnect();
 
 export const connectToDB = (cb: () => any) => {
   try {
-    connect(mongoConnect)
+    connect(mongoConnect, { dbName: mongoDbName })
       .then(() => console.log("connected!"))
       .catch((err) => console.log("connection problem", err));
 

@@ -1,16 +1,15 @@
 import { compose } from "compose-middleware";
-import { RequestHandler } from "express";
-import { errorHandlerMiddleware } from "./error.middleware";
 import { eventLoggerMiddleware } from "./eventLogger.middleware";
+import { authMiddleware } from "./auth.middleware";
 
 export * from "./error.middleware";
 export * from "./customBodyParse.middleware";
+export * from "./saveMedia.middleware";
+export * from "./auth.middleware";
 
-const commonMiddleware: RequestHandler[] = [];
-export const privateRoutesMiddleware = [
-  ...commonMiddleware,
+export const composePublicMiddleware = compose([eventLoggerMiddleware]);
+
+export const composeProtectedMiddleware = compose([
+  authMiddleware,
   eventLoggerMiddleware,
-  errorHandlerMiddleware,
-];
-
-export const composePublicMiddleware = compose(privateRoutesMiddleware);
+]);

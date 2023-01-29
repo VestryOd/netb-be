@@ -4,13 +4,13 @@ import * as fileUpload from "express-fileupload";
 import * as httpContext from "express-http-context";
 import * as config from "@/config";
 import * as path from "path";
-import protectedRouter from "./routes/private";
-import { composePublicMiddleware } from "./middlewares";
 import { connectToDB, closeConnection } from "@/db";
 import {
   uncaughtExceptionHandler,
   unhandledPromiseRejectionHandler,
 } from "./common/helpers";
+import { MainRoutes } from "./common/constants";
+import { routingSchema } from "./routing/routes";
 
 process
   .on("unhandledRejection", unhandledPromiseRejectionHandler)
@@ -28,10 +28,12 @@ const app: express.Application = express();
 app.use(fileUpload());
 
 app.use(express.json());
-app.use("/static", express.static(path.join(__dirname, "public")));
+app.use(MainRoutes.Static, express.static(path.join(__dirname, "public")));
 app.use(httpContext.middleware);
 
-app.use("/:discipline", composePublicMiddleware, protectedRouter);
+routingSchema.forEach(({ prefix, middlewares, routes }) => {
+  middlewares ? app.use(prefix, middlewares, routes) : app.use(prefix, routes);
+});
 
 connectToDB(() => {
   app.listen(config.port, () =>

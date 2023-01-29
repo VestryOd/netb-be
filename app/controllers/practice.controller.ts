@@ -7,6 +7,7 @@ import {
   deleteOnePractice,
   updateOnePractice,
 } from "@/services";
+import { catchErrorHandler } from "@/common/helpers";
 
 export const getAllPracticeItems = async (
   req: Request,
@@ -18,8 +19,7 @@ export const getAllPracticeItems = async (
     const practiceItems = await practiceAllHandler({ discipline });
     res.send(practiceItems);
   } catch (err) {
-    console.error(err);
-    next(err);
+    catchErrorHandler(err, next);
   }
 };
 
@@ -34,7 +34,7 @@ export const getOnePracticeHandler = async (
     res.statusCode = practiceItem ? StatusCodes.OK : StatusCodes.NOT_FOUND;
     res.send(practiceItem);
   } catch (err) {
-    next(err);
+    catchErrorHandler(err, next);
   }
 };
 
@@ -53,7 +53,7 @@ export const createPracticeHandler = async (
     res.statusCode = StatusCodes.CREATED;
     res.send(JSON.stringify(practiceItem));
   } catch (err) {
-    next(err);
+    catchErrorHandler(err, next);
   }
 };
 
@@ -68,7 +68,7 @@ export const deletePracticeHandler = async (
     res.statusCode = cleared ? StatusCodes.ACCEPTED : StatusCodes.NOT_FOUND;
     res.send(cleared);
   } catch (err) {
-    next(err);
+    catchErrorHandler(err, next);
   }
 };
 
@@ -87,6 +87,6 @@ export const updatePracticeHandler = async (
     res.statusCode = StatusCodes.OK;
     res.send(updated);
   } catch (err) {
-    next(err);
+    catchErrorHandler(err, next);
   }
 };
