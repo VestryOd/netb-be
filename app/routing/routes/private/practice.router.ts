@@ -8,10 +8,7 @@ import {
 } from "@/controllers";
 import { errorHandlerMiddleware } from "@/middlewares";
 import { parentParamSchema } from "@/common/validators";
-import {
-  practiceBasicSchema,
-  practiceIdParamsSchema,
-} from "../../validators/practice.validator";
+import { practiceBasicSchema, practiceIdParamsSchema } from "../../validators";
 
 const protectedPracticeRouter = express.Router({ mergeParams: true });
 const validator = createValidator();

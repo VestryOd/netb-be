@@ -22,4 +22,10 @@ export enum QueryParams {
 export enum SchemaNames {
   Theory = "Theory",
   Practice = "Practice",
+  Content = "Content",
+  Image = "Image",
+  User = "User",
+  Role = "Role",
+  Discipline = "Discipline",
+  Quiz = "Quiz",
 }

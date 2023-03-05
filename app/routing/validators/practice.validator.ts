@@ -1,5 +1,6 @@
 import * as Joi from "joi";
-import { errorResponseSchema, parentParamSchema } from "@/common/validators";
+import { parentParamSchema } from "@/common/validators";
+import { PracticeTypeEnum } from "@/common/enums/PracticeTypeEnum";
 
 export const practiceIdParamsSchema = parentParamSchema.append({
   practice_id: Joi.string()
@@ -8,17 +9,13 @@ export const practiceIdParamsSchema = parentParamSchema.append({
 });
 
 export const practiceBasicSchema = Joi.object({
-  p__code: Joi.string().required().min(3),
-  p__answers: Joi.array().items(Joi.string()).min(2).required(),
-  p__right_answer: Joi.number().required(),
-  p__details: Joi.string().optional(),
+  type: Joi.string()
+    .required()
+    .valid(...Object.values(PracticeTypeEnum)),
+  // discipline: Joi.string().required(),
+  code: Joi.string().required().min(3),
+  answers: Joi.array().items(Joi.string()).min(2).required(),
+  right_answer: Joi.array().items(Joi.number()).required(),
+  details: Joi.string().optional(),
+  created_by: Joi.string().required(),
 });
-
-export const practiceObjectSchema = practiceBasicSchema.append({
-  id: Joi.string().required(),
-});
-
-export const practicePostResponseSchema = Joi.alternatives().try(
-  practiceObjectSchema,
-  errorResponseSchema
-);

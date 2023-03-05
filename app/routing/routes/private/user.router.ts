@@ -14,7 +14,7 @@ import {
   userParamsSchema,
   userPostResponse,
   userRoleRequestSchema,
-} from "../../validators/user.validators";
+} from "../../validators";
 
 export const protectedUserRouter = express.Router({ mergeParams: true });
 const validator = createValidator();
@@ -51,7 +51,7 @@ protectedUserRouter.put(
   errorHandlerMiddleware
 );
 
-protectedUserRouter.put(
+protectedUserRouter.patch(
   `${SubRoutes.UpdateRole}/:userId`,
   authMiddlewareByRole[RolesEnum.ADMIN],
   validator.params(userParamsSchema),

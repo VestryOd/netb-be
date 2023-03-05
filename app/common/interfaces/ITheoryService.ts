@@ -4,6 +4,6 @@ import { FileArray } from "express-fileupload";
 export interface ITheoryService {
   discipline: string;
   theory_id?: string;
-  theory?: Omit<ITheory, "id"> | ITheory;
+  theory?: ITheory;
   files?: FileArray;
 }

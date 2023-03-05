@@ -5,9 +5,8 @@ import {
   userEmailValidateRegexp,
   userEmailMessage,
   userPasswordMinLength,
-  userModelName,
+  SchemaNames,
 } from "@/common/constants";
-import { RolesEnum } from "../../common/enums";
 
 export const userSchema = new Schema(
   {
@@ -32,12 +31,11 @@ export const userSchema = new Schema(
       minLength: userPasswordMinLength,
     },
     user_role: {
-      type: String,
+      type: Schema.Types.ObjectId,
+      ref: SchemaNames.Role,
       required: true,
-      enum: [...Object.values(RolesEnum)],
-      default: RolesEnum.USER,
     },
   },
   { versionKey: false }
 );
-export const userModel = model(userModelName, userSchema);
+export const userModel = model(SchemaNames.User, userSchema);

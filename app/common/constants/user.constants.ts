@@ -9,8 +9,6 @@ export const userEmailMessage =
 
 export const userPasswordMinLength = 6;
 
-export const userModelName = "user";
-
 export const userCreatedMessage = ({
   user_name,
   user_email,

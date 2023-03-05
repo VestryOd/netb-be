@@ -26,35 +26,38 @@ export const createUser = async (user: Partial<IUser>): Promise<IUser> => {
 export const getOneById = async (id: string) => await userModel.findById(id);
 
 export const removeUser = async (id: string) => {
-  const user = await userModel.findById(id);
-
-  if (!user) return null;
-
-  await user.remove();
-  return user;
+  // const user = await userModel.findById(id);
+  //
+  // if (!user) return null;
+  //
+  // await user.remove();
+  // return user;
+  return userModel.findByIdAndDelete(id);
 };
 
 export const updateUser = async (userId: string, user: IUser) => {
-  const existingUser = await userModel.findById(userId);
-
-  if (!existingUser) return null;
-
-  Object.entries(user).forEach(([key, value]) => {
-    if (key) {
-      existingUser[key] = value;
-    }
-  });
-  existingUser.save();
-  return existingUser;
+  // const existingUser = await userModel.findById(userId);
+  //
+  // if (!existingUser) return null;
+  //
+  // Object.entries(user).forEach(([key, value]) => {
+  //   if (key) {
+  //     existingUser[key] = value;
+  //   }
+  // });
+  // existingUser.save();
+  // return existingUser;
+  return userModel.updateOne({ _id: userId }, { ...user });
 };
 
 export const updateUserRole = async (userId: string, role: RolesEnum) => {
-  const existingUser = await userModel.findById(userId);
-
-  if (!existingUser) return null;
-
-  existingUser.user_role = role;
-
-  existingUser.save();
-  return existingUser;
+  // const existingUser = await userModel.findById(userId);
+  //
+  // if (!existingUser) return null;
+  //
+  // existingUser.user_role = role;
+  //
+  // existingUser.save();
+  // return existingUser;
+  return userModel.findByIdAndUpdate(userId, { role });
 };
