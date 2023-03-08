@@ -1,9 +1,10 @@
 import { MainRoutes, QueryParams } from "@/common/constants";
-import { authMiddleware, composeProtectedMiddleware } from "@/middlewares";
+import { authMiddleware } from "@/middlewares";
 import authRouter from "./public/auth.router";
 import publicUserRouter from "./public/user.router";
 import { publicDisciplineRouter } from "./public";
 import { protectedDisciplineRouter, protectedUserRouter } from "./private";
+import { protectedRoleRouter } from "./private/role.router";
 
 export const routingSchema = [
   {
@@ -25,7 +26,12 @@ export const routingSchema = [
   },
   {
     prefix: MainRoutes.User,
-    middlewares: composeProtectedMiddleware,
+    middlewares: authMiddleware,
     routes: protectedUserRouter,
+  },
+  {
+    prefix: MainRoutes.Role,
+    middlewares: authMiddleware,
+    routes: protectedRoleRouter,
   },
 ];

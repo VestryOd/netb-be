@@ -36,7 +36,7 @@ export const removeUser = async (userId: string) => {
   if (!user) return null;
 
   await user.remove();
-  return userId;
+  return { id: userId };
 };
 
 export const updateUser = async (userId: string, user: IUser) => {

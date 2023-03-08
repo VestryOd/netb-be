@@ -11,6 +11,7 @@ import {
 } from "./common/helpers";
 import { MainRoutes } from "./common/constants";
 import { routingSchema } from "./routing/routes";
+import { eventLoggerMiddleware } from "./middlewares/eventLogger.middleware";
 
 process
   .on("unhandledRejection", unhandledPromiseRejectionHandler)
@@ -34,6 +35,7 @@ app.use(httpContext.middleware);
 routingSchema.forEach(({ prefix, middlewares, routes }) => {
   middlewares ? app.use(prefix, middlewares, routes) : app.use(prefix, routes);
 });
+app.use("*", eventLoggerMiddleware);
 
 connectToDB(() => {
   app.listen(config.port, () =>
