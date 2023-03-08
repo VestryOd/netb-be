@@ -6,11 +6,15 @@ export enum MainRoutes {
   Root = "",
   Login = "/login",
   SignUp = "/sign-up",
+  Role = "/role",
 }
 
 export enum SubRoutes {
   Root = "",
-  UpdateRole = "update-role",
+  DeleteUser = "/delete-user",
+  GetAll = "/get-all",
+  UpdateUser = "/update-user",
+  UpdateRole = "/update-role",
 }
 
 export enum QueryParams {

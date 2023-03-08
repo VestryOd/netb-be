@@ -7,7 +7,7 @@ export * from "./customBodyParse.middleware";
 export * from "./saveMedia.middleware";
 export * from "./auth.middleware";
 
-export const composePublicMiddleware = compose([eventLoggerMiddleware]);
+export const composePublicMiddleware = compose([]);
 
 export const composeProtectedMiddleware = compose([
   authMiddleware,

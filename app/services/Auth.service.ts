@@ -53,12 +53,13 @@ export class AuthService {
       (routeAccessLevel === accessLevelByRole[RolesEnum.USER] &&
         userId &&
         userId === id) ||
-      accessLevelByRole[user.user_role] >= routeAccessLevel;
+      accessLevelByRole[user.user_role] === accessLevelByRole[RolesEnum.ADMIN];
 
     if (!isUserRoleValid) throw PERMISSION_DENIED;
   }
 
   public validateToken(headerAuthorization: string): void {
+    if (!headerAuthorization) throw UNAUTHORIZED();
     const authHeaderData = headerAuthorization.split(" ");
     const isAuthorized =
       authHeaderData[0] === "Bearer" &&

@@ -15,7 +15,8 @@ export const authMiddleware = (
     authService.validateToken(req.headers.authorization);
     next();
   } catch (err) {
-    catchErrorHandler(err, next);
+    catchErrorHandler(err);
+    res.send(err);
   }
 };
 

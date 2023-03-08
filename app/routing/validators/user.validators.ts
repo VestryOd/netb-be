@@ -6,6 +6,7 @@ import {
 } from "@/common/constants";
 import { RolesEnum } from "@/common/enums";
 import { errorResponseSchema } from "@/common/validators";
+import { isValidObjectId } from "@/common/helpers";
 
 export const userBasicSchema = Joi.object({
   user_name: Joi.string()
@@ -16,7 +17,7 @@ export const userBasicSchema = Joi.object({
 });
 
 export const userParamsSchema = Joi.object({
-  userId: Joi.string().required(),
+  userId: Joi.string().required().custom(isValidObjectId),
 });
 
 export const userRoleRequestSchema = Joi.object({

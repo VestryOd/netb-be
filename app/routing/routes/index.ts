@@ -1,8 +1,5 @@
 import { MainRoutes, QueryParams } from "@/common/constants";
-import {
-  composeProtectedMiddleware,
-  composePublicMiddleware,
-} from "@/middlewares";
+import { authMiddleware, composeProtectedMiddleware } from "@/middlewares";
 import authRouter from "./public/auth.router";
 import publicUserRouter from "./public/user.router";
 import { publicDisciplineRouter } from "./public";
@@ -19,12 +16,11 @@ export const routingSchema = [
   },
   {
     prefix: `/:${QueryParams.Discipline}`,
-    middlewares: composePublicMiddleware,
     routes: publicDisciplineRouter,
   },
   {
     prefix: `/:${QueryParams.Discipline}`,
-    middlewares: composeProtectedMiddleware,
+    middlewares: authMiddleware,
     routes: protectedDisciplineRouter,
   },
   {

@@ -7,6 +7,8 @@ const roleSchema = new Schema(
     name: {
       type: String,
       required: true,
+      unique: true,
+      index: true,
       enum: [...Object.values(RolesEnum)],
       default: RolesEnum.USER,
     },
@@ -19,4 +21,4 @@ const roleSchema = new Schema(
   { versionKey: false }
 );
 
-export const RoleModel = model(SchemaNames.Role, roleSchema);
+export const RoleModel = model<any>(SchemaNames.Role, roleSchema);

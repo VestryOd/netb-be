@@ -12,7 +12,7 @@ import { errorHandlerMiddleware, authMiddlewareByRole } from "@/middlewares";
 import { RolesEnum } from "@/common/enums";
 import {
   userParamsSchema,
-  userPostResponse,
+  userRequestSchema,
   userRoleRequestSchema,
 } from "../../validators";
 
@@ -20,7 +20,7 @@ export const protectedUserRouter = express.Router({ mergeParams: true });
 const validator = createValidator();
 
 protectedUserRouter.get(
-  SubRoutes.Root,
+  SubRoutes.GetAll,
   authMiddlewareByRole[RolesEnum.ADMIN],
   getAllUsersHandler as express.RequestHandler,
   errorHandlerMiddleware
@@ -30,13 +30,12 @@ protectedUserRouter.get(
   `${SubRoutes.Root}/:userId`,
   authMiddlewareByRole[RolesEnum.USER],
   validator.params(userParamsSchema),
-  validator.response(userPostResponse),
   getUserByIdHandler as express.RequestHandler,
   errorHandlerMiddleware
 );
 
 protectedUserRouter.delete(
-  `${SubRoutes.Root}/:userId`,
+  `${SubRoutes.DeleteUser}/:userId`,
   authMiddlewareByRole[RolesEnum.USER],
   validator.params(userParamsSchema),
   deleteUserHandler as express.RequestHandler,
@@ -44,9 +43,10 @@ protectedUserRouter.delete(
 );
 
 protectedUserRouter.put(
-  `${SubRoutes.Root}/:userId`,
+  `${SubRoutes.UpdateUser}/:userId`,
   authMiddlewareByRole[RolesEnum.USER],
   validator.params(userParamsSchema),
+  validator.body(userRequestSchema),
   updateUserHandler as express.RequestHandler,
   errorHandlerMiddleware
 );
