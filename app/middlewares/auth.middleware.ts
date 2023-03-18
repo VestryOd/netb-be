@@ -13,7 +13,7 @@ export const authMiddleware = (
 ): void => {
   try {
     authService.validateToken(req.headers.authorization);
-    next();
+    return next();
   } catch (err) {
     catchErrorHandler(err);
     res.send(err);
@@ -30,7 +30,7 @@ const generateAuthMiddleware = () => {
     ) => {
       try {
         await authService.validateUserRole(req, level);
-        next();
+        return next();
       } catch (err) {
         catchErrorHandler(err, next);
       }

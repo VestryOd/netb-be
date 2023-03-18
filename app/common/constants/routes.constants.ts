@@ -7,6 +7,7 @@ export enum MainRoutes {
   Login = "/login",
   SignUp = "/sign-up",
   Role = "/role",
+  Discipline = "/discipline",
 }
 
 export enum SubRoutes {

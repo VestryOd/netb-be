@@ -1,6 +1,6 @@
 import { compose } from "compose-middleware";
-import { eventLoggerMiddleware } from "./eventLogger.middleware";
-import { authMiddleware } from "./auth.middleware";
+import { authMiddleware, authMiddlewareByRole } from "./auth.middleware";
+import { RolesEnum } from "@/common/enums";
 
 export * from "./error.middleware";
 export * from "./customBodyParse.middleware";
@@ -9,7 +9,7 @@ export * from "./auth.middleware";
 
 export const composePublicMiddleware = compose([]);
 
-export const composeProtectedMiddleware = compose([
+export const composeProtectedDisciplineMiddleware = compose([
   authMiddleware,
-  eventLoggerMiddleware,
+  authMiddlewareByRole[RolesEnum.TEACHER],
 ]);

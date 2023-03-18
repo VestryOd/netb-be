@@ -13,3 +13,5 @@ export * from "./commonErrorLogger";
 export * from "./catchErrorHandler";
 export * from "./normalizeUserRoles";
 export * from "./isValidObjectId";
+export * from "./notFoundHandler";
+export * from "./generateDisciplineLinkName";
