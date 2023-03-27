@@ -5,13 +5,13 @@ import { Request } from "express";
 import { IUser } from "@/common/interfaces/IUser";
 import { UserService } from "./User.service";
 import {
-  accessLevelByRole,
   PERMISSION_DENIED,
   UNAUTHORIZED,
   USER_NOT_EXIST,
 } from "@/common/constants";
 import { jwtSecret } from "@/config";
 import { RolesEnum } from "../common/enums";
+import { RoleService } from "./Role.service";
 
 export class AuthService {
   private userService: UserService;
@@ -48,12 +48,15 @@ export class AuthService {
     const { id } = jwt_decode<Partial<IUser>>(authHeaderData[1]);
 
     const user = await this.userService.getUserById(id);
+    const userRolesAccessLevels =
+      await RoleService.prototype.getRolesAccessLevelsMap();
 
     const isUserRoleValid =
-      (routeAccessLevel === accessLevelByRole[RolesEnum.USER] &&
+      (routeAccessLevel === userRolesAccessLevels[RolesEnum.USER] &&
         userId &&
         userId === id) ||
-      accessLevelByRole[user.user_role] === accessLevelByRole[RolesEnum.ADMIN];
+      userRolesAccessLevels[user.user_role] ===
+        userRolesAccessLevels[RolesEnum.ADMIN];
 
     if (!isUserRoleValid) throw PERMISSION_DENIED;
   }

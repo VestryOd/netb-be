@@ -12,6 +12,17 @@ export class RoleService {
     return getAllRoles();
   }
 
+  public async getRolesAccessLevelsMap() {
+    const userRoles: IRole[] = await this.getAllRoles();
+
+    const usersRolesAccessLevels: Record<string, number> = {};
+    userRoles.forEach(({ name, access_level }) => {
+      usersRolesAccessLevels[name] = access_level;
+    });
+
+    return usersRolesAccessLevels;
+  }
+
   public async createRole(role: IRole) {
     const existingRole = await getRoleByName(role.name);
 
