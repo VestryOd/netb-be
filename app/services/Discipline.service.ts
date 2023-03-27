@@ -12,6 +12,14 @@ export class DisciplineService {
     return getAllDisciplines();
   }
 
+  public async getDisciplineByName(discipline: string) {
+    const existingDiscipline = await getDisciplineByName(discipline);
+
+    if (!existingDiscipline) throw NOT_FOUND("Discipline");
+
+    return existingDiscipline;
+  }
+
   public async createOneDiscipline(name: string) {
     const existingDiscipline = await getDisciplineByName(name);
 

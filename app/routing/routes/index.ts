@@ -1,5 +1,9 @@
 import { MainRoutes, QueryParams } from "@/common/constants";
-import { authMiddleware, authMiddlewareByRole } from "@/middlewares";
+import {
+  authMiddleware,
+  authMiddlewareByRole,
+  disciplineMiddleware,
+} from "@/middlewares";
 import authRouter from "./public/auth.router";
 import publicUserRouter from "./public/user.router";
 import { publicDisciplineRouter } from "./public";
@@ -20,6 +24,7 @@ export const routingSchema = [
   },
   {
     prefix: `/:${QueryParams.Discipline}`,
+    middlewares: disciplineMiddleware,
     routes: publicDisciplineRouter,
   },
   {
@@ -29,7 +34,7 @@ export const routingSchema = [
   },
   {
     prefix: `/:${QueryParams.Discipline}`,
-    // middlewares: authMiddleware,
+    middlewares: disciplineMiddleware,
     routes: protectedDisciplineRouter,
   },
   {

@@ -10,8 +10,8 @@ export const getDisciplineById = (disciplineId: string) => {
   return DisciplineModel.findById(disciplineId);
 };
 
-export const getDisciplineByName = (name: string) => {
-  return DisciplineModel.findOne({ name });
+export const getDisciplineByName = (discipline: string) => {
+  return DisciplineModel.findOne({ link_name: discipline });
 };
 
 export const createDiscipline = (name: string): Promise<IDiscipline> => {
