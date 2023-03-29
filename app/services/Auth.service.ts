@@ -19,6 +19,17 @@ export class AuthService {
     this.userService = new UserService();
   }
 
+  static getUserIdFromToken(req: Request) {
+    const { authorization } = req.headers;
+    const authHeaderData = authorization.split(" ");
+    try {
+      const { id } = jwt_decode<Partial<IUser>>(authHeaderData[1]);
+      return id;
+    } catch (e) {
+      throw UNAUTHORIZED();
+    }
+  }
+
   static async authenticate(userInfo: Partial<IUser>) {
     const { user_email, user_password } = userInfo;
 
@@ -42,10 +53,9 @@ export class AuthService {
     req: Request,
     routeAccessLevel: number
   ): Promise<void> {
-    const { authorization } = req.headers;
     const { userId } = req.params;
-    const authHeaderData = authorization.split(" ");
-    const { id } = jwt_decode<Partial<IUser>>(authHeaderData[1]);
+
+    const id = AuthService.getUserIdFromToken(req);
 
     const user = await this.userService.getUserById(id);
     const userRolesAccessLevels =
@@ -55,6 +65,7 @@ export class AuthService {
       (routeAccessLevel === userRolesAccessLevels[RolesEnum.USER] &&
         userId &&
         userId === id) ||
+      routeAccessLevel === userRolesAccessLevels[user.user_role] ||
       userRolesAccessLevels[user.user_role] ===
         userRolesAccessLevels[RolesEnum.ADMIN];
 

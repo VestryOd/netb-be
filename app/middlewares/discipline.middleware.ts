@@ -9,7 +9,7 @@ export const disciplineMiddleware = async (
   try {
     const { discipline } = req.params;
     await DisciplineService.prototype.getDisciplineByName(discipline);
-    next();
+    return next();
   } catch (e) {
     res.send(e);
   }

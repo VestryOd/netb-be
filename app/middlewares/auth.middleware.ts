@@ -32,7 +32,8 @@ const generateAuthMiddleware = () => {
         await authService.validateUserRole(req, level);
         return next();
       } catch (err) {
-        catchErrorHandler(err, next);
+        catchErrorHandler(err);
+        res.send(err);
       }
     };
   });

@@ -5,7 +5,12 @@ import {
   deleteOne,
   updateOne,
 } from "@/db/practice.db";
-import { IPracticeService } from "@/common/interfaces";
+import {
+  IPracticeService,
+  IPracticeServiceCreate,
+  IPracticeServiceItem,
+  IPracticeServiceUpdate,
+} from "@/common/interfaces";
 
 export const practiceAllHandler = async ({ discipline }: IPracticeService) => {
   return await getAll({ discipline });
@@ -14,21 +19,22 @@ export const practiceAllHandler = async ({ discipline }: IPracticeService) => {
 export const practiceOneHandler = async ({
   discipline,
   practice_id,
-}: IPracticeService) => {
+}: IPracticeServiceItem) => {
   return await getById({ discipline, practice_id });
 };
 
 export const createNewPractice = async ({
   discipline,
   body,
-}: IPracticeService) => {
-  return await createOne({ discipline, body });
+  user_id,
+}: IPracticeServiceCreate) => {
+  return await createOne({ discipline, body, user_id });
 };
 
 export const deleteOnePractice = async ({
   discipline,
   practice_id,
-}: IPracticeService) => {
+}: IPracticeServiceItem) => {
   return await deleteOne({ discipline, practice_id });
 };
 
@@ -36,6 +42,7 @@ export const updateOnePractice = async ({
   discipline,
   practice_id,
   body,
-}: IPracticeService) => {
-  return await updateOne({ discipline, practice_id, body });
+  user_id,
+}: IPracticeServiceUpdate) => {
+  return await updateOne({ discipline, practice_id, body, user_id });
 };
