@@ -1,5 +1,6 @@
 import { StatusCodes } from "http-status-codes";
 import { IAwsError, IErrorInterface } from "../interfaces";
+import { MongoIdType } from "../types";
 
 export const ERR_MESSAGES = {
   FORBIDDEN: "Permission denied",
@@ -68,3 +69,6 @@ export const UNKNOWN_ERROR = (error?: null | string | IAwsError) => {
     };
   }
 };
+
+export const theoryNotFoundMessage = (theory_id: MongoIdType) =>
+  `Theory with id ${theory_id} not found`;

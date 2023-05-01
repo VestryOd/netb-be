@@ -1,44 +1,75 @@
-import { ITheoryService } from "@/common/interfaces";
+import { ITheory, ITheoryRequest, ITheoryService } from "@/common/interfaces";
 import { TheoryModel } from "./models";
+import {
+  NOT_FOUND,
+  theoryAggregateQuery,
+  theoryNotFoundMessage,
+} from "@/common/constants";
+import { MongoIdType } from "@/common/types";
 
-export const getAll = async ({ discipline }: ITheoryService) => {
-  return TheoryModel.aggregate([{ $match: { discipline } }]);
+export const getAll = async ({ discipline }: Partial<ITheoryService>) => {
+  // @ts-ignore
+  return TheoryModel.aggregate(theoryAggregateQuery({ discipline }));
 };
 
-export const getById = async ({ theory_id }: ITheoryService) =>
-  await TheoryModel.findById(theory_id);
+export const getById = async ({
+  theory_id,
+  discipline,
+}: Partial<ITheoryService>): Promise<ITheory[]> => {
+  const query = theoryAggregateQuery({ discipline, theory_id });
+  // @ts-ignore
+  const aggregateResult = await TheoryModel.aggregate(query);
+  if (!aggregateResult?.length)
+    throw NOT_FOUND(theoryNotFoundMessage(theory_id));
 
-export const createOne = async ({ discipline, theory }: ITheoryService) => {
-  // return TheoryModel.insertMany([{ ...theory, discipline }]);
-  const newTheory = new TheoryModel({ ...theory, discipline });
+  return aggregateResult;
+};
+
+export const checkExistenceTheory = async (theoryId: MongoIdType) => {
+  const item = await TheoryModel.findById(theoryId);
+
+  if (!item) throw NOT_FOUND(theoryNotFoundMessage(theoryId));
+  return item;
+};
+
+export const createOne = async ({
+  discipline,
+  theory,
+  user_id,
+}: {
+  discipline: string;
+  theory: ITheoryRequest;
+  user_id: string;
+}) => {
+  const newTheory = new TheoryModel({
+    ...theory,
+    discipline,
+    created_by: user_id,
+  });
   await newTheory.save();
   return newTheory;
 };
 
 export const updateOne = async ({
-  discipline,
   theory_id,
   theory,
-}: ITheoryService) => {
-  // const exist = await TheoryModels[discipline].findById(theory_id);
-  // if (!exist) return null;
-  //
-  // Object.entries(theory).forEach(([key, value]) => {
-  //   if (key) {
-  //     exist[key] = value;
-  //   }
-  // });
-  // await exist.save();
-  // return exist;
-
-  return TheoryModel.updateOne({ _id: theory_id }, { ...theory, discipline });
+}: {
+  theory_id: string;
+  theory: ITheoryRequest;
+}) => {
+  return TheoryModel.findByIdAndUpdate(
+    theory_id,
+    {
+      ...theory,
+      updated_at: Date.now(),
+    },
+    { new: true }
+  );
 };
 
-export const deleteOne = async ({ discipline, theory_id }: ITheoryService) => {
-  // const theory = await TheoryModels[discipline].findById(theory_id);
-  // if (!theory) return null;
-  //
-  // await theory.remove();
-  // return theory;
+export const deleteOne = async ({
+  discipline,
+  theory_id,
+}: Partial<ITheoryService>) => {
   return TheoryModel.findOneAndRemove({ _id: theory_id, discipline });
 };

@@ -40,3 +40,6 @@ export const generateImageUrl = (
 ): string => {
   return `https://${bucketName}.s3.${region}.amazonaws.com/${imageName}`;
 };
+
+export const fileNameRegex =
+  /([a-fA-F0-9]{32})+\.(png|jpg|gif|bmp|jpeg|PNG|JPG|GIF|BMP|JPEG)/gim;

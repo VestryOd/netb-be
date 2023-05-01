@@ -1,35 +1,18 @@
-import { model, Schema } from "mongoose";
-import { TheoryComplexityEnum } from "@/common/enums";
+import { model, Schema, Types } from "mongoose";
 import { SchemaNames } from "@/common/constants";
 
 const theorySchema = new Schema(
   {
-    discipline: {
-      type: Schema.Types.ObjectId,
-      ref: SchemaNames.Discipline,
-      required: true,
-    },
+    _id: Types.ObjectId,
+    discipline: { type: String, required: true },
     title: { type: String, default: "" },
-    complexity: {
-      type: String,
-      enum: [...Object.values(TheoryComplexityEnum)],
-      default: TheoryComplexityEnum.Lower,
-    },
     content: [
       {
-        _id: {
-          type: Schema.Types.ObjectId,
-          required: true,
-          refPath: "onModel",
-        },
-        // validate: [(arr: any[]) => arr.length >= 1, "{PATH} needs min 1 item"],
+        type: Schema.Types.ObjectId,
+        required: true,
+        ref: "Content",
       },
     ],
-    onModel: {
-      type: String,
-      // required: true,
-      enum: ["Content", "Image"],
-    },
     links: {
       type: [
         {
@@ -46,6 +29,7 @@ const theorySchema = new Schema(
       ref: SchemaNames.User,
       required: true,
     },
+    updated_at: { type: Date },
   },
   { versionKey: false }
 );

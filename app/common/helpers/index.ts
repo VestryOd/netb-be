@@ -15,3 +15,4 @@ export * from "./normalizeUserRoles";
 export * from "./isValidObjectId";
 export * from "./notFoundHandler";
 export * from "./generateDisciplineLinkName";
+export * from "./parseFilenameFromImageLink";

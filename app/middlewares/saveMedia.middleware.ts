@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import { MediaService } from "../services/Media.service";
+import { NOT_FOUND } from "../common/constants";
 
 export const saveMediaMiddleware = async (
   req: Request,
@@ -23,8 +24,12 @@ export const saveMediaMiddleware = async (
       );
       req.body = { ...updatedTheory };
     } catch (e) {
-      next(e);
+      return next(e);
     }
+  } else if (files === null) {
+    const error = NOT_FOUND("Media files");
+    res.statusCode = error.status;
+    res.send(error);
   }
   next();
 };

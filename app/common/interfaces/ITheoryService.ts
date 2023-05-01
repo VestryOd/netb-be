@@ -3,7 +3,8 @@ import { FileArray } from "express-fileupload";
 
 export interface ITheoryService {
   discipline: string;
-  theory_id?: string;
-  theory?: ITheory;
-  files?: FileArray;
+  theory_id: string;
+  theory: ITheory;
+  files: FileArray;
+  user_id: string;
 }

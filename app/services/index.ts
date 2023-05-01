@@ -5,3 +5,4 @@ export * from "./StorageSdk.service";
 export * from "./User.service";
 export * from "./Role.service";
 export * from "./Discipline.service";
+export * from "./Content.service";

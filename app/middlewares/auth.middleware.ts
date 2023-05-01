@@ -16,6 +16,7 @@ export const authMiddleware = (
     return next();
   } catch (err) {
     catchErrorHandler(err);
+    res.statusCode = err.status;
     res.send(err);
   }
 };
@@ -33,6 +34,7 @@ const generateAuthMiddleware = () => {
         return next();
       } catch (err) {
         catchErrorHandler(err);
+        res.statusCode = err.status;
         res.send(err);
       }
     };

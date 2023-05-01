@@ -4,12 +4,17 @@ import { SchemaNames } from "@/common/constants";
 
 const contentSchema = new Schema(
   {
-    _id: Schema.Types.ObjectId,
     content_type: {
       type: String,
       default: TheoryItemEnum.Text,
     },
-    content_data: String || [String] || [[Number || String]],
+    parentId: { type: Schema.Types.ObjectId, required: true },
+    order: { type: Number, required: true },
+    content_data: {
+      type: String || [String] || [[Number || String]],
+      required: true,
+    },
+    content_image: { type: String },
   },
   { versionKey: false }
 );
