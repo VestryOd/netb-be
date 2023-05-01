@@ -5,12 +5,39 @@ import {
   IPracticeServiceUpdate,
 } from "../common/interfaces";
 import { PracticeModel } from "./models";
+import {
+  aggregateQuery,
+  NOT_FOUND,
+  SchemaNames,
+  entityNotFoundMessage,
+} from "@/common/constants";
 
-export const getAll = async ({ discipline }: IPracticeService) =>
-  await PracticeModel.aggregate([{ $match: { discipline } }]);
+export const getAll = async ({ discipline, limit, skip }: IPracticeService) => {
+  const query = aggregateQuery({
+    discipline,
+    schemaName: SchemaNames.Practice,
+    limit,
+    skip,
+  });
+  // @ts-ignore
+  return PracticeModel.aggregate(query);
+};
 
-export const getById = async ({ practice_id }: IPracticeServiceItem) => {
-  return PracticeModel.findById(practice_id);
+export const getById = async ({
+  practice_id,
+  discipline,
+}: IPracticeServiceItem) => {
+  const query = aggregateQuery({
+    discipline,
+    schemaName: SchemaNames.Practice,
+    id: practice_id,
+  });
+  // @ts-ignore
+  const aggregateResult = await PracticeModel.aggregate(query);
+  if (!aggregateResult?.length)
+    throw NOT_FOUND(entityNotFoundMessage(practice_id, SchemaNames.Practice));
+
+  return aggregateResult;
 };
 
 export const createOne = async ({

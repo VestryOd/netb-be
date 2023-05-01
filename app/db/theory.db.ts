@@ -2,25 +2,40 @@ import { ITheory, ITheoryRequest, ITheoryService } from "@/common/interfaces";
 import { TheoryModel } from "./models";
 import {
   NOT_FOUND,
-  theoryAggregateQuery,
-  theoryNotFoundMessage,
+  aggregateQuery,
+  entityNotFoundMessage,
+  SchemaNames,
 } from "@/common/constants";
 import { MongoIdType } from "@/common/types";
 
-export const getAll = async ({ discipline }: Partial<ITheoryService>) => {
+export const getAll = async ({
+  discipline,
+  limit,
+  skip,
+}: Partial<ITheoryService>) => {
+  const query = aggregateQuery({
+    discipline,
+    schemaName: SchemaNames.Theory,
+    limit,
+    skip,
+  });
   // @ts-ignore
-  return TheoryModel.aggregate(theoryAggregateQuery({ discipline }));
+  return TheoryModel.aggregate(query);
 };
 
 export const getById = async ({
   theory_id,
   discipline,
 }: Partial<ITheoryService>): Promise<ITheory[]> => {
-  const query = theoryAggregateQuery({ discipline, theory_id });
+  const query = aggregateQuery({
+    discipline,
+    schemaName: SchemaNames.Theory,
+    id: theory_id,
+  });
   // @ts-ignore
   const aggregateResult = await TheoryModel.aggregate(query);
   if (!aggregateResult?.length)
-    throw NOT_FOUND(theoryNotFoundMessage(theory_id));
+    throw NOT_FOUND(entityNotFoundMessage(theory_id, SchemaNames.Theory));
 
   return aggregateResult;
 };
@@ -28,7 +43,8 @@ export const getById = async ({
 export const checkExistenceTheory = async (theoryId: MongoIdType) => {
   const item = await TheoryModel.findById(theoryId);
 
-  if (!item) throw NOT_FOUND(theoryNotFoundMessage(theoryId));
+  if (!item)
+    throw NOT_FOUND(entityNotFoundMessage(theoryId, SchemaNames.Theory));
   return item;
 };
 

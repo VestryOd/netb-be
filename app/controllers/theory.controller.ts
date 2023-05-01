@@ -3,7 +3,6 @@ import StatusCodes from "http-status-codes";
 import { TheoryService } from "@/services";
 import { catchErrorHandler } from "@/common/helpers";
 import { AuthService } from "@/services/Auth.service";
-import { NOT_FOUND } from "@/common/constants";
 
 const theoryService = new TheoryService();
 
@@ -13,8 +12,13 @@ export const getAllTheoryItems = async (
   next: NextFunction
 ) => {
   const { discipline } = req.params;
+  const { limit, skip } = req.query;
   try {
-    const theoryItems = await theoryService.getAll({ discipline });
+    const theoryItems = await theoryService.getAll({
+      discipline,
+      limit: +limit,
+      skip: +skip,
+    });
     res.send(theoryItems);
   } catch (err) {
     catchErrorHandler(err, next);
@@ -30,7 +34,7 @@ export const getOneTheoryHandler = async (
   try {
     const [theoryItem] = await theoryService.getOne({ discipline, theory_id });
     res.statusCode = theoryItem ? StatusCodes.OK : StatusCodes.NOT_FOUND;
-    res.send(theoryItem ?? NOT_FOUND(`Theory with id ${theory_id}`));
+    res.send(theoryItem);
   } catch (err) {
     catchErrorHandler(err, next);
   }
@@ -66,7 +70,6 @@ export const deleteTheoryHandler = async (
   const { theory_id, discipline } = req.params;
   try {
     const cleared = await theoryService.deleteOne({ discipline, theory_id });
-    console.log("--cleared", cleared);
     res.statusCode = cleared ? StatusCodes.ACCEPTED : StatusCodes.NOT_FOUND;
     res.send(cleared ? theory_id : null);
   } catch (err) {

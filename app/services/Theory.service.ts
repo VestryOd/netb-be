@@ -20,8 +20,12 @@ export class TheoryService {
     this.contentService = new ContentService();
   }
 
-  async getAll({ discipline }: Partial<ITheoryService>): Promise<ITheory[]> {
-    return await getAll({ discipline });
+  async getAll({
+    discipline,
+    limit,
+    skip,
+  }: Partial<ITheoryService>): Promise<ITheory[]> {
+    return await getAll({ discipline, limit, skip });
   }
 
   async getOne({

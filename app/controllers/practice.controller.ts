@@ -1,15 +1,19 @@
-import { Request, Response, NextFunction } from "express";
+import { NextFunction, Request, Response } from "express";
 import StatusCodes from "http-status-codes";
 import {
-  practiceAllHandler,
-  practiceOneHandler,
   createNewPractice,
   deleteOnePractice,
+  practiceAllHandler,
+  practiceOneHandler,
   updateOnePractice,
 } from "@/services";
 import { catchErrorHandler } from "@/common/helpers";
 import { AuthService } from "../services/Auth.service";
-import { NOT_FOUND } from "@/common/constants";
+import {
+  entityNotFoundMessage,
+  NOT_FOUND,
+  SchemaNames,
+} from "@/common/constants";
 
 export const getAllPracticeItems = async (
   req: Request,
@@ -17,8 +21,13 @@ export const getAllPracticeItems = async (
   next: NextFunction
 ) => {
   const { discipline } = req.params;
+  const { limit, skip } = req.query;
   try {
-    const practiceItems = await practiceAllHandler({ discipline });
+    const practiceItems = await practiceAllHandler({
+      discipline,
+      limit: +limit,
+      skip: +skip,
+    });
     res.send(practiceItems);
   } catch (err) {
     catchErrorHandler(err, next);
@@ -32,9 +41,12 @@ export const getOnePracticeHandler = async (
 ) => {
   const { discipline, practice_id } = req.params;
   try {
-    const practiceItem = await practiceOneHandler({ discipline, practice_id });
+    const [practiceItem] = await practiceOneHandler({
+      discipline,
+      practice_id,
+    });
     res.statusCode = practiceItem ? StatusCodes.OK : StatusCodes.NOT_FOUND;
-    res.send(practiceItem || NOT_FOUND(`User with id ${practice_id}`));
+    res.send(practiceItem);
   } catch (err) {
     catchErrorHandler(err, next);
   }
@@ -70,7 +82,10 @@ export const deletePracticeHandler = async (
   try {
     const cleared = await deleteOnePractice({ discipline, practice_id });
     res.statusCode = cleared ? StatusCodes.ACCEPTED : StatusCodes.NOT_FOUND;
-    res.send(cleared || NOT_FOUND(`User with id ${practice_id}`));
+    res.send(
+      cleared ||
+        NOT_FOUND(entityNotFoundMessage(practice_id, SchemaNames.Practice))
+    );
   } catch (err) {
     catchErrorHandler(err, next);
   }
@@ -91,7 +106,10 @@ export const updatePracticeHandler = async (
       user_id,
     });
     res.statusCode = updated ? StatusCodes.OK : StatusCodes.NOT_FOUND;
-    res.send(updated || NOT_FOUND(`Practice with id ${practice_id}`));
+    res.send(
+      updated ||
+        NOT_FOUND(entityNotFoundMessage(practice_id, SchemaNames.Practice))
+    );
   } catch (err) {
     catchErrorHandler(err, next);
   }

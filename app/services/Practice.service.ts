@@ -12,8 +12,12 @@ import {
   IPracticeServiceUpdate,
 } from "@/common/interfaces";
 
-export const practiceAllHandler = async ({ discipline }: IPracticeService) => {
-  return await getAll({ discipline });
+export const practiceAllHandler = async ({
+  discipline,
+  limit,
+  skip,
+}: IPracticeService) => {
+  return await getAll({ discipline, limit, skip });
 };
 
 export const practiceOneHandler = async ({

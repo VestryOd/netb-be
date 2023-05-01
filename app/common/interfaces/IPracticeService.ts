@@ -2,6 +2,8 @@ import { IPractice } from "./IPractice";
 
 export interface IPracticeService {
   discipline: string;
+  limit?: string | number;
+  skip?: string | number;
 }
 
 export interface IPracticeServiceItem extends IPracticeService {

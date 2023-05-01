@@ -7,4 +7,6 @@ export interface ITheoryService {
   theory: ITheory;
   files: FileArray;
   user_id: string;
+  limit?: string | number;
+  skip?: string | number;
 }
