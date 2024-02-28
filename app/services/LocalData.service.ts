@@ -7,14 +7,15 @@ export class LocalDataService {
     this.path = path;
   }
   async getData(field = "") {
+    console.log("--dirPath", this.path);
     const { data, error } = await readFromJsonFile(this.path);
     return {
-      data: field ? data[field] : data,
+      data: field && field in data ? data[field] : data,
       error,
     };
   }
 
-  writeData(data: string) {
-    writeToJsonFile(this.path, data);
+  writeData(data: string, filePath = this.path) {
+    writeToJsonFile(filePath, data);
   }
 }

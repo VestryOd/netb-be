@@ -9,11 +9,6 @@ const practiceSchema = new Schema(
       enum: [...Object.values(PracticeTypeEnum)],
       required: true,
     },
-    // discipline: {
-    //   type: Schema.Types.ObjectId,
-    //   ref: SchemaNames.Discipline,
-    //   required: true,
-    // },
     discipline: { type: String, required: true },
     code: { type: String },
     answers: { type: [String], required: true },
@@ -26,11 +21,6 @@ const practiceSchema = new Schema(
       ref: SchemaNames.User,
       required: true,
     },
-    updated_by:
-      {
-        type: Schema.Types.ObjectId,
-        ref: SchemaNames.User,
-      } || undefined,
   },
   { versionKey: false }
 );

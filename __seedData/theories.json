@@ -1,0 +1,4809 @@
+[
+  {
+    "_id": "64518e2a78a3eb63645a9b78",
+    "title": "1. Как создать объект?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9b86",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/object"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9b87",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9b79",
+      "64518e2a78a3eb63645a9b7a",
+      "64518e2a78a3eb63645a9b7b",
+      "64518e2a78a3eb63645a9b7c",
+      "64518e2a78a3eb63645a9b7d",
+      "64518e2a78a3eb63645a9b7e",
+      "64518e2a78a3eb63645a9b7f",
+      "64518e2a78a3eb63645a9b80",
+      "64518e2a78a3eb63645a9b81",
+      "64518e2a78a3eb63645a9b82",
+      "64518e2a78a3eb63645a9b83",
+      "64518e2a78a3eb63645a9b84",
+      "64518e2a78a3eb63645a9b85"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9b88",
+    "title": "2. Что такое прототипы?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9b8a",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/protocontentType-inheritance"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9b8b",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Learn/JavaScript/%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D1%8B/Object_protocontentTypes"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9b89"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9b8c",
+    "title": "3. В чем разница между call(), apply() и bind()?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9b95",
+        "resource_name": "jsr",
+        "title": "Call/Apply",
+        "url": "https://learn.javascript.ru/call-apply-decorators"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9b96",
+        "resource_name": "jsr",
+        "title": "Bind",
+        "url": "https://learn.javascript.ru/bind"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9b97",
+        "resource_name": "mdn",
+        "title": "Call",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function/call"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9b98",
+        "resource_name": "mdn",
+        "title": "Apply",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9b99",
+        "resource_name": "mdn",
+        "title": "Bind",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function/bind"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9b8d",
+      "64518e2a78a3eb63645a9b8e",
+      "64518e2a78a3eb63645a9b8f",
+      "64518e2a78a3eb63645a9b90",
+      "64518e2a78a3eb63645a9b91",
+      "64518e2a78a3eb63645a9b92",
+      "64518e2a78a3eb63645a9b93",
+      "64518e2a78a3eb63645a9b94"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9b9a",
+    "title": "4. Что такое JSON и какие у него есть методы?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9ba0",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/json"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ba1",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/JSON"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9b9b",
+      "64518e2a78a3eb63645a9b9c",
+      "64518e2a78a3eb63645a9b9d",
+      "64518e2a78a3eb63645a9b9e",
+      "64518e2a78a3eb63645a9b9f"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9ba2",
+    "title": "5. Что делает метод Array.slice()?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9ba6",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/array-methods"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ba7",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/slice"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9ba3",
+      "64518e2a78a3eb63645a9ba4",
+      "64518e2a78a3eb63645a9ba5"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9ba8",
+    "title": "6. Что делает метод Array.splice()?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9bac",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/array-methods"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9bad",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/splice"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9ba9",
+      "64518e2a78a3eb63645a9baa",
+      "64518e2a78a3eb63645a9bab"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9bae",
+    "title": "7. В чем разница между slice() и splice()?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9bb1",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/array-methods"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9bb2",
+        "resource_name": "mdn",
+        "title": "Slice",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/slice"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9bb3",
+        "resource_name": "mdn",
+        "title": "Splice",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/splice"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9baf",
+      "64518e2a78a3eb63645a9bb0"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9bb4",
+    "title": "8. Как сравниваются объекты и карты?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9bb7",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/map-set"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9bb8",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Map"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9bb5",
+      "64518e2a78a3eb63645a9bb6"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9bb9",
+    "title": "9. В чем разница между операторами \"==\" и \"===\"?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9bbe",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/comparison"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9bbf",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/%D0%9E%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D1%8B_%D1%81%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9bba",
+      "64518e2a78a3eb63645a9bbb",
+      "64518e2a78a3eb63645a9bbc",
+      "64518e2a78a3eb63645a9bbd"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9bc0",
+    "title": "10. Что такое лямбда- или стрелочные функции?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9bc3",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/arrow-functions-basics"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9bc4",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Arrow_functions"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9bc1",
+      "64518e2a78a3eb63645a9bc2"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9bc5",
+    "title": "11. Почему функции называют объектами первого класса?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9bc9",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/function-basics"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9bca",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/First-class_Function"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9bc6",
+      "64518e2a78a3eb63645a9bc7",
+      "64518e2a78a3eb63645a9bc8"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9bcb",
+    "title": "12. Что такое функция первого порядка?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9bce",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/function-basics"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9bcf",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9bcc",
+      "64518e2a78a3eb63645a9bcd"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9bd0",
+    "title": "13. Что такое функция высшего порядка?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9bd3",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/function-basics"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9bd4",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9bd1",
+      "64518e2a78a3eb63645a9bd2"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9bd5",
+    "title": "14. Что такое унарная функция?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9bd8",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/function-basics"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9bd9",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9bd6",
+      "64518e2a78a3eb63645a9bd7"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9bda",
+    "title": "15. Что такое каррирование (currying)?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9bde",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/currying-partials"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9bdb",
+      "64518e2a78a3eb63645a9bdc",
+      "64518e2a78a3eb63645a9bdd"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9bdf",
+    "title": "16. Что такое чистая функция?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9be3",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/function-basics"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9be4",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9be0",
+      "64518e2a78a3eb63645a9be1",
+      "64518e2a78a3eb63645a9be2"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9be5",
+    "title": "17. Для чего используется ключевое слово \"let\"?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9be8",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/variables"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9be9",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/let"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9be6",
+      "64518e2a78a3eb63645a9be7"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9bea",
+    "title": "18. В чем разница между let и var?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9bef",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/variables"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9bf0",
+        "resource_name": "mdn",
+        "title": "let",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/let"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9bf1",
+        "resource_name": "mdn",
+        "title": "var",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/var"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9beb",
+      "64518e2a78a3eb63645a9bec",
+      "64518e2a78a3eb63645a9bed",
+      "64518e2a78a3eb63645a9bee"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9bf2",
+    "title": "19. Почему в качестве ключевого слова было выбрано слово \"let\"?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9bf4",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/variables"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9bf5",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/let"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9bf3"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9bf6",
+    "title": "20. Как переопределить переменную в блоке switch?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9bfb",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/switch"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9bfc",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/switch"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9bf7",
+      "64518e2a78a3eb63645a9bf8",
+      "64518e2a78a3eb63645a9bf9",
+      "64518e2a78a3eb63645a9bfa"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9bfd",
+    "title": "21. Что такое временная мертвая зона?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c00",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/let"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9bfe",
+      "64518e2a78a3eb63645a9bff"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c01",
+    "title": "22. Что такое немедленно вызываемое функциональное выражение (Immediately Invoked Function Expression, IIFE)?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c06",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/closure#bloki-koda-i-tsikly-iife"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9c07",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/IIFE"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9c02",
+      "64518e2a78a3eb63645a9c03",
+      "64518e2a78a3eb63645a9c04",
+      "64518e2a78a3eb63645a9c05"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c08",
+    "title": "23. В чем заключаются преимущества использования модулей?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c0b",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/modules-intro"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9c0c",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Modules"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9c09",
+      "64518e2a78a3eb63645a9c0a"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c0d",
+    "title": "24. Что такое запоминание или мемоизация?",
+    "discipline": "js",
+    "content": [
+      "64518e2a78a3eb63645a9c0e",
+      "64518e2a78a3eb63645a9c0f"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c10",
+    "title": "25. Что такое поднятие переменных (hoisting)?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c15",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/var"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9c16",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/%D0%9F%D0%BE%D0%B4%D0%BD%D1%8F%D1%82%D0%B8%D0%B5"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9c11",
+      "64518e2a78a3eb63645a9c12",
+      "64518e2a78a3eb63645a9c13",
+      "64518e2a78a3eb63645a9c14"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c17",
+    "title": "26. Что такое класс?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c1c",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/class"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9c1d",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9c18",
+      "64518e2a78a3eb63645a9c19",
+      "64518e2a78a3eb63645a9c1a",
+      "64518e2a78a3eb63645a9c1b"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c1e",
+    "title": "27. Что такое замыкание?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c22",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/closure"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9c23",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Closures"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9c1f",
+      "64518e2a78a3eb63645a9c20",
+      "64518e2a78a3eb63645a9c21"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c24",
+    "title": "28. Что такое модуль?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c26",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/modules-intro"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9c27",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Modules"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9c25"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c28",
+    "title": "29. Что такое область видимости?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c2a",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Glossary/Scope"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9c29"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c2b",
+    "title": "30. Что такое сервис-воркер (service worker)?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c2d",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/ServiceWorker"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9c2c"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c2e",
+    "title": "31. Как взаимодействовать с объектной моделью документа (Document Object Model, DOM) с помощью сервис-воркеров?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c30",
+        "resource_name": "mdn",
+        "title": "ServiceWorker",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/ServiceWorker"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9c31",
+        "resource_name": "mdn",
+        "title": "postMessage",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Client/postMessage"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9c2f"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c32",
+    "title": "32. Как повторно использовать информацию при перезапуске сервис-воркера?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c34",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/ServiceWorker"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9c33"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c35",
+    "title": "33. Что такое индексированная база данных (IndexedDB)?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c37",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/indexeddb"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9c38",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/IndexedDB_API"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9c36"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c39",
+    "title": "34. Что такое веб-хранилище (Web Storage)?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c3c",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/localstorage"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9c3d",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Web_Storage_API"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9c3a",
+      "64518e2a78a3eb63645a9c3b"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c3e",
+    "title": "35. Что такое postMessage?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c40",
+        "resource_name": "mdn",
+        "title": "postMessage",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Client/postMessage"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9c3f"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c41",
+    "title": "36. Что такое куки (cookie)?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c44",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/cookie"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9c45",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Document/cookie"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9c42",
+      "64518e2a78a3eb63645a9c43"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c46",
+    "title": "37. Зачем нужны куки?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c49",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/cookie"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9c4a",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Document/cookie"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9c47",
+      "64518e2a78a3eb63645a9c48"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c4b",
+    "title": "38. Какими возможностями обладают куки?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c50",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/cookie"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9c51",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Document/cookie"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9c4c",
+      "64518e2a78a3eb63645a9c4d",
+      "64518e2a78a3eb63645a9c4e",
+      "64518e2a78a3eb63645a9c4f"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c52",
+    "title": "39. Как удалить куки?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c56",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/cookie"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9c57",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Document/cookie"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9c53",
+      "64518e2a78a3eb63645a9c54",
+      "64518e2a78a3eb63645a9c55"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c58",
+    "title": "40. В чем разница между куки, локальным и сессионным хранилищами?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c5b",
+        "resource_name": "jsr",
+        "title": "Куки",
+        "url": "https://learn.javascript.ru/cookie"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9c5c",
+        "resource_name": "mdn",
+        "title": "Cookie",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Document/cookie"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9c5d",
+        "resource_name": "jsr",
+        "title": "LocalStorage, SessionStotage",
+        "url": "https://learn.javascript.ru/localstorage"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9c5e",
+        "resource_name": "mdn",
+        "title": "Web Storage",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Web_Storage_API"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9c59",
+      "64518e2a78a3eb63645a9c5a"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c5f",
+    "title": "41. В чем главное отличие между локальным и сессионным хранилищами?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c61",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/localstorage"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9c62",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Web_Storage_API"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9c60"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c63",
+    "title": "42. Как получить доступ к веб-хранилищу?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c66",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/localstorage"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9c67",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Web_Storage_API"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9c64",
+      "64518e2a78a3eb63645a9c65"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c68",
+    "title": "43. Какие методы предоставляет сессионное хранилище?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c6b",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/localstorage"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9c6c",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Web_Storage_API"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9c69",
+      "64518e2a78a3eb63645a9c6a"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c6d",
+    "title": "44. Какое событие возникает при работе с веб-хранилищем?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c73",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/localstorage"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9c74",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Web_Storage_API"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9c6e",
+      "64518e2a78a3eb63645a9c6f",
+      "64518e2a78a3eb63645a9c70",
+      "64518e2a78a3eb63645a9c71",
+      "64518e2a78a3eb63645a9c72"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c75",
+    "title": "45. Для чего используется веб-хранилище?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c77",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/localstorage"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9c78",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Web_Storage_API"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9c76"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c79",
+    "title": "46. Как определить поддержку веб-хранилища браузером?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c7d",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/localstorage"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9c7e",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Web_Storage_API"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9c7a",
+      "64518e2a78a3eb63645a9c7b",
+      "64518e2a78a3eb63645a9c7c"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c7f",
+    "title": "47. Как определить поддержку сервис-воркеров браузером?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c83",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/ServiceWorker"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9c80",
+      "64518e2a78a3eb63645a9c81",
+      "64518e2a78a3eb63645a9c82"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c84",
+    "title": "48. Приведите пример веб-воркера",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c91",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Web_Workers_API"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9c85",
+      "64518e2a78a3eb63645a9c86",
+      "64518e2a78a3eb63645a9c87",
+      "64518e2a78a3eb63645a9c88",
+      "64518e2a78a3eb63645a9c89",
+      "64518e2a78a3eb63645a9c8a",
+      "64518e2a78a3eb63645a9c8b",
+      "64518e2a78a3eb63645a9c8c",
+      "64518e2a78a3eb63645a9c8d",
+      "64518e2a78a3eb63645a9c8e",
+      "64518e2a78a3eb63645a9c8f",
+      "64518e2a78a3eb63645a9c90"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c92",
+    "title": "49. Назовите ограничения веб-воркеров по работе с DOM",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c95",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Web_Workers_API"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9c93",
+      "64518e2a78a3eb63645a9c94"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c96",
+    "title": "50. Что такое промис (promise)?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9c9d",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/promise-basics"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9c9e",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Promise"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9c97",
+      "64518e2a78a3eb63645a9c98",
+      "64518e2a78a3eb63645a9c99",
+      "64518e2a78a3eb63645a9c9a",
+      "64518e2a78a3eb63645a9c9b",
+      "64518e2a78a3eb63645a9c9c"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9c9f",
+    "title": "51. Зачем нужны промисы?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9ca1",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/promise-basics"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ca2",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Promise"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9ca0"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9ca3",
+    "title": "52. Назовите три возможных состояния промиса",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9ca6",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/promise-basics"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ca7",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Promise"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9ca4",
+      "64518e2a78a3eb63645a9ca5"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9ca8",
+    "title": "53. Что такое функция обратного вызова (колбэк)?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9cac",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/callbacks"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9cad",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F_%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B2%D1%8B%D0%B7%D0%BE%D0%B2%D0%B0"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9ca9",
+      "64518e2a78a3eb63645a9caa",
+      "64518e2a78a3eb63645a9cab"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9cae",
+    "title": "54. Зачем нужны колбэки?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9cb2",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/callbacks"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9cb3",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F_%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B2%D1%8B%D0%B7%D0%BE%D0%B2%D0%B0"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9caf",
+      "64518e2a78a3eb63645a9cb0",
+      "64518e2a78a3eb63645a9cb1"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9cb4",
+    "title": "55. Что такое ад колбэков?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9cb8",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/callbacks"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9cb9",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F_%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B2%D1%8B%D0%B7%D0%BE%D0%B2%D0%B0"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9cb5",
+      "64518e2a78a3eb63645a9cb6",
+      "64518e2a78a3eb63645a9cb7"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9cba",
+    "title": "56. Что такое события, отправляемые сервером (server-sent events, SSE)?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9cbc",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/server-sent-events"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9cbd",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Server-sent_events"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9cbb"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9cbe",
+    "title": "57. Как получать сообщения (уведомления или события), отправленные сервером?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9cc1",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/server-sent-events"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9cc2",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/EventSource"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9cbf",
+      "64518e2a78a3eb63645a9cc0"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9cc3",
+    "title": "58. Как проверить поддержку SSE браузером?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9cc7",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/server-sent-events"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9cc8",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Server-sent_events"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9cc4",
+      "64518e2a78a3eb63645a9cc5",
+      "64518e2a78a3eb63645a9cc6"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9cc9",
+    "title": "59. Какие события возникают при работе с SSE?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9ccc",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/server-sent-events"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ccd",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Server-sent_events"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9cca",
+      "64518e2a78a3eb63645a9ccb"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9cce",
+    "title": "60. Назовите основные правила работы с промисами",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9cd1",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/promise-basics"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9cd2",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Promise"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9ccf",
+      "64518e2a78a3eb63645a9cd0"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9cd3",
+    "title": "61. Что такое колбэк в колбэке?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9cd6",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/callbacks"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9cd7",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F_%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B2%D1%8B%D0%B7%D0%BE%D0%B2%D0%B0"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9cd4",
+      "64518e2a78a3eb63645a9cd5"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9cd8",
+    "title": "62. Что такое цепочка промисов?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9cdd",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/promise-basics"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9cde",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Promise"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9cd9",
+      "64518e2a78a3eb63645a9cda",
+      "64518e2a78a3eb63645a9cdb",
+      "64518e2a78a3eb63645a9cdc"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9cdf",
+    "title": "63. Что такое Promise.all()?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9ce3",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/promise-api"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ce4",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Promise/all"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9ce0",
+      "64518e2a78a3eb63645a9ce1",
+      "64518e2a78a3eb63645a9ce2"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9ce5",
+    "title": "64. Что такое Promise.race()?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9ce8",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/promise-api"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ce9",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Promise/race"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9ce6",
+      "64518e2a78a3eb63645a9ce7"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9cea",
+    "title": "65. Что такое строгий режим?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9cec",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/strict-mode"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ced",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Strict_mode"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9ceb"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9cee",
+    "title": "66. Зачем нужен строгий режим?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9cf0",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/strict-mode"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9cf1",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Strict_mode"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9cef"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9cf2",
+    "title": "67. Как включить строгий режим?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9cf7",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/strict-mode"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9cf8",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Strict_mode"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9cf3",
+      "64518e2a78a3eb63645a9cf4",
+      "64518e2a78a3eb63645a9cf5",
+      "64518e2a78a3eb63645a9cf6"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9cf9",
+    "title": "68. Для чего используется двойное отрицание?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9cfd",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Logical_NOT"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9cfe",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/logical-ops"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9cfa",
+      "64518e2a78a3eb63645a9cfb",
+      "64518e2a78a3eb63645a9cfc"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9cff",
+    "title": "69. Для чего используется оператор delete?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d04",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/object#literaly-i-svoystva"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9d05",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/delete"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d00",
+      "64518e2a78a3eb63645a9d01",
+      "64518e2a78a3eb63645a9d02",
+      "64518e2a78a3eb63645a9d03"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d06",
+    "title": "70. Для чего используется оператор contentTypeof?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d09",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/contentTypes#contentType-contentTypeof"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9d0a",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/contentTypeof"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d07",
+      "64518e2a78a3eb63645a9d08"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d0b",
+    "title": "71. Что такое undefined?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d10",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/contentTypes#znachenie-undefined"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9d11",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/undefined"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d0c",
+      "64518e2a78a3eb63645a9d0d",
+      "64518e2a78a3eb63645a9d0e",
+      "64518e2a78a3eb63645a9d0f"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d12",
+    "title": "72. Что такое null?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d15",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/contentTypes#znachenie-null"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9d16",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/null"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d13",
+      "64518e2a78a3eb63645a9d14"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d17",
+    "title": "73. В чем разница между null и undefined?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d1a",
+        "resource_name": "jsr",
+        "title": "undefined",
+        "url": "https://learn.javascript.ru/contentTypes#znachenie-undefined"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9d1b",
+        "resource_name": "jsr",
+        "title": "null",
+        "url": "https://learn.javascript.ru/contentTypes#znachenie-null"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9d1c",
+        "resource_name": "mdn",
+        "title": "undefined",
+        "url": "https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/undefined"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9d1d",
+        "resource_name": "mdn",
+        "title": "null",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/null"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d18",
+      "64518e2a78a3eb63645a9d19"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d1e",
+    "title": "74. Что такое eval?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d22",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/eval"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9d23",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/eval"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d1f",
+      "64518e2a78a3eb63645a9d20",
+      "64518e2a78a3eb63645a9d21"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d24",
+    "title": "75. Как получить доступ к истории браузера?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d27",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/History"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d25",
+      "64518e2a78a3eb63645a9d26"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d28",
+    "title": "76. Какие типы данных существуют в JavaScript?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d2b",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/contentTypes"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9d2c",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Data_structures"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d29",
+      "64518e2a78a3eb63645a9d2a"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d2d",
+    "title": "77. Что делает isNaN()?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d31",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/number"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9d32",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/isNaN"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d2e",
+      "64518e2a78a3eb63645a9d2f",
+      "64518e2a78a3eb63645a9d30"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d33",
+    "title": "78. В чем разница между необъявленными и неопределенными переменными?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d36",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/variables"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9d37",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/Variable"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d34",
+      "64518e2a78a3eb63645a9d35"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d38",
+    "title": "79. Что такое глобальные переменные?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d3b",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/global-object"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d39",
+      "64518e2a78a3eb63645a9d3a"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d3c",
+    "title": "80. Какие проблемы влечет за собой создание глобальных переменных?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d3e",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/global-object"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d3d"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d3f",
+    "title": "81. Что такое NaN?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d42",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/NaN"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d40",
+      "64518e2a78a3eb63645a9d41"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d43",
+    "title": "82. Что делает isFinite()?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d47",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/isFinite"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9d48",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/number"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d44",
+      "64518e2a78a3eb63645a9d45",
+      "64518e2a78a3eb63645a9d46"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d49",
+    "title": "83. Что такое поток или рспространение событий (event flow/propagation)?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d4c",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/bubbling-and-capturing"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d4a",
+      "64518e2a78a3eb63645a9d4b"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d4d",
+    "title": "84. Что такое всплытие события?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d4f",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/bubbling-and-capturing"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d4e"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d50",
+    "title": "85. Что такое погружение или захват события?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d52",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/bubbling-and-capturing"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d51"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d53",
+    "title": "86. Как отправить форму на обработку?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d57",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/forms-submit"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9d58",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/HTMLFormElement/submit"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d54",
+      "64518e2a78a3eb63645a9d55",
+      "64518e2a78a3eb63645a9d56"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d59",
+    "title": "87. Как получить информацию об операционной системе?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d5c",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Navigator"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d5a",
+      "64518e2a78a3eb63645a9d5b"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d5d",
+    "title": "88. В чем разница между событиями DOMContentLoaded и load?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d5f",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/onload-ondomcontentloaded"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9d60",
+        "resource_name": "mdn",
+        "title": "DOMContentLoaded",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Document/DOMContentLoaded_event"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9d61",
+        "resource_name": "mdn",
+        "title": "load",
+        "url": "https://developer.mozilla.org/ru/docs/Web/Events/load"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d5e"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d62",
+    "title": "89. В чем разница между нативными, хостовыми (принадлежащими среде выполнения кода) и пользовательскими объектами?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d65",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/object"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9d66",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d63",
+      "64518e2a78a3eb63645a9d64"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d67",
+    "title": "90. Какие средства используются для откладки кода?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d6a",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/debugging-chrome"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9d6b",
+        "resource_name": "mdn",
+        "title": "debugger",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/debugger"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9d6c",
+        "resource_name": "mdn",
+        "title": "Console",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Console"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d68",
+      "64518e2a78a3eb63645a9d69"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d6d",
+    "title": "91. В чем заключаются преимущества и недостатки промисов по сравнению с колбэками?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d72",
+        "resource_name": "jsr",
+        "title": "Промисы",
+        "url": "https://learn.javascript.ru/promise-basics"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9d73",
+        "resource_name": "jsr",
+        "title": "Колбэки",
+        "url": "https://learn.javascript.ru/callbacks"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9d74",
+        "resource_name": "mdn",
+        "title": "Promise",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Promise"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9d75",
+        "resource_name": "mdn",
+        "title": "Callback",
+        "url": "https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F_%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B2%D1%8B%D0%B7%D0%BE%D0%B2%D0%B0"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d6e",
+      "64518e2a78a3eb63645a9d6f",
+      "64518e2a78a3eb63645a9d70",
+      "64518e2a78a3eb63645a9d71"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d76",
+    "title": "92. В чем разница между атрибутом и свойством элемента?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d7a",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/dom-attributes-and-properties"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d77",
+      "64518e2a78a3eb63645a9d78",
+      "64518e2a78a3eb63645a9d79"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d7b",
+    "title": "93. Что такое политика общего происхождения (same-origin policy, SOP)?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d7d",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/cross-window-communication"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9d7e",
+        "resource_name": "mdn",
+        "title": "SOP",
+        "url": "https://developer.mozilla.org/ru/docs/Web/Security/Same-origin_policy"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9d7f",
+        "resource_name": "mdn",
+        "title": "CORS",
+        "url": "https://developer.mozilla.org/ru/docs/Web/HTTP/CORS"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d7c"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d80",
+    "title": "94. Что делает void 0?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d85",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/void"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d81",
+      "64518e2a78a3eb63645a9d82",
+      "64518e2a78a3eb63645a9d83",
+      "64518e2a78a3eb63645a9d84"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d86",
+    "title": "95. JavaScript - это компилируемый или интерпретируемый язык программирования?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d88",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/intro"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9d89",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d87"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d8a",
+    "title": "96. Чувствителен ли JavaScript к регистру?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d8c",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/intro"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9d8d",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d8b"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d8e",
+    "title": "97. Связаны ли Java и JavaScript?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d90",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/intro"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9d91",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d8f"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d92",
+    "title": "98. Что такое событие (event)?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d95",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Event"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9d96",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/introduction-browser-events#event-object"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d93",
+      "64518e2a78a3eb63645a9d94"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d97",
+    "title": "99. Кто придумал JavaScript?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d99",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/intro"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9d9a",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d98"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9d9b",
+    "title": "100. Для чего используется preventDefault()?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9d9f",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/default-browser-action"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9da0",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Event/preventDefault"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9d9c",
+      "64518e2a78a3eb63645a9d9d",
+      "64518e2a78a3eb63645a9d9e"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9da1",
+    "title": "101. Для чего используется stopPropagation()?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9da5",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/bubbling-and-capturing"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9da6",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Event/stopPropagation"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9da2",
+      "64518e2a78a3eb63645a9da3",
+      "64518e2a78a3eb63645a9da4"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9da7",
+    "title": "102. Что делает инструкция return false?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9dab",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/default-browser-action"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9dac",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/return"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9da8",
+      "64518e2a78a3eb63645a9da9",
+      "64518e2a78a3eb63645a9daa"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9dad",
+    "title": "103. Что такое BOM?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9db0",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/browser-environment"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9dae",
+      "64518e2a78a3eb63645a9daf"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9db1",
+    "title": "104. Для чего используется setTimeout()?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9db4",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/settimeout-setinterval"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9db5",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/WindowTimers/setTimeout"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9db2",
+      "64518e2a78a3eb63645a9db3"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9db6",
+    "title": "105. Для чего используется setInterval()?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9dba",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/settimeout-setinterval"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9dbb",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/WindowOrWorkerGlobalScope/setInterval"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9db7",
+      "64518e2a78a3eb63645a9db8",
+      "64518e2a78a3eb63645a9db9"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9dbc",
+    "title": "106. Почему JavaScript называют однопоточным (single threated)?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9dbe",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/intro"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9dbf",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9dbd"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9dc0",
+    "title": "107. Что такое делегирование событий (event delegation)?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9dc5",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/event-delegation"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9dc1",
+      "64518e2a78a3eb63645a9dc2",
+      "64518e2a78a3eb63645a9dc3",
+      "64518e2a78a3eb63645a9dc4"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9dc6",
+    "title": "108. Что такое ECMAScript?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9dc8",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/manuals-specifications"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9dc9",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Language_Resources"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9dc7"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9dca",
+    "title": "109. Назовите особенности синтаксиса JSON",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9dcd",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/json"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9dce",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/JSON"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9dcb",
+      "64518e2a78a3eb63645a9dcc"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9dcf",
+    "title": "110. Что делает JSON.stringify()?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9dd2",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/json"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9dd3",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9dd0",
+      "64518e2a78a3eb63645a9dd1"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9dd4",
+    "title": "111. Что делает JSON.parse()?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9dd7",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/json"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9dd8",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9dd5",
+      "64518e2a78a3eb63645a9dd6"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9dd9",
+    "title": "112. Зачем нужен JSON?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9ddb",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/json"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ddc",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/JSON"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9dda"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9ddd",
+    "title": "113. Что такое PWA (Progressive Web Application - прогрессивное веб-приложение)?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9ddf",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/Progressive_web_apps"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9dde"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9de0",
+    "title": "114. Для чего используется clearTimeout()?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9de4",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/settimeout-setinterval"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9de5",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/WindowOrWorkerGlobalScope/clearTimeout"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9de1",
+      "64518e2a78a3eb63645a9de2",
+      "64518e2a78a3eb63645a9de3"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9de6",
+    "title": "115. Для чего используется clearInterval()?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9dea",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/settimeout-setinterval"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9deb",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/WindowOrWorkerGlobalScope/clearInterval"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9de7",
+      "64518e2a78a3eb63645a9de8",
+      "64518e2a78a3eb63645a9de9"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9dec",
+    "title": "116. Как выполнить перенаправление?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9def",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Location"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9ded",
+      "64518e2a78a3eb63645a9dee"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9df0",
+    "title": "117. Как проверить, существует ли подстрока в строке?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9df8",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/string"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9df9",
+        "resource_name": "mdn",
+        "title": "includes",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/includes"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9dfa",
+        "resource_name": "mdn",
+        "title": "indexOf",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9dfb",
+        "resource_name": "mdn",
+        "title": "test",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9df1",
+      "64518e2a78a3eb63645a9df2",
+      "64518e2a78a3eb63645a9df3",
+      "64518e2a78a3eb63645a9df4",
+      "64518e2a78a3eb63645a9df5",
+      "64518e2a78a3eb63645a9df6",
+      "64518e2a78a3eb63645a9df7"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9dfc",
+    "title": "118. Как проверить корректность адреса электронной почты?",
+    "discipline": "js",
+    "content": [
+      "64518e2a78a3eb63645a9dfd",
+      "64518e2a78a3eb63645a9dfe",
+      "64518e2a78a3eb63645a9dff"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9e00",
+    "title": "119. Как получить текущий URL?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9e03",
+        "resource_name": "mdn",
+        "title": "location",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Location"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e04",
+        "resource_name": "mdn",
+        "title": "document.URL",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Document/URL"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9e01",
+      "64518e2a78a3eb63645a9e02"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9e05",
+    "title": "120. Какие свойства имеет объект location?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9e08",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Location"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9e06",
+      "64518e2a78a3eb63645a9e07"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9e09",
+    "title": "121. Как получить строку запроса?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9e0c",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Document/URL"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9e0a",
+      "64518e2a78a3eb63645a9e0b"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9e0d",
+    "title": "122. Как проверить, существует ли свойство в объекте?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9e15",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/object"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e16",
+        "resource_name": "mdn",
+        "title": "for...in",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for...in"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e17",
+        "resource_name": "mdn",
+        "title": "hasOwnProperty",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9e0e",
+      "64518e2a78a3eb63645a9e0f",
+      "64518e2a78a3eb63645a9e10",
+      "64518e2a78a3eb63645a9e11",
+      "64518e2a78a3eb63645a9e12",
+      "64518e2a78a3eb63645a9e13",
+      "64518e2a78a3eb63645a9e14"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9e18",
+    "title": "123. Как перебрать перечисляемые свойства объекта?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9e1b",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/object"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e1c",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for...in"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9e19",
+      "64518e2a78a3eb63645a9e1a"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9e1d",
+    "title": "124. Как проверить, что объект является пустым?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9e25",
+        "resource_name": "jsr",
+        "title": "Объекты",
+        "url": "https://learn.javascript.ru/object"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e26",
+        "resource_name": "jsr",
+        "title": "Object.keys, values, entries",
+        "url": "https://learn.javascript.ru/keys-values-entries"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e27",
+        "resource_name": "mdn",
+        "title": "Object.entries",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/entries"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e28",
+        "resource_name": "mdn",
+        "title": "Object.keys",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/keys"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e29",
+        "resource_name": "mdn",
+        "title": "for...in",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for...in"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e2a",
+        "resource_name": "mdn",
+        "title": "Object.hasOwnProperty",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9e1e",
+      "64518e2a78a3eb63645a9e1f",
+      "64518e2a78a3eb63645a9e20",
+      "64518e2a78a3eb63645a9e21",
+      "64518e2a78a3eb63645a9e22",
+      "64518e2a78a3eb63645a9e23",
+      "64518e2a78a3eb63645a9e24"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9e2b",
+    "title": "125. Что такое объект arguments?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9e30",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/arguments-pseudoarray"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e31",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/arguments"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9e2c",
+      "64518e2a78a3eb63645a9e2d",
+      "64518e2a78a3eb63645a9e2e",
+      "64518e2a78a3eb63645a9e2f"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9e32",
+    "title": "126. Как сделать первую букву строки заглавной?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9e35",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/string"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e36",
+        "resource_name": "mdn",
+        "title": "charAt",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/charAt"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e37",
+        "resource_name": "mdn",
+        "title": "toUpperCase",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e38",
+        "resource_name": "mdn",
+        "title": "slice",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/slice"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9e33",
+      "64518e2a78a3eb63645a9e34"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9e39",
+    "title": "127. Как получить текущую дату?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9e3c",
+        "resource_name": "jsr",
+        "title": "Date",
+        "url": "https://learn.javascript.ru/date"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e3d",
+        "resource_name": "jsr",
+        "title": "Intl",
+        "url": "https://learn.javascript.ru/intl"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e3e",
+        "resource_name": "mdn",
+        "title": "Date",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Date"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e3f",
+        "resource_name": "mdn",
+        "title": "Intl.DateTimeFormat",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9e3a",
+      "64518e2a78a3eb63645a9e3b"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9e40",
+    "title": "128. Как сравнить два объекта Date?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9e43",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/date"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e44",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Date"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9e41",
+      "64518e2a78a3eb63645a9e42"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9e45",
+    "title": "129. Как проверить, что строка начинается с другой строки?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9e49",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/string"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e4a",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9e46",
+      "64518e2a78a3eb63645a9e47",
+      "64518e2a78a3eb63645a9e48"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9e4b",
+    "title": "130. Как удалить проблемы в строке?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9e51",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/Trim"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9e4c",
+      "64518e2a78a3eb63645a9e4d",
+      "64518e2a78a3eb63645a9e4e",
+      "64518e2a78a3eb63645a9e4f",
+      "64518e2a78a3eb63645a9e50"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9e52",
+    "title": "131. Как добавить новое свойство в объект?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9e59",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/object"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e5a",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9e53",
+      "64518e2a78a3eb63645a9e54",
+      "64518e2a78a3eb63645a9e55",
+      "64518e2a78a3eb63645a9e56",
+      "64518e2a78a3eb63645a9e57",
+      "64518e2a78a3eb63645a9e58"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9e5b",
+    "title": "132. Является ли выражение !-- специальным оператором?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9e5e",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/operators"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e5f",
+        "resource_name": "mdn",
+        "title": "Logical NOT",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Logical_NOT"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e60",
+        "resource_name": "mdn",
+        "title": "Decrement",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Decrement"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9e5c",
+      "64518e2a78a3eb63645a9e5d"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9e61",
+    "title": "133. Как присвоить переменной значение по умолчанию?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9e69",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/operators"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e6a",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Logical_OR"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9e62",
+      "64518e2a78a3eb63645a9e63",
+      "64518e2a78a3eb63645a9e64",
+      "64518e2a78a3eb63645a9e65",
+      "64518e2a78a3eb63645a9e66",
+      "64518e2a78a3eb63645a9e67",
+      "64518e2a78a3eb63645a9e68"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9e6b",
+    "title": "134. Как создать многострочную строку?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9e70",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/string"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e71",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/template_strings"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9e6c",
+      "64518e2a78a3eb63645a9e6d",
+      "64518e2a78a3eb63645a9e6e",
+      "64518e2a78a3eb63645a9e6f"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9e72",
+    "title": "135. Можем ли мы добавлять свойства функциям?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9e75",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/function-basics"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e76",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9e73",
+      "64518e2a78a3eb63645a9e74"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9e77",
+    "title": "136. Как узнать, сколько аргументов ожидает получить функция?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9e7a",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Function/length"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9e78",
+      "64518e2a78a3eb63645a9e79"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9e7b",
+    "title": "137. Что такое полифил (polyfill)?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9e80",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/polyfills"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e81",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Glossary/Polyfill"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9e7c",
+      "64518e2a78a3eb63645a9e7d",
+      "64518e2a78a3eb63645a9e7e",
+      "64518e2a78a3eb63645a9e7f"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9e82",
+    "title": "138. Для чего используются операторы continue и break?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9e87",
+        "resource_name": "mdn",
+        "title": "break",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/break"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e88",
+        "resource_name": "mdn",
+        "title": "continue",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/continue"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9e83",
+      "64518e2a78a3eb63645a9e84",
+      "64518e2a78a3eb63645a9e85",
+      "64518e2a78a3eb63645a9e86"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9e89",
+    "title": "139. Что такое метка (label)?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9e8d",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/label"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9e8a",
+      "64518e2a78a3eb63645a9e8b",
+      "64518e2a78a3eb63645a9e8c"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9e8e",
+    "title": "140. В чем заключаются преимущества объявления переменных в начале кода?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9e91",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/variables"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e92",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/Variable"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9e8f",
+      "64518e2a78a3eb63645a9e90"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9e93",
+    "title": "141. В чем заключаются преимущества инициализации переменной при объявлении?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9e96",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/variables"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e97",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/Variable"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9e94",
+      "64518e2a78a3eb63645a9e95"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9e98",
+    "title": "142. Назовите основные рекомендации по созданию объекта",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9e9b",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/object"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9e9c",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9e99",
+      "64518e2a78a3eb63645a9e9a"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9e9d",
+    "title": "143. Как определить массив в формате JSON?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9ea0",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/json"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ea1",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/JSON"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9e9e",
+      "64518e2a78a3eb63645a9e9f"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9ea2",
+    "title": "144. Как реализовать функцию, возвращающую случайное целое число в заданном диапазоне?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9ea5",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/number"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ea6",
+        "resource_name": "mdn",
+        "title": "Math.random()",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/random"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ea7",
+        "resource_name": "mdn",
+        "title": "Math.floor()",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/floor"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9ea3",
+      "64518e2a78a3eb63645a9ea4"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9ea8",
+    "title": "145. Что такое tree shaking (встряхивание дерева)?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9eaa",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Glossary/Tree_shaking"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9ea9"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9eab",
+    "title": "146. Для чего используется tree shaking (встряхивание дерева)?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9ead",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Glossary/Tree_shaking"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9eac"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9eae",
+    "title": "147. Что такое регулярное выражение?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9eb5",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/regexp-methods"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9eb6",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/RegExp"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9eaf",
+      "64518e2a78a3eb63645a9eb0",
+      "64518e2a78a3eb63645a9eb1",
+      "64518e2a78a3eb63645a9eb2",
+      "64518e2a78a3eb63645a9eb3",
+      "64518e2a78a3eb63645a9eb4"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9eb7",
+    "title": "148. Какие методы используются в регулярных выражениях?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9ebe",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/regexp-methods"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ebf",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/RegExp"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9eb8",
+      "64518e2a78a3eb63645a9eb9",
+      "64518e2a78a3eb63645a9eba",
+      "64518e2a78a3eb63645a9ebb",
+      "64518e2a78a3eb63645a9ebc",
+      "64518e2a78a3eb63645a9ebd"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9ec0",
+    "title": "149. Какие флаги используются в регулярных выражениях?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9ec3",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/regexp-methods"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ec4",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/RegExp"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9ec1",
+      "64518e2a78a3eb63645a9ec2"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9ec5",
+    "title": "150. Какие специальные символы используются в регулярных выражениях?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9ed1",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/regexp-methods"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ed2",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/RegExp"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9ec6",
+      "64518e2a78a3eb63645a9ec7",
+      "64518e2a78a3eb63645a9ec8",
+      "64518e2a78a3eb63645a9ec9",
+      "64518e2a78a3eb63645a9eca",
+      "64518e2a78a3eb63645a9ecb",
+      "64518e2a78a3eb63645a9ecc",
+      "64518e2a78a3eb63645a9ecd",
+      "64518e2a78a3eb63645a9ece",
+      "64518e2a78a3eb63645a9ecf",
+      "64518e2a78a3eb63645a9ed0"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9ed3",
+    "title": "151.Как изменить стили HTML-элемента?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9ed6",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/styles-and-classes"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ed7",
+        "resource_name": "mdn",
+        "title": "style",
+        "url": "https://developer.mozilla.org/ru/docs/Web/HTML/Global_attributes/style"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ed8",
+        "resource_name": "mdn",
+        "title": "className",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Element/className"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ed9",
+        "resource_name": "mdn",
+        "title": "classList",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Element/classList"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9ed4",
+      "64518e2a78a3eb63645a9ed5"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9eda",
+    "title": "152.Что такое debugger(отладчик)?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9edd",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/debugging-chrome"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ede",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/debugger"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9edb",
+      "64518e2a78a3eb63645a9edc"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9edf",
+    "title": "153.Для чего используются контрольные точки debugger(отладчика)?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9ee1",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/debugging-chrome"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ee2",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/debugger"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9ee0"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9ee3",
+    "title": "154. Можно ли использовать зарезервированные слова в качестве идентификаторов?",
+    "discipline": "js",
+    "content": [
+      "64518e2a78a3eb63645a9ee4",
+      "64518e2a78a3eb63645a9ee5"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9ee6",
+    "title": "155. Как определить ширину и высоту изображения?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9ee9",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/HTMLImageElement/Image"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9ee7",
+      "64518e2a78a3eb63645a9ee8"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9eea",
+    "title": "156. Как отправить синхронный HTTP-запрос?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9eed",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/xmlhttprequest"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9eee",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/XHR_(XMLHttpRequest)"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9eeb",
+      "64518e2a78a3eb63645a9eec"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9eef",
+    "title": "157. Как сделать асинхронный HTTP-запрос?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9ef2",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/fetch"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ef3",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Fetch_API"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9ef0",
+      "64518e2a78a3eb63645a9ef1"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9ef4",
+    "title": "158. Как получить дату в нужном формате?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9ef7",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9ef5",
+      "64518e2a78a3eb63645a9ef6"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9ef8",
+    "title": "159. Как получить максимальные размеры страницы?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9efb",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/size-and-scroll"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9ef9",
+      "64518e2a78a3eb63645a9efa"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9efc",
+    "title": "160. Что такое условный или тернарный оператор?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9eff",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/ifelse"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9f00",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/%D0%A3%D1%81%D0%BB%D0%BE%D0%B2%D0%BD%D1%8B%D0%B9_%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9efd",
+      "64518e2a78a3eb63645a9efe"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9f01",
+    "title": "161. Можно ли использовать цепочку из тернарных операторов?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9f04",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/ifelse"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9f05",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/%D0%A3%D1%81%D0%BB%D0%BE%D0%B2%D0%BD%D1%8B%D0%B9_%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9f02",
+      "64518e2a78a3eb63645a9f03"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9f06",
+    "title": "162. Как начать выполнение кода после полной загрузки страницы?",
+    "discipline": "js",
+    "content": [
+      "64518e2a78a3eb63645a9f07",
+      "64518e2a78a3eb63645a9f08",
+      "64518e2a78a3eb63645a9f09",
+      "64518e2a78a3eb63645a9f0a",
+      "64518e2a78a3eb63645a9f0b",
+      "64518e2a78a3eb63645a9f0c",
+      "64518e2a78a3eb63645a9f0d",
+      "64518e2a78a3eb63645a9f0e",
+      "64518e2a78a3eb63645a9f0f",
+      "64518e2a78a3eb63645a9f10",
+      "64518e2a78a3eb63645a9f11"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9f12",
+    "title": "163. В чем разница между __proto__ и protocontentType?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9f15",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/protocontentType-inheritance"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9f16",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Inheritance_and_the_protocontentType_chain"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9f13",
+      "64518e2a78a3eb63645a9f14"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9f17",
+    "title": "164. Приведите пример обязательного использования точки с запятой",
+    "discipline": "js",
+    "content": [
+      "64518e2a78a3eb63645a9f18",
+      "64518e2a78a3eb63645a9f19",
+      "64518e2a78a3eb63645a9f1a",
+      "64518e2a78a3eb63645a9f1b",
+      "64518e2a78a3eb63645a9f1c",
+      "64518e2a78a3eb63645a9f1d",
+      "64518e2a78a3eb63645a9f1e",
+      "64518e2a78a3eb63645a9f1f",
+      "64518e2a78a3eb63645a9f20"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9f21",
+    "title": "165. Для чего используется метод freeze()?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9f25",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/property-descriptors"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9f26",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9f22",
+      "64518e2a78a3eb63645a9f23",
+      "64518e2a78a3eb63645a9f24"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9f27",
+    "title": "166. Зачем нужен метод freeze()?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9f29",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/property-descriptors"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9f2a",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9f28"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9f2b",
+    "title": "167. Как сделать первую букву каждого слова в строке заглавной?",
+    "discipline": "js",
+    "content": [
+      "64518e2a78a3eb63645a9f2c",
+      "64518e2a78a3eb63645a9f2d"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9f2e",
+    "title": "168. Как узнать, что на странице отключен JavaScript?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9f32",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/HTML/Element/noscript"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9f2f",
+      "64518e2a78a3eb63645a9f30",
+      "64518e2a78a3eb63645a9f31"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9f33",
+    "title": "169. Какие операторы поддерживаются JavaScript?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9f37",
+        "resource_name": "jsr",
+        "title": "Операторы",
+        "url": "https://learn.javascript.ru/operators"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9f38",
+        "resource_name": "jsr",
+        "title": "Логические операторы",
+        "url": "https://learn.javascript.ru/logical-operators"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9f39",
+        "resource_name": "jsr",
+        "title": "Операторы сравнения",
+        "url": "https://learn.javascript.ru/comparison"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9f3a",
+        "resource_name": "jsr",
+        "title": "Условные операторы",
+        "url": "https://learn.javascript.ru/ifelse"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9f3b",
+        "resource_name": "jsr",
+        "title": "Побитовые операторы",
+        "url": "https://learn.javascript.ru/bitwise-operators"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9f3c",
+        "resource_name": "mdn",
+        "title": "Оператор опциональной последовательности",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Optional_chaining"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9f3d",
+        "resource_name": "mdn",
+        "title": "Оператор нулевого слияния",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Nullish_Coalescing_Operator"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9f34",
+      "64518e2a78a3eb63645a9f35",
+      "64518e2a78a3eb63645a9f36"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9f3e",
+    "title": "170. Для чего используется оператор rest ... (прочие параметры)?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9f43",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/destructuring-assignment"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9f44",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/rest_parameters"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9f3f",
+      "64518e2a78a3eb63645a9f40",
+      "64518e2a78a3eb63645a9f41",
+      "64518e2a78a3eb63645a9f42"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9f45",
+    "title": "171. Для чего используется оператор spread ... (оператор распространения)?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9f48",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/destructuring-assignment"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9f49",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Spread_syntax"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9f46",
+      "64518e2a78a3eb63645a9f47"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9f4a",
+    "title": "172. Как определить, заморожен ли объект?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9f4d",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/isFrozen"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9f4b",
+      "64518e2a78a3eb63645a9f4c"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9f4e",
+    "title": "173. Как определить равенство значений, используя объект?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9f53",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/object"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9f54",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/is"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9f4f",
+      "64518e2a78a3eb63645a9f50",
+      "64518e2a78a3eb63645a9f51",
+      "64518e2a78a3eb63645a9f52"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9f55",
+    "title": "174. Как создать копию объекта?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9f5c",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/object"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9f5d",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/assign"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9f56",
+      "64518e2a78a3eb63645a9f57",
+      "64518e2a78a3eb63645a9f58",
+      "64518e2a78a3eb63645a9f59",
+      "64518e2a78a3eb63645a9f5a",
+      "64518e2a78a3eb63645a9f5b"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9f5e",
+    "title": "175. Что такое прокси?",
+    "discipline": "js",
+    "content": [
+      "64518e2a78a3eb63645a9f5f",
+      "64518e2a78a3eb63645a9f60"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9f61",
+    "title": "176. Для чего используется метод seal()?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9f65",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/property-descriptors"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9f66",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/seal"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9f62",
+      "64518e2a78a3eb63645a9f63",
+      "64518e2a78a3eb63645a9f64"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9f67",
+    "title": "177. В чем разница между методами freeze() и seal()?",
+    "discipline": "js",
+    "content": [
+      "64518e2a78a3eb63645a9f68",
+      "64518e2a78a3eb63645a9f69"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9f6a",
+    "title": "178. Как получить перечисляемые пары ключ/значение объекта?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9f6d",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/keys-values-entries"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9f6e",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/entries"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9f6b",
+      "64518e2a78a3eb63645a9f6c"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9f6f",
+    "title": "179. В чем главное отличие методов Object.keys(), Object.values() и Object.entries()?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9f72",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/keys-values-entries"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9f73",
+        "resource_name": "mdn",
+        "title": "Object.keys()",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/keys"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9f74",
+        "resource_name": "mdn",
+        "title": "Object.values()",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/values"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9f75",
+        "resource_name": "mdn",
+        "title": "Object.entries()",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/entries"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9f70",
+      "64518e2a78a3eb63645a9f71"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9f76",
+    "title": "180. Как создать объект с определенным прототипом, не используя функцию-конструктор и классы?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9f79",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/protocontentType-inheritance"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9f7a",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/create"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9f77",
+      "64518e2a78a3eb63645a9f78"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9f7b",
+    "title": "181. Для чего используется WeakSet?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9f7e",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/weakmap-weakset"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9f7f",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/WeakSet"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9f7c",
+      "64518e2a78a3eb63645a9f7d"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9f80",
+    "title": "182. В чем разница между Set и WeakSet?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9f83",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/weakmap-weakset"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9f84",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/WeakSet"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9f81",
+      "64518e2a78a3eb63645a9f82"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9f85",
+    "title": "183. Какие методы доступны в WeakSet?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9f89",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/weakmap-weakset"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9f8a",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/WeakSet"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9f86",
+      "64518e2a78a3eb63645a9f87",
+      "64518e2a78a3eb63645a9f88"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9f8b",
+    "title": "184. Для чего используется WeakMap?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9f8e",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/weakmap-weakset"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9f8f",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/WeakMap"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9f8c",
+      "64518e2a78a3eb63645a9f8d"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9f90",
+    "title": "185. В чем разница между Map и WeakMap?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9f93",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/weakmap-weakset"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9f94",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/WeakMap"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9f91",
+      "64518e2a78a3eb63645a9f92"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9f95",
+    "title": "186. Какие методы доступны в WeakMap?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9f99",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/weakmap-weakset"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9f9a",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/WeakMap"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9f96",
+      "64518e2a78a3eb63645a9f97",
+      "64518e2a78a3eb63645a9f98"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9f9b",
+    "title": "187. Как закодировать URL?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9f9e",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/url"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9f9f",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/encodeURI"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9f9c",
+      "64518e2a78a3eb63645a9f9d"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9fa0",
+    "title": "188. Как раскодировать URL?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9fa3",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/url"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fa4",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/decodeURI"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9fa1",
+      "64518e2a78a3eb63645a9fa2"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9fa5",
+    "title": "189. Как вывести содержимое страницы на печать?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9fa8",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/API/Window/print"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9fa6",
+      "64518e2a78a3eb63645a9fa7"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9fa9",
+    "title": "190. Что такое анонимная функция?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9fac",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/function-basics"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fad",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9faa",
+      "64518e2a78a3eb63645a9fab"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9fae",
+    "title": "191. Каков приоритет использования локальных и глобальных переменных?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9fb1",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/variables"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fb2",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/Variable"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9faf",
+      "64518e2a78a3eb63645a9fb0"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9fb3",
+    "title": "192. Что такое аксессоры?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9fb8",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/property-accessors"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9fb4",
+      "64518e2a78a3eb63645a9fb5",
+      "64518e2a78a3eb63645a9fb6",
+      "64518e2a78a3eb63645a9fb7"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9fb9",
+    "title": "193. Как определить свойство в конструкторе объекта?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9fbd",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/property-descriptors"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fbe",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9fba",
+      "64518e2a78a3eb63645a9fbb",
+      "64518e2a78a3eb63645a9fbc"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9fbf",
+    "title": "194. В чем заключаются особенности геттеров и сеттеров?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9fc2",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/property-accessors"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9fc0",
+      "64518e2a78a3eb63645a9fc1"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9fc3",
+    "title": "195. Можно ли добавить к объекту геттеры и сеттеры с помощью метода Object.defineProperty()?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9fc6",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/property-descriptors"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fc7",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9fc4",
+      "64518e2a78a3eb63645a9fc5"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9fc8",
+    "title": "196. Для чего используется switch...case?",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9fcb",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/switch"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fcc",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/switch"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9fc9",
+      "64518e2a78a3eb63645a9fca"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9fcd",
+    "title": "197. Назовите правила использования switch...case",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9fd0",
+        "resource_name": "jsr",
+        "title": "",
+        "url": "https://learn.javascript.ru/switch"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fd1",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/switch"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9fce",
+      "64518e2a78a3eb63645a9fcf"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9fd2",
+    "title": "198. Назовите примитивные типы данных.",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9fd5",
+        "resource_name": "",
+        "title": "",
+        "url": "https://learn.javascript.ru/contentTypes"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fd6",
+        "resource_name": "mdn",
+        "title": "",
+        "url": "https://developer.mozilla.org/ru/docs/%D0%A1%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C/contentType"
+      }
+    ],
+    "content": [
+      "64518e2a78a3eb63645a9fd3",
+      "64518e2a78a3eb63645a9fd4"
+    ]
+  },
+  {
+    "_id": "64518e2a78a3eb63645a9fd7",
+    "title": "Дополнительная литература",
+    "discipline": "js",
+    "links": [
+      {
+        "_id": "64518e2a78a3eb63645a9fd8",
+        "resource_name": "hab",
+        "title": "Из чего сделан JavaScript?",
+        "url": "https://habr.com/ru/company/ruvds/blog/482472/"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fd9",
+        "resource_name": "hab",
+        "title": "Зачем в JavaScript нужен строгий режим?",
+        "url": "https://habr.com/ru/company/ruvds/blog/477284/"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fda",
+        "resource_name": "нас",
+        "title": "ько JavaScript сильный?",
+        "url": "https://medium.com/devschacht/javascript-coercions-9a36505c1370"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fdb",
+        "resource_name": "med",
+        "title": "- Advanced JavaScript ES6 — Temporal Dead Zone, Default Parameters And Let vs Var — Deep dive!",
+        "url": "https://medium.com/nmc-techblog/advanced-javascript-es6-temporal-dead-zone-default-parameters-and-let-vs-var-deep-dive-ca588fcde21b"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fdc",
+        "resource_name": "jav",
+        "title": "ript: область видимости простыми словами",
+        "url": "https://habr.com/ru/post/517338/"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fdd",
+        "resource_name": "дел",
+        "title": "рование событий в JavaScript",
+        "url": "https://medium.com/@stasonmars/%D0%B4%D0%B5%D0%BB%D0%B5%D0%B3%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B8%CC%86-%D0%B2-javascript-d91cbdd8916a"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fde",
+        "resource_name": "med",
+        "title": "- Понимаем замыкания в JavaScript. Раз и навсегда",
+        "url": "https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%B5%D0%BC-%D0%B7%D0%B0%D0%BC%D1%8B%D0%BA%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B2-javascript-%D1%80%D0%B0%D0%B7-%D0%B8-%D0%BD%D0%B0%D0%B2%D1%81%D0%B5%D0%B3%D0%B4%D0%B0-c211805b6898"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fdf",
+        "resource_name": "hab",
+        "title": "Дэн Абрамов о замыканиях в JavaScript",
+        "url": "https://habr.com/ru/company/ruvds/blog/513764/"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fe0",
+        "resource_name": "med",
+        "title": "- Understanding ProtocontentTypes in JavaScript",
+        "url": "https://medium.com/madhash/understanding-protocontentTypes-in-javascript-e466244da086"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fe1",
+        "resource_name": "med",
+        "title": "- Подробно о методах apply(), call() и bind(), необходимых каждому JavaScript разработчику",
+        "url": "https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D0%BE-%D0%BE-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%B0%D1%85-apply-call-%D0%B8-bind-%D0%BD%D0%B5%D0%BE%D0%B1%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%D1%8B%D1%85-%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%BC%D1%83-javascript-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D1%83-ddd5f9b06290"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fe2",
+        "resource_name": "jav",
+        "title": "ript: полное руководство по классам",
+        "url": "https://habr.com/ru/post/518386/"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fe3",
+        "resource_name": "med",
+        "title": "- JavaScript Classes: An In-Depth look (Part 1)",
+        "url": "https://medium.com/javascript-in-plain-english/javascript-classes-an-in-depth-look-part-1-47d8f4e77cbd"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fe4",
+        "resource_name": "med",
+        "title": "- Разбираемся с путаницей между JavaScript методами slice(), splice() и split()",
+        "url": "https://medium.com/@stasonmars/%D1%80%D0%B0%D0%B7%D0%B1%D0%B8%D1%80%D0%B0%D0%B5%D0%BC%D1%81%D1%8F-%D1%81-%D0%BF%D1%83%D1%82%D0%B0%D0%BD%D0%B8%D1%86%D0%B5%D0%B9-%D0%BC%D0%B5%D0%B6%D0%B4%D1%83-javascript-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D0%B0%D0%BC%D0%B8-slice-splice-%D0%B8-split-6e72363baf1d"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fe5",
+        "resource_name": "коп",
+        "title": "вание объектов в JavaScript",
+        "url": "https://medium.com/@stasonmars/%D0%BA%D0%BE%D0%BF%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BE%D0%B2-%D0%B2-javascript-d25c261a7aff"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fe6",
+        "resource_name": "нач",
+        "title": "работы с методами JavaScript-массивов .map(), .filter() и .reduce()",
+        "url": "https://habr.com/ru/company/ruvds/blog/480354/"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fe7",
+        "resource_name": "как",
+        "title": "ботает reduce() в JavaScript",
+        "url": "https://medium.com/@stasonmars/%D0%BA%D0%B0%D0%BA-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B5%D1%82-reduce-%D0%B2-javascript-%D0%BA%D0%BE%D0%B3%D0%B4%D0%B0-%D0%B5%D0%B3%D0%BE-%D0%BD%D1%83%D0%B6%D0%BD%D0%BE-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D1%8F%D1%82%D1%8C-%D0%B8-%D0%BA%D0%B0%D0%BA%D0%B8%D0%B5-%D0%BA%D1%80%D1%83%D1%82%D1%8B%D0%B5-%D0%B2%D0%B5%D1%89%D0%B8-%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE-%D1%81-%D0%BD%D0%B8%D0%BC-b650c397bee6"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fe8",
+        "resource_name": "раб",
+        "title": "ем с асинхронной итерацией в ECMAScript 2019, используя for-of",
+        "url": "https://medium.com/@stasonmars/%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B5%D0%BC-%D1%81-%D0%B0%D1%81%D0%B8%D0%BD%D1%85%D1%80%D0%BE%D0%BD%D0%BD%D0%BE%D0%B8%CC%86-%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B5%D0%B8%CC%86-%D0%B2-ecmascript-2019-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8F-for-of-cc0baa81cdd8"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fe9",
+        "resource_name": "нов",
+        "title": "тва ES2020, которые мне очень нравятся",
+        "url": "https://habr.com/ru/company/ruvds/blog/504586/"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fea",
+        "resource_name": "dig",
+        "title": "lOcean - Знакомство с объектами map и set в JavaScript",
+        "url": "https://www.digitalocean.com/community/tutorials/understanding-map-and-set-objects-in-javascript-ru"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9feb",
+        "resource_name": "med",
+        "title": "- Понимаем каррирование в JavaScript",
+        "url": "https://medium.com/@stasonmars/%D0%BF%D0%BE%D0%BD%D0%B8%D0%BC%D0%B0%D0%B5%D0%BC-%D0%BA%D0%B0%D1%80%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B2-javascript-5ec4a1d88827"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fec",
+        "resource_name": "med",
+        "title": "- What is Memoization in Javascript?",
+        "url": "https://medium.com/@mike_wong/what-is-memoization-in-javascript-5c6cdef49ad2"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fed",
+        "resource_name": "red",
+        "title": "Debounce vs Throttle: Definitive Visual Guide",
+        "url": "https://redd.one/blog/debounce-vs-throttle"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fee",
+        "resource_name": "пут",
+        "title": "пониманию шаблонных литералов в JavaScript",
+        "url": "https://habr.com/ru/company/ruvds/blog/511590/"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9fef",
+        "resource_name": "hab",
+        "title": "5 малоизвестных возможностей JSON.stringify()",
+        "url": "https://habr.com/ru/post/491252/"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ff0",
+        "resource_name": "hab",
+        "title": "Понимание (всех) «модульных» форматов и инструментов JavaScript",
+        "url": "https://habr.com/ru/post/501198/"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ff1",
+        "resource_name": "hab",
+        "title": "Использование JavaScript-модулей в продакшне: современное состояние дел. Часть 1",
+        "url": "https://habr.com/ru/company/ruvds/blog/466537/"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ff2",
+        "resource_name": "hab",
+        "title": "Визуализация работы сервис-воркеров",
+        "url": "https://habr.com/ru/post/491840/"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ff3",
+        "resource_name": "goo",
+        "title": "Developers - Service Workers: an Introduction",
+        "url": "https://developers.google.com/web/fundamentals/primers/service-workers"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ff4",
+        "resource_name": "hab",
+        "title": "Хранилище для веба",
+        "url": "https://habr.com/ru/post/500834/"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ff5",
+        "resource_name": "web",
+        "title": "Blog - Изучаем IndexedDB",
+        "url": "https://webdevblog.ru/izuchaem-indexeddb/"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ff6",
+        "resource_name": "goo",
+        "title": "Developers - Working with IndexedDB",
+        "url": "https://developers.google.com/web/ilt/pwa/working-with-indexeddb"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ff7",
+        "resource_name": "hab",
+        "title": "Web Storage API: примеры использования",
+        "url": "https://habr.com/ru/post/496348/"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ff8",
+        "resource_name": "hab",
+        "title": "Прослушиватели событий и веб-воркеры",
+        "url": "https://habr.com/ru/company/ruvds/blog/479268/"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ff9",
+        "resource_name": "med",
+        "title": "- A Simple Introduction to Web Workers in JavaScript",
+        "url": "https://medium.com/young-coder/a-simple-introduction-to-web-workers-in-javascript-b3504f9d9d1c"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ffa",
+        "resource_name": "hab",
+        "title": "Распространенные ошибки при работе с промисами в JavaScript, о которых должен знать каждый",
+        "url": "https://habr.com/ru/post/484466/"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ffb",
+        "resource_name": "hab",
+        "title": "Визуализация промисов и Async/Await",
+        "url": "https://habr.com/ru/post/501702/"
+      },
+      {
+        "_id": "64518e2a78a3eb63645a9ffc",
+        "resource_name": "hab",
+        "title": "Политика общего происхождения и CORS: визуальное руководство",
+        "url": "https://habr.com/ru/post/514684/"
+      }
+    ],
+    "content": []
+  }
+]
