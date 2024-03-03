@@ -7,6 +7,7 @@
   "scripts": {
     "start": "NODE_ENV=production nodemon app/index.ts",
     "start:dev": "nodemon --files app/index.ts",
+    "start:seed": "ts-node __seedData/index.ts",
     "prettier": "find app -type f -name '*.ts' | xargs prettier --write",
     "lint": "eslint --ext .ts .",
     "commit-hook": "git add .",
