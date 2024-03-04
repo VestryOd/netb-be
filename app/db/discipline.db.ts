@@ -21,6 +21,10 @@ export const createDiscipline = (name: string): Promise<IDiscipline> => {
   });
 };
 
+export const createDisciplines = (disciplines: IDiscipline[]) => {
+  return DisciplineModel.insertMany(disciplines);
+};
+
 export const removeDiscipline = async (
   disciplineId: string
 ): Promise<IRemoved> => {

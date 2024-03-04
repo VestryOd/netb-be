@@ -3615,544 +3615,544 @@
     "_id": "6453dc682f673612d4c02a24",
     "discipline": "js",
     "code": "const strA = 'Привет!'\nlet strB = strA\nstrB = 'Пока!'\nconsole.log(strA)",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "Привет!"
   },
   {
     "_id": "6453dc682f673612d4c02a25",
     "discipline": "js",
     "code": "const objA ={ prop: 42 }\nlet objB = objA\nobjB.prop1 = 24\nconsole.log(objA)",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "{ prop: 24}"
   },
   {
     "_id": "6453dc682f673612d4c02a26",
     "discipline": "js",
     "code": "const objA = { prop: 42 }\nlet objB = objA\nobjB = {}\nconsole.log(objA)",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "{ prop: 42 }"
   },
   {
     "_id": "6453dc682f673612d4c02a27",
     "discipline": "js",
     "code": "const arrA = [0, 1, 2, 3, 4, 5]\nlet arrB = arrA\narrB[0] = 42\nconsole.log(arrA)",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "[42, 1, 2, 3, 4, 5]"
   },
   {
     "_id": "6453dc682f673612d4c02a28",
     "discipline": "js",
     "code": "const arrA = [0, 1, 2, 3, 4, 5]\nlet arrB = arrA.slice()\narrB[0] = 42\nconsole.log(arrA)",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "[0, 1, 2, 3, 4, 5]"
   },
   {
     "_id": "6453dc682f673612d4c02a29",
     "discipline": "js",
     "code": "const arrA = [ {prop1: 'элемент массива А'} , {prop2: 'еще один элемент массива А'}, 3, 4, 5 ]\nlet arrB = arrA\narrB[0].prop1 = 42\nconsole.log(arrA)",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "[ {prop1: 42} , {prop2: 'еще один элемент массива А'}, 3, 4, 5 ]"
   },
   {
     "_id": "6453dc682f673612d4c02a2a",
     "discipline": "js",
     "code": "const arrA = [ {prop1: 'элемент массива А'} , {prop2: 'еще один элемент массива А'}, 3, 4, 5 ]\nlet arrB = arrA.slice()\narrB[0].prop1 = 42\narrB[3] = 24\nconsole.log(arrA)",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "[ {prop1: 'элемент массива А'} , {prop2: 'еще один элемент массива А'}, 3, 4, 5 ]"
   },
   {
     "_id": "6453dc682f673612d4c02a2b",
     "discipline": "js",
     "code": "console.log(id)",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "ReferenceError: id is not defined"
   },
   {
     "_id": "6453dc682f673612d4c02a2c",
     "discipline": "js",
     "code": "console.log(id)\nvar id = '123abc'",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "undefined"
   },
   {
     "_id": "6453dc682f673612d4c02a2d",
     "discipline": "js",
     "code": "var id = '123abc'\n(function () {\n    console.log(id)\n    var id = '321cba'\n})()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "undefined"
   },
   {
     "_id": "6453dc682f673612d4c02a2e",
     "discipline": "js",
     "code": "var id = '123abc'\n(function () {\n    console.log(id)\n    var id = '321cba'\n    (function () {\n        var id = 'abc123'\n    })()\n})()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "undefined"
   },
   {
     "_id": "6453dc682f673612d4c02a2f",
     "discipline": "js",
     "code": "(function () {\n    console.log(typeof f)\n    var f = function () {\n        console.log('Привет, я нахожусь внутри f.')\n    }\n})()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "undefined"
   },
   {
     "_id": "6453dc682f673612d4c02a30",
     "discipline": "js",
     "code": "var id = '123abc'\nfunction foo () {\n    id = 'abc123'\n    return;\n}\nfoo()\nconsole.log(id)",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "abc123"
   },
   {
     "_id": "6453dc682f673612d4c02a31",
     "discipline": "js",
     "code": "var id = '123abc'\n\nfunction foo () {\n    id = 'abc123'\n    return;\n\n    function id () {}\n}\nfoo()\nconsole.log(id)",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "123abc"
   },
   {
     "_id": "6453dc682f673612d4c02a32",
     "discipline": "js",
     "code": "var id = '123abc'\n\nfunction foo () {\n    id = 'abc123'\n    return;\n\n    function id () {\n        console.log(typeof id)\n    }\n}\nfoo()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "function"
   },
   {
     "_id": "6453dc682f673612d4c02a33",
     "discipline": "js",
     "code": "function foo () {\n    id()\n    var product = 'Автомобиль'\n    return;\n\n    function id () {\n        console.log(product)\n    }\n}\n\nfoo()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "undefined"
   },
   {
     "_id": "6453dc682f673612d4c02a34",
     "discipline": "js",
     "code": "(function foo () {\n    bar()\n\n    function bar () {\n        baz()\n        console.log(typeof baz)\n    }\n\n    function baz() {\n        console.log(typeof bar)\n    }\n})()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "function function"
   },
   {
     "_id": "6453dc682f673612d4c02a35",
     "discipline": "js",
     "code": "(function () {\n    'use strict'\n\n    var person = {\n        name: 'Ванька'\n    }\n    person.salary = '100000'\n    person['country'] = 'Россия'\n\n    Object.defineProperty(person, 'phone', {\n        value: '+123456789',\n        enumerable: true\n    })\n\n    console.log(Object.keys(person))\n})()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "[ 'name', 'salary', 'country', 'phone' ]"
   },
   {
     "_id": "6453dc682f673612d4c02a36",
     "discipline": "js",
     "code": "(function () {\n    'use strict'\n\n    var person = {\n        name: 'Ванька'\n    }\n    person.salary = '100000'\n    person['country'] = 'Россия'\n\n    Object.defineProperty(person, 'phone', {\n        value: '+123456789',\n        enumerable: false\n    })\n\n    console.log(Object.keys(person))\n}())",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "[ 'name', 'salary', 'country' ]"
   },
   {
     "_id": "6453dc682f673612d4c02a37",
     "discipline": "js",
     "code": "(() => {\n    const objA = {\n        foo: 'foo',\n        bar: 'bar'\n    }\n    const objB = {\n        foo: 'foo',\n        bar: 'bar'\n    }\n\n    console.log(objA == objB)\n    console.log(objA === objB)\n})()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "false false"
   },
   {
     "_id": "6453dc682f673612d4c02a38",
     "discipline": "js",
     "code": "(() => {\n    const objA = new Object({ foo: 'foo' })\n    const objB = new Object({ foo: 'foo' })\n\n    console.log(objA == objB)\n    console.log(objA === objB)\n})()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "false false"
   },
   {
     "_id": "6453dc682f673612d4c02a39",
     "discipline": "js",
     "code": "(() => {\n    const objA = Object.create({\n        foo: 'foo'\n    })\n    const objB = Object.create({\n        foo: 'foo'\n    })\n\n    console.log(objA == objB)\n    console.log(objA === objB)\n})()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "false false"
   },
   {
     "_id": "6453dc682f673612d4c02a3a",
     "discipline": "js",
     "code": "!function () {\n    const objA = Object.create({\n        foo: 'foo'\n    })\n    const objB = Object.create(objA)\n\n    console.log(objA == objB)\n    console.log(objA === objB)\n}()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "false false true"
   },
   {
     "_id": "6453dc682f673612d4c02a3b",
     "discipline": "js",
     "code": "(function () {\n    const objA = Object.create({\n        foo: 'foo'\n    })\n    const objB = Object.create(objA)\n\n    console.log(objA.toString() == objB.toString())\n    console.log(objA.toString() === objB.toString())\n}())",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "true true"
   },
   {
     "_id": "6453dc682f673612d4c02a3c",
     "discipline": "js",
     "code": "+function () {\n    const objA = Object.create({\n        foo: 'foo'\n    })\n    const objB = objA\n\n    console.log(objA == objB)\n    console.log(objA === objB)\n\n    console.log(objA.toString() == objB.toString())\n    console.log(objA.toString() === objB.toString())\n}()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "true true true true NaN"
   },
   {
     "_id": "6453dc682f673612d4c02a3d",
     "discipline": "js",
     "code": "(() => {\n    const objA = Object.create({\n        foo: 'foo'\n    })\n    const objB = objA\n\n    objB.foo = 'bar'\n\n    console.log(objA.foo)\n    console.log(objB.foo)\n})()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "bar bar"
   },
   {
     "_id": "6453dc682f673612d4c02a3e",
     "discipline": "js",
     "code": "new function () {\n    const objA = Object.create({\n        foo: 'foo'\n    })\n    const objB = objA\n\n    objB.foo = 'bar'\n\n    delete objA.foo\n\n    console.log(objA.foo)\n    console.log(objB.foo)\n}",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "foo foo {}"
   },
   {
     "_id": "6453dc682f673612d4c02a3f",
     "discipline": "js",
     "code": "new function () {\n    const objA = {\n        foo: 'foo'\n    }\n    const objB = objA\n\n    objB.foo = 'bar'\n\n    delete objA.foo\n\n    console.log(objA.foo)\n    console.log(objB.foo)\n}()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "undefined undefined {}"
   },
   {
     "_id": "6453dc682f673612d4c02a40",
     "discipline": "js",
     "code": "(() => {\n    const array = new Array('100')\n    console.log(array)\n    console.log(array.length)\n})()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "['100'] 1"
   },
   {
     "_id": "6453dc682f673612d4c02a41",
     "discipline": "js",
     "code": "(() => {\n    const array1 = []\n    const array2 = new Array(100)\n    const array3 = new Array(['1', 2, '3', 4, 5.6])\n\n    console.log(\n        array1,\n        array2,\n        array3,\n        array3.length\n    )\n})()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "Зависит от браузера. В Chrome выводится следующее: [] (100)&nbsp;[empty × 100] [Array(5)] 1"
   },
   {
     "_id": "6453dc682f673612d4c02a42",
     "discipline": "js",
     "code": "(() => {\n    const array = new Array('a', 'b', 'c', 'd', 'e')\n    array[10] = 'f'\n    delete array[10]\n    console.log(array.length)\n})()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "11"
   },
   {
     "_id": "6453dc682f673612d4c02a43",
     "discipline": "js",
     "code": "(() => {\n    const animals = ['корова', 'лошадь']\n\n    animals.push('кошка')\n    animals.push('собака', 'осел', 'козел')\n    console.log(animals.length)\n})()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "6"
   },
   {
     "_id": "6453dc682f673612d4c02a44",
     "discipline": "js",
     "code": "(() => {\n    const animals = ['корова', 'лошадь']\n\n    animals.push('кошка')\n    animals.unshift('собака', 'осел', 'козел')\n    console.log(animals)\n})()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "['собака', 'осел', 'козел', 'корова', 'лошадь', 'кошка']"
   },
   {
     "_id": "6453dc682f673612d4c02a45",
     "discipline": "js",
     "code": "(() => {\n    const array = [1,2,3,4,5]\n\n    console.log(array.indexOf(2))\n\n    console.log([{ name: 'Ванька' }, { name: 'Петька' }].indexOf({ name: 'Ванька' }))\n\n    console.log([[1],[2],[3],[4]].indexOf(2))\n\n    console.log('abcdef'.indexOf('c'))\n})()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "1 -1 -1 2"
   },
   {
     "_id": "6453dc682f673612d4c02a46",
     "discipline": "js",
     "code": "(() => {\n    const array = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6]\n\n    console.log(array.indexOf(2))\n    console.log(array.indexOf(2,3))\n    console.log(array.indexOf(2,10))\n})()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "1 6 -1"
   },
   {
     "_id": "6453dc682f673612d4c02a47",
     "discipline": "js",
     "code": "(() => {\n    const nums = [2, 3, 4, 8, 9, 11, 13, 12, 16]\n\n    const even = nums.filter((el, i) => el % 2 === 0)\n    console.log(even)\n\n    const divBy3 = nums.some((el, i) => el % 3 === 0)\n    console.log(divBy3)\n})()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "[2, 4, 8, 12, 16] true"
   },
   {
     "_id": "6453dc682f673612d4c02a48",
     "discipline": "js",
     "code": "(() => {\n    var array = [2, 0, false, '', '12', true]\n\n    var array = array.filter(Boolean)\n    console.log(array)\n\n    var array = array.filter(Number)\n    console.log(array)\n\n    var array = array.filter(String)\n    console.log(array)\n\n    var array = array.filter(Object)\n    console.log(array)\n})()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "[2,'12',true] <br> [2,'12',true] <br> [2,'12',true] <br> [2,'12',true]"
   },
   {
     "_id": "6453dc682f673612d4c02a49",
     "discipline": "js",
     "code": "(() => {\n    const list = ['foo', 'bar', 'baz', 'qux']\n\n    console.log(`\n    ${list.slice(1)}\n\n    ${list.slice(1,3)}\n\n    ${list.slice()}\n\n    ${list.slice(2,2)}\n\n    ${list}\n    `)\n})()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "bar, baz, qux <br> bar, baz <br> foo, bar, baz, qux <br> (пусто) <br> foo, bar, baz, qux <br>"
   },
   {
     "_id": "6453dc682f673612d4c02a4a",
     "discipline": "js",
     "code": "(() => {\n    const list = ['foo', 'bar', 'baz']\n\n    console.log(`\n    ${list.splice(1)}\n\n    ${list.slice(1,2)}\n\n    ${list}\n    `)\n})()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "bar, baz <br> (пусто) <br> foo <br>"
   },
   {
     "_id": "6453dc682f673612d4c02a4b",
     "discipline": "js",
     "code": "(() => {\n    const nums = [2, 8, 15, 16, 23, 42]\n    nums.sort().reverse()\n    console.log(nums)\n\n    nums.reverse().sort((x, y) => x - y)\n    console.log(nums)\n})()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "[8, 42, 23, 2, 16, 15] [2, 8, 15, 16, 23, 42]"
   },
   {
     "_id": "6453dc682f673612d4c02a4c",
     "discipline": "js",
     "code": "function f1 () {\n    console.log('f1', this)\n    ;(function f2 () {\n        console.log('f2', this)\n        ;(function f3 () {\n            console.log('f3', this)\n        })()\n    })()\n}\n\nf1()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "f1 Window&nbsp;{…} <br> f2 Window&nbsp;{…} <br> f3 Window&nbsp;{…}"
   },
   {
     "_id": "6453dc682f673612d4c02a4d",
     "discipline": "js",
     "code": "const obj = {\n    message: 'Привет!',\n    innerMessage: !(() => {\n        console.log(this.message)\n    })()\n}\n\nobj.innerMessage()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "undefined true"
   },
   {
     "_id": "6453dc682f673612d4c02a4e",
     "discipline": "js",
     "code": "const obj = {\n    message: 'Привет!',\n    innerMessage: function () {\n        console.log(this.message)\n    }\n}\n\nconsole.log(obj.innerMessage())",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "Привет!"
   },
   {
     "_id": "6453dc682f673612d4c02a4f",
     "discipline": "js",
     "code": "const obj = {\n    message: 'Привет!',\n    innerMessage: () => {\n        (() => {\n            console.log(this.message)\n        })()\n    }\n}\nobj.innerMessage()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "undefined"
   },
   {
     "_id": "6453dc682f673612d4c02a50",
     "discipline": "js",
     "code": "const obj = {\n    message: 'Привет!',\n    innerMessage: function () {\n        const self = this\n        ;(function () {\n            console.log(self.message)\n        })()\n    }\n}\nobj.innerMessage()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "Привет!"
   },
   {
     "_id": "6453dc682f673612d4c02a51",
     "discipline": "js",
     "code": "function f () {\n    console.log(this.message)\n}\nf.message = 'Привет!'\n\nf()\nf.call(f)",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "undefined Привет!"
   },
   {
     "_id": "6453dc682f673612d4c02a52",
     "discipline": "js",
     "code": "function f () {\n    console.log(f.message)\n}\nf.message = 'Привет!'\n\nf()\nf.bind(f)",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "Привет! f () {...}"
   },
   {
     "_id": "6453dc682f673612d4c02a53",
     "discipline": "js",
     "code": "function f1 () {\n    f1.message = 'Привет!'\n    console.log(f1.message)\n}\nfunction f2 () {\n    f2.message = 'Пока!'\n}\nf1()\nf1.bind(f2)()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "Привет! Привет!"
   },
   {
     "_id": "6453dc682f673612d4c02a54",
     "discipline": "js",
     "code": "function f1 (par1, par2) {\n    console.log(arguments.length)\n    console.log(arguments)\n}\nfunction f2 (...rest) {\n    console.log(rest.length)\n    console.log(rest)\n}\n\nf1()\nf1(1, 2)\nf1(1, 2, 3, 4)\n\nf2()\nf2(1, 2)\nf2(1, 2, 3, 4)",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "2 [] 2 [1, 2] 2 [1, 2, 3, 4] <br> 0 [] 0 [1, 2] 0 [1, 2, 3, 4]"
   },
   {
     "_id": "6453dc682f673612d4c02a55",
     "discipline": "js",
     "code": "function f1 (par1, par2) {\n    console.log(arguments.length)\n}\nfunction f2 (...rest) {\n    console.log(rest.length)\n}\n\nf1()\nf1(1,2)\nf1(1,2,3,4)\n\nf2()\nf2(1,2)\nf2(1,2,3,4)",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "0 2 4 0 2 4"
   },
   {
     "_id": "6453dc682f673612d4c02a56",
     "discipline": "js",
     "code": "function f () {\n    const password = '12345'\n    this.name = 'Ванька'\n    return {\n        pwd: password\n    }\n}\nconst info = f()\nconsole.log(info.pwd)\nconsole.log(info.name)",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "12345 undefined"
   },
   {
     "_id": "6453dc682f673612d4c02a57",
     "discipline": "js",
     "code": "const id = '123abc'\nfunction F () {\n    this.id = 'abc123'\n}\nconsole.log(F.id)",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "undefined"
   },
   {
     "_id": "6453dc682f673612d4c02a58",
     "discipline": "js",
     "code": "const foo = 'foo'\nfunction F () {\n    this.foo = 'bar'\n}\nconsole.log(new F().foo)\n\nF.prototype.foo = 'baz'\nF.prototype.bar = 'qux'\nconsole.log(new F().bar)\nconsole.log(new F().foo)",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "bar qux bar"
   },
   {
     "_id": "6453dc682f673612d4c02a59",
     "discipline": "js",
     "code": "const foo = 'foo'\n;(function F () {\n    try {\n        throw 'bar'\n    } catch (foo) {\n        console.log(foo)\n    }\n    console.log(foo)\n})()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "bar foo"
   },
   {
     "_id": "6453dc682f673612d4c02a5a",
     "discipline": "js",
     "code": "(() => {\n    const greet = 'Привет, народ!'\n    const toGreet = [].filter.call(greet, (el, i) => i < 6)\n    console.log(toGreet)\n})()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "['П', 'р', 'и', 'в', 'е', 'т']"
   },
   {
     "_id": "6453dc682f673612d4c02a5b",
     "discipline": "js",
     "code": "(() => {\n    const foo = {\n        name: 'foo',\n        amount: 4000,\n        deduct: function (amount) {\n            this.amount -= amount\n            return `Осталось ${this.amount}`\n        }\n    }\n\n    const bar = {\n        name: 'bar',\n        amount: 6000\n    }\n\n    const amountBy = total =>\n        foo.deduct.bind(bar, total)\n\n    console.log(amountBy(1000)())\n    console.log(amountBy(2000)())\n})()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "Осталось 5000 Осталось 3000"
   },
   {
     "_id": "6453dc682f673612d4c02a5c",
     "discipline": "js",
     "code": "(() => {\n    const foo = {\n        name: 'foo',\n        amount: 4000,\n        deduct: function (amount) {\n            this.amount -= amount\n            return `Осталось ${this.amount}`\n        }\n    }\n\n    const bar = {\n        name: 'bar',\n        amount: 6000\n    }\n\n    const amountBy = total =>\n        foo.deduct.apply(bar, [total])\n\n    console.log(amountBy(1000))\n    console.log(amountBy(2000))\n})()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "Осталось 5000 Осталось 3000"
   },
   {
     "_id": "6453dc682f673612d4c02a5d",
     "discipline": "js",
     "code": "const user1 = (name = 'Ванька', age = 24) => ({\n    name,\n    age,\n    getInfo() {\n        console.log(`${this.name} ${this.age}`)\n    }\n})\n\nconst user2 = (name = 'Петька', age = 42) => ({name, age})\n\nuser1().getInfo()\nuser1().getInfo.bind(user2())()\nuser1().getInfo.call(user2('Васька', 30))",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "Ванька 24 <br> Петька 42 <br> Васька 30"
   },
   {
     "_id": "6453dc682f673612d4c02a5e",
     "discipline": "js",
     "code": "(function () {\n    console.log(`Привет, ${this.name}!`)\n}.bind({\n    name: 'Ванька'\n}))()\n\n;(function () {\n    console.log(`Пока, ${this.name}!`)\n}).call({\n    name: 'Петька'\n})",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "Привет, Ванька! <br> Пока, Петька!"
   },
   {
     "_id": "6453dc682f673612d4c02a5f",
     "discipline": "js",
     "code": "function getData () {\n    const name = 'Ванька'\n    return {\n        then: function (f) {\n            f(name)\n        }\n    }\n}\n\ngetData().then(name => console.log(name))",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "Ванька"
   },
   {
     "_id": "6453dc682f673612d4c02a60",
     "discipline": "js",
     "code": "(() => {\n    const nums = [2, 8, 15, 16, 23, 42]\n    Array.prototype.sort = (a, b) => a - b\n    nums.sort()\n    console.log(nums)\n})()\n\n;(() => {\n    const nums = [2, 8, 15, 16, 23, 42]\n    nums.sort((a, b) => {\n        (a === b)\n            ? 0\n            : a < b ? -1 : 1\n    })\n    console.log(nums)\n})()\n\n;(() => {\n    const nums = [2, 8, 15, 16, 23, 42]\n    nums.sort((a, b) => b - a)\n    console.log(nums)\n})()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "[ 2, 8, 15, 16, 23, 42 ] <br> [ 2, 8, 15, 16, 23, 42 ] <br> [ 2, 8, 15, 16, 23, 42 ]"
   },
   {
     "_id": "6453dc682f673612d4c02a61",
     "discipline": "js",
     "code": "(() => {\n    function hello () {\n        const name = 'Ванька'\n        return\n        {\n            greet: `Привет, ${name}!`\n        }\n    }\n    console.log(hello().greet)\n})()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "TypeError: Cannot read property 'greet' of undefined"
   },
   {
     "_id": "6453dc682f673612d4c02a62",
     "discipline": "js",
     "code": "function getNums () {\n    return (2, 3, 4)\n}\nconst nums = getNums()\nconsole.log(nums)",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "4"
   },
   {
     "_id": "6453dc682f673612d4c02a63",
     "discipline": "js",
     "code": "function getNum () {\n    return\n}\nconst num = getNum()\nconsole.log(num)",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "undefined"
   },
   {
     "_id": "6453dc682f673612d4c02a64",
     "discipline": "js",
     "code": "function mult(x) {\n    return function (y) {\n        return [x * y, function (z) {\n            return x * y + z\n        }]\n    }\n}\nconsole.log(mult(2)(3)[0])\nconsole.log(mult(2)(3)[1](4))",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "6 10"
   },
   {
     "_id": "6453dc682f673612d4c02a65",
     "discipline": "js",
     "code": "function mult(x) {\n    return function (y) {\n        return {\n            result: x * y,\n            add: function (z) {\n                return x * y + z\n            }\n        }\n    }\n}\nconsole.log(mult(2)(3).result)\nconsole.log(mult(2)(3).add(4))",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "6 10"
   },
   {
     "_id": "6453dc682f673612d4c02a66",
     "discipline": "js",
     "code": "const calc = a => b => c => d => {\n    switch (d) {\n        case '*': return a * b * c\n        case '/': return a / b / c\n        case '+': return a + b + c\n        case '-': return a - b - c\n        default: return 'Некорректная операция!'\n    }\n}\n\nconsole.log(calc(1)(2)(3)('*'))\nconsole.log(calc(2)(3)(4)('+'))\nconsole.log(calc(6)(3)(1)('-'))\nconsole.log(calc(6)(3)(2)('x'))",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "6 9 2 Некорректная операция!"
   },
   {
     "_id": "6453dc682f673612d4c02a67",
     "discipline": "js",
     "code": "function getName1() {\n    console.log(this.name)\n}\n\nObject.prototype.getName2 = () => console.log(this.name)\n\nconst person = {\n    name: 'Ванька',\n    displayName: getName1\n}\n\nperson.displayName()\nperson.getName2()",
-    "answers": null,
-    "right_answer": null,
+    "answers": [],
+    "right_answer": [],
     "details": "Ванька undefined"
   }
 ]

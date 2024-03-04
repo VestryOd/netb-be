@@ -57,6 +57,10 @@ export const createOne = async ({
   return newPractice;
 };
 
+export const createMany = async (practices: IPracticeServiceCreate[]) => {
+  return PracticeModel.insertMany(practices);
+};
+
 export const deleteOne = async ({
   discipline,
   practice_id,
