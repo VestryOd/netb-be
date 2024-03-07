@@ -58,7 +58,14 @@ export const createOne = async ({
 };
 
 export const createMany = async (practices: IPracticeServiceCreate[]) => {
-  return PracticeModel.insertMany(practices);
+  const bulkData = practices.map((item) => ({
+    insertOne: {
+      document: item,
+    },
+  }));
+  // TODO: refactor
+  return PracticeModel.bulkWrite(bulkData);
+  // return PracticeModel.insertMany(practices, { limit });
 };
 
 export const deleteOne = async ({

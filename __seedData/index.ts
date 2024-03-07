@@ -50,6 +50,7 @@ const clearDbCollections = async () => {
     await connect(mongoConnect, {
       dbName: mongoDbName,
       autoIndex: mode === "development",
+      bufferCommands: false,
     })
       .then(async () => {
         console.log("connected!");
@@ -137,24 +138,39 @@ const generatePracticeItems = async (user_id: string) => {
     created_at: new Date(),
   }));
 
+  let counter = 0;
+  let chunks = [];
+
+  while (counter !== data.length - 1) {
+    if (chunks.length === 50) {
+      await generatePractices(items);
+      chunks = [];
+      log.ok(`Practices chunk was added: ${chunks.length}`);
+    } else {
+      chunks.push(items[counter]);
+      counter++;
+    }
+  }
+
   // TODO: refactor with chunks by 50 or by bulkWrite
   const practices = await generatePractices(items);
-  log.ok(`Practices successfully added: ${practices.length}`);
+  log.ok(`Practices successfully added: ${data.length}`);
   return;
 };
 
 const startSeeding = async () => {
-  await clearDbCollections();
-  const user_id = await createRootUser();
-  await createUserRoles();
-  await generateDisciplines();
+  // TODO: refactor
+  // await clearDbCollections();
+  // const user_id = await createRootUser();
+  // await createUserRoles();
+  // await generateDisciplines();
 
   const isContentIncluded = process.argv[2] === "full";
   if (isContentIncluded) {
     log.info(
       `Content will be generated: theory with content items & practices, flag: ${process.argv[2]}`
     );
-    await generatePracticeItems(user_id);
+    await generatePracticeItems("65e516514cdf2ad38f00b203");
     // TODO: add theory and content (including pictures uploading)
   }
 
