@@ -3,7 +3,7 @@ import { createValidator } from "express-joi-validation";
 import { errorHandlerMiddleware } from "@/middlewares";
 import { SubRoutes } from "@/common/constants";
 import { login } from "@/controllers/auth.controller";
-import { authBodyValidator } from "../../validators/auth.validators";
+import { authBodyValidator } from "../../validators";
 
 const authRouter = express.Router();
 const validator = createValidator();

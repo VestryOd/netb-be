@@ -5,7 +5,7 @@ import {
   userEmailValidateRegexp,
   userEmailMessage,
   userPasswordMinLength,
-  userModelName,
+  SchemaNames,
 } from "@/common/constants";
 import { RolesEnum } from "../../common/enums";
 
@@ -21,6 +21,7 @@ export const userSchema = new Schema(
       type: String,
       required: true,
       unique: true,
+      index: true,
       validate: {
         validator: (str: string) => userEmailValidateRegexp.test(str),
         message: userEmailMessage,
@@ -33,11 +34,10 @@ export const userSchema = new Schema(
     },
     user_role: {
       type: String,
-      required: true,
-      enum: [...Object.values(RolesEnum)],
       default: RolesEnum.USER,
+      required: true,
     },
   },
   { versionKey: false }
 );
-export const userModel = model(userModelName, userSchema);
+export const UserModel = model(SchemaNames.User, userSchema);

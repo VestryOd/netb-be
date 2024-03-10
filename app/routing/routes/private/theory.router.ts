@@ -10,8 +10,7 @@ import { errorHandlerMiddleware } from "@/middlewares";
 import {
   theoryIdParamsSchema,
   theoryObjectRequestSchema,
-  theoryPostResponseSchema,
-} from "../../validators/theory.validators";
+} from "../../validators";
 import { parentParamSchema } from "@/common/validators";
 import { customBodyParseMiddleware } from "@/middlewares";
 import { saveMediaMiddleware } from "@/middlewares/saveMedia.middleware";
@@ -25,7 +24,6 @@ protectedTheoryRouter.post(
   saveMediaMiddleware,
   validator.params(parentParamSchema),
   validator.body(theoryObjectRequestSchema),
-  validator.response(theoryPostResponseSchema),
   createTheoryHandler,
   errorHandlerMiddleware
 );

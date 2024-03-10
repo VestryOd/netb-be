@@ -3,9 +3,10 @@ import {
   SaveImageToStorageType,
   StorageSdkService,
 } from "./StorageSdk.service";
-import { IImageResponse, ITheory, ITheoryImage } from "@/common/interfaces";
+import { IImageResponse, ITheory } from "@/common/interfaces";
 import { FileArray } from "express-fileupload";
 import { DeleteObjectCommandOutput } from "@aws-sdk/client-s3";
+import { parseFilenameFromImageLink } from "@/common/helpers";
 
 export class MediaService {
   private storage: StorageSdkService;
@@ -13,70 +14,43 @@ export class MediaService {
     this.storage = new StorageSdkService();
   }
 
-  protected prepareImagesData(images: ITheoryImage[]) {
-    return images.map((image) => image.t__image_filename);
-  }
-
-  protected normalizeImages(
+  protected getImagesMap(
     files: SaveImageToStorageType[]
   ): Record<string, IImageResponse> {
-    const result = {};
-    files.forEach((file) => {
+    return files.reduce((acc, file) => {
       if ("imageUrl" in file) {
         // @ts-ignore
-        result[file.inputName] = file;
+        acc[file.inputName] = file;
       }
-    });
-    return result;
-  }
-
-  protected normalizeImageContent(
-    image: IImageResponse,
-    theoryImage: ITheoryImage
-  ): Omit<ITheoryImage, "id"> | null {
-    if (!theoryImage) return null;
-
-    const { t__image_description } = theoryImage;
-    const { imageUrl, fileName } = image;
-    return {
-      t__image_filename: fileName,
-      t__image_description,
-      t__image_url: imageUrl,
-    };
+      return acc;
+    }, {});
   }
 
   protected normalizeTheory(
-    theory: Omit<ITheory, "id">,
+    theory: ITheory,
     files: SaveImageToStorageType[]
-  ): Omit<ITheory, "id"> {
-    const images = this.normalizeImages(files);
-    const { t__content } = theory;
-    const updatedContent = t__content.map((item) => {
-      const { t__content_image } = item;
-      return !t__content_image
-        ? item
-        : {
-            ...item,
-            t__content_image: this.normalizeImageContent(
-              images[t__content_image.t__image_filename],
-              t__content_image
-            ),
-          };
+  ): ITheory {
+    const imagesMap = this.getImagesMap(files);
+
+    const { content } = theory;
+    const updatedContent = content.map((item) => {
+      const { content_image } = item;
+      return content_image && imagesMap[content_image]
+        ? { ...item, content_image: imagesMap[content_image]?.imageUrl }
+        : item;
     });
+
     return {
       ...theory,
-      t__content: updatedContent,
+      content: updatedContent,
     } as ITheory;
   }
 
   private async clearMedia(
     discipline: string,
-    images: ITheoryImage[]
+    images: string[]
   ): Promise<DeleteObjectCommandOutput[]> {
-    const imageNames = this.prepareImagesData(images);
-    const deleted = await this.storage.deleteImages(discipline, imageNames);
-    console.log("--images was deleted", deleted);
-    return deleted;
+    return await this.storage.deleteImages(discipline, images);
   }
 
   private async saveMediaToStorage(
@@ -88,10 +62,11 @@ export class MediaService {
 
   async saveMediaAndUpdateTheory(
     discipline: string,
-    theory: Omit<ITheory, "id">,
+    theory: ITheory,
     files: FileArray
-  ): Promise<Omit<ITheory, "id"> | ITheory> {
+  ): Promise<ITheory> {
     const savedMedia = await this.saveMediaToStorage(discipline, files);
+
     return this.normalizeTheory(theory, savedMedia);
   }
 
@@ -99,9 +74,10 @@ export class MediaService {
     discipline: string,
     theory: ITheory
   ): Promise<true | DeleteObjectCommandOutput[]> {
-    const images = theory.t__content
-      .filter((el) => el.t__content_image)
-      .map((el) => el.t__content_image);
+    const images = theory.content
+      .filter((el) => "content_image" in el)
+      .map(({ content_image }) => parseFilenameFromImageLink(content_image));
+
     return images.length ? await this.clearMedia(discipline, images) : true;
   }
 }

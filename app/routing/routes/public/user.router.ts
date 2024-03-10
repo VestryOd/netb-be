@@ -1,6 +1,6 @@
 import * as express from "express";
 import { createValidator } from "express-joi-validation";
-import { userRequestSchema } from "../../validators/user.validators";
+import { userRequestSchema } from "../../validators";
 import { SubRoutes } from "@/common/constants";
 import { addNewUserHandler } from "@/controllers";
 import { errorHandlerMiddleware } from "@/middlewares";

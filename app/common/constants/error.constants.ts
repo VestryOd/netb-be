@@ -1,5 +1,7 @@
 import { StatusCodes } from "http-status-codes";
 import { IAwsError, IErrorInterface } from "../interfaces";
+import { MongoIdType } from "../types";
+import { SchemaNames } from "./routes.constants";
 
 export const ERR_MESSAGES = {
   FORBIDDEN: "Permission denied",
@@ -68,3 +70,8 @@ export const UNKNOWN_ERROR = (error?: null | string | IAwsError) => {
     };
   }
 };
+
+export const entityNotFoundMessage = (
+  theory_id: MongoIdType,
+  entity: SchemaNames
+) => `${entity} with id ${theory_id} not found`;

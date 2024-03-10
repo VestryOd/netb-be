@@ -4,7 +4,7 @@ import { SubRoutes } from "@/common/constants";
 import { parentParamSchema } from "@/common/validators";
 import { getAllTheoryItems, getOneTheoryHandler } from "@/controllers";
 import { errorHandlerMiddleware } from "@/middlewares";
-import { theoryIdParamsSchema } from "../../validators/theory.validators";
+import { theoryIdParamsSchema } from "../../validators";
 
 const publicTheoryRouter = express.Router({ mergeParams: true });
 const validator = createValidator();

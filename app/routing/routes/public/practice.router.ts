@@ -4,7 +4,7 @@ import { SubRoutes } from "@/common/constants";
 import { parentParamSchema } from "@/common/validators";
 import { getAllPracticeItems, getOnePracticeHandler } from "@/controllers";
 import { errorHandlerMiddleware } from "@/middlewares";
-import { practiceIdParamsSchema } from "../../validators/practice.validator";
+import { practiceIdParamsSchema } from "../../validators";
 
 const publicPracticeRouter = express.Router({ mergeParams: true });
 const validator = createValidator();

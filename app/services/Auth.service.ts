@@ -5,18 +5,29 @@ import { Request } from "express";
 import { IUser } from "@/common/interfaces/IUser";
 import { UserService } from "./User.service";
 import {
-  accessLevelByRole,
   PERMISSION_DENIED,
   UNAUTHORIZED,
   USER_NOT_EXIST,
 } from "@/common/constants";
 import { jwtSecret } from "@/config";
 import { RolesEnum } from "../common/enums";
+import { RoleService } from "./Role.service";
 
 export class AuthService {
   private userService: UserService;
   constructor() {
     this.userService = new UserService();
+  }
+
+  static getUserIdFromToken(req: Request) {
+    const { authorization } = req.headers;
+    const authHeaderData = authorization.split(" ");
+    try {
+      const { id } = jwt_decode<Partial<IUser>>(authHeaderData[1]);
+      return id;
+    } catch (e) {
+      throw UNAUTHORIZED();
+    }
   }
 
   static async authenticate(userInfo: Partial<IUser>) {
@@ -42,23 +53,27 @@ export class AuthService {
     req: Request,
     routeAccessLevel: number
   ): Promise<void> {
-    const { authorization } = req.headers;
     const { userId } = req.params;
-    const authHeaderData = authorization.split(" ");
-    const { id } = jwt_decode<Partial<IUser>>(authHeaderData[1]);
+
+    const id = AuthService.getUserIdFromToken(req);
 
     const user = await this.userService.getUserById(id);
+    const userRolesAccessLevels =
+      await RoleService.prototype.getRolesAccessLevelsMap();
 
     const isUserRoleValid =
-      (routeAccessLevel === accessLevelByRole[RolesEnum.USER] &&
+      (routeAccessLevel === userRolesAccessLevels[RolesEnum.USER] &&
         userId &&
         userId === id) ||
-      accessLevelByRole[user.user_role] >= routeAccessLevel;
+      routeAccessLevel === userRolesAccessLevels[user.user_role] ||
+      userRolesAccessLevels[user.user_role] ===
+        userRolesAccessLevels[RolesEnum.ADMIN];
 
     if (!isUserRoleValid) throw PERMISSION_DENIED;
   }
 
   public validateToken(headerAuthorization: string): void {
+    if (!headerAuthorization) throw UNAUTHORIZED();
     const authHeaderData = headerAuthorization.split(" ");
     const isAuthorized =
       authHeaderData[0] === "Bearer" &&

@@ -8,33 +8,48 @@ import {
   getAllUsers,
   updateUserRole,
 } from "../db/user.db";
-import { RolesEnum } from "../common/enums";
+import { RolesEnum } from "@/common/enums";
+import { ALREADY_EXIST, NOT_FOUND } from "@/common/constants";
+import { userToResponse } from "@/common/helpers";
 
 export class UserService {
-  public async getAllUsers(): Promise<IUser[]> {
-    return getAllUsers();
+  public async getAllUsers(): Promise<Omit<IUser, "user_password">[]> {
+    const users = await getAllUsers();
+    return users.map((user) => userToResponse(user));
   }
   public async getByEmail(email: string): Promise<IUser> {
     return await getByEmail(email);
   }
 
   async createUser(user: Partial<IUser>) {
-    return await createUser(user);
+    const candidate = await this.getByEmail(user.user_email);
+
+    if (candidate) throw ALREADY_EXIST(`User with email ${user.user_email}`);
+    const created = await createUser(user);
+    return created ? userToResponse(created) : created;
   }
 
   async getUserById(id: string) {
-    return await getOneById(id);
+    const user = await getOneById(id);
+    if (!user) throw NOT_FOUND(id);
+    return userToResponse(user);
   }
 
   async deleteUser(id: string) {
-    return await removeUser(id);
+    const result = await removeUser(id);
+    if (!result) throw NOT_FOUND(id);
+    return result;
   }
 
   async updateOneUser(userId: string, user: IUser) {
-    return await updateUser(userId, user);
+    const updated = await updateUser(userId, user);
+    if (!updated) throw NOT_FOUND(userId);
+    return userToResponse(updated);
   }
 
   async updateUserRole(userId: string, role: RolesEnum) {
-    return await updateUserRole(userId, role);
+    const updated = await updateUserRole(userId, role);
+    if (!updated) throw NOT_FOUND(userId);
+    return userToResponse(updated);
   }
 }

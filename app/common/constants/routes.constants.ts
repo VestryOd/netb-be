@@ -6,11 +6,16 @@ export enum MainRoutes {
   Root = "",
   Login = "/login",
   SignUp = "/sign-up",
+  Role = "/role",
+  Discipline = "/discipline",
 }
 
 export enum SubRoutes {
   Root = "",
-  UpdateRole = "update-role",
+  DeleteUser = "/delete-user",
+  GetAll = "/get-all",
+  UpdateUser = "/update-user",
+  UpdateRole = "/update-role",
 }
 
 export enum QueryParams {
@@ -22,4 +27,10 @@ export enum QueryParams {
 export enum SchemaNames {
   Theory = "Theory",
   Practice = "Practice",
+  Content = "Content",
+  Image = "Image",
+  User = "User",
+  Role = "Role",
+  Discipline = "Discipline",
+  Quiz = "Quiz",
 }

@@ -8,7 +8,7 @@ export const customBodyParseMiddleware = (
   next: NextFunction
 ) => {
   if (env === MODE.DEV) {
-    const keys = ["t__content", "t__tags"];
+    const keys = ["content", "links"];
     const { body } = req;
     const result = {};
 

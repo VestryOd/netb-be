@@ -1,15 +1,22 @@
-import { Schema } from "mongoose";
-import { generateModels } from "@/common/helpers";
+import { model, Schema } from "mongoose";
 import { SchemaNames } from "@/common/constants";
 
-export const PracticeModel = new Schema({
-  p__code: { type: String, required: true },
-  p__answers: { type: [String], required: true },
-  p__right_answer: { type: Number, required: true },
-  p__details: { type: String, default: "" },
-});
-
-export const PracticeModels = generateModels(
-  SchemaNames.Practice,
-  PracticeModel
+const practiceSchema = new Schema(
+  {
+    discipline: { type: String, required: true },
+    code: { type: String },
+    answers: { type: [String], required: true },
+    right_answer: { type: [Number], required: true },
+    details: { type: String, default: undefined },
+    created_at: { type: Date, default: Date.now },
+    updated_at: { type: Date } || undefined,
+    created_by: {
+      type: Schema.Types.ObjectId,
+      ref: SchemaNames.User,
+      required: true,
+    },
+  },
+  { versionKey: false }
 );
+
+export const PracticeModel = model(SchemaNames.Practice, practiceSchema);

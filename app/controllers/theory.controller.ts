@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import StatusCodes from "http-status-codes";
 import { TheoryService } from "@/services";
 import { catchErrorHandler } from "@/common/helpers";
+import { AuthService } from "@/services/Auth.service";
 
 const theoryService = new TheoryService();
 
@@ -11,8 +12,13 @@ export const getAllTheoryItems = async (
   next: NextFunction
 ) => {
   const { discipline } = req.params;
+  const { limit, skip } = req.query;
   try {
-    const theoryItems = await theoryService.getAll({ discipline });
+    const theoryItems = await theoryService.getAll({
+      discipline,
+      limit: +limit,
+      skip: +skip,
+    });
     res.send(theoryItems);
   } catch (err) {
     catchErrorHandler(err, next);
@@ -26,7 +32,7 @@ export const getOneTheoryHandler = async (
 ) => {
   const { theory_id, discipline } = req.params;
   try {
-    const theoryItem = await theoryService.getOne({ discipline, theory_id });
+    const [theoryItem] = await theoryService.getOne({ discipline, theory_id });
     res.statusCode = theoryItem ? StatusCodes.OK : StatusCodes.NOT_FOUND;
     res.send(theoryItem);
   } catch (err) {
@@ -42,9 +48,11 @@ export const createTheoryHandler = async (
   const { body } = req;
   const { discipline } = req.params;
   try {
+    const user_id = AuthService.getUserIdFromToken(req);
     const theoryItem = await theoryService.createOne({
       discipline,
       theory: body,
+      user_id,
     });
     res.setHeader("Content-Type", "application/json");
     res.statusCode = StatusCodes.CREATED;
@@ -63,7 +71,7 @@ export const deleteTheoryHandler = async (
   try {
     const cleared = await theoryService.deleteOne({ discipline, theory_id });
     res.statusCode = cleared ? StatusCodes.ACCEPTED : StatusCodes.NOT_FOUND;
-    res.send(cleared);
+    res.send(cleared ? theory_id : null);
   } catch (err) {
     catchErrorHandler(err, next);
   }

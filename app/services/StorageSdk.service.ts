@@ -164,7 +164,7 @@ export class StorageSdkService {
 
   async saveImagesToStorage(
     discipline: string,
-    files: FileArray
+    files: Partial<FileArray>
   ): Promise<SaveImageToStorageType[]> {
     const bucketName = getBucketNameByDiscipline(discipline);
 
@@ -213,7 +213,8 @@ export class StorageSdkService {
   ): Promise<DeleteObjectCommandOutput[]> {
     if (!fileNames.length) return [];
     const promises = fileNames.map(
-      async (fileName) => await this.deleteImage(discipline, fileName)
+      async (fileName) =>
+        fileName && (await this.deleteImage(discipline, fileName))
     );
     return await Promise.allSettled(promises).then((res) =>
       allSettledHandler(res)

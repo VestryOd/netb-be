@@ -6,3 +6,5 @@ export * from "./IMetadata";
 export * from "./IAwsError";
 export * from "./IImageResponse";
 export * from "./IErrorInterface";
+export * from "./IDiscipline";
+export * from "./IRemoved";

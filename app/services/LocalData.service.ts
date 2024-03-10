@@ -9,12 +9,12 @@ export class LocalDataService {
   async getData(field = "") {
     const { data, error } = await readFromJsonFile(this.path);
     return {
-      data: field ? data[field] : data,
+      data: field && field in data ? data[field] : data,
       error,
     };
   }
 
-  writeData(data: string) {
-    writeToJsonFile(this.path, data);
+  writeData(data: string, filePath = this.path) {
+    writeToJsonFile(filePath, data);
   }
 }

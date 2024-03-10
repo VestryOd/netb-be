@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import StatusCodes from "http-status-codes";
 import { UserService } from "@/services";
 import { userCreatedMessage } from "@/common/constants";
-import { catchErrorHandler, userToResponse } from "@/common/helpers";
+import { catchErrorHandler } from "@/common/helpers";
 
 const userService = new UserService();
 
@@ -20,7 +20,7 @@ export const addNewUserHandler = async (
     });
     res.statusCode = StatusCodes.CREATED;
     res.statusMessage = userCreatedMessage({ user_name, user_email });
-    res.send(userToResponse(user));
+    res.send(user);
   } catch (err) {
     catchErrorHandler(err, next);
   }
@@ -75,9 +75,10 @@ export const updateUserHandler = async (
   next: NextFunction
 ) => {
   const { userId } = req.params;
-  const { user } = req.body;
   try {
-    const updatedUser = await userService.updateOneUser(userId, user);
+    const updatedUser = await userService.updateOneUser(userId, {
+      ...req.body,
+    });
     res.statusCode = updatedUser ? StatusCodes.OK : StatusCodes.NOT_FOUND;
     res.send(updatedUser);
   } catch (err) {
