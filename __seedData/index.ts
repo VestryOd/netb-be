@@ -1,17 +1,22 @@
-import { connection, disconnect, connect, set } from "mongoose";
-import { mode, mongoConnect, mongoDbName } from "../app/config";
+import { connection, disconnect, connect, set, Types } from "mongoose";
+import { UploadedFile } from "express-fileupload";
 import * as dotenv from "dotenv";
 import * as joi from "joi";
+import { promises } from "fs";
 import { ValidationResult } from "joi";
-import { IUser } from "../app/common/interfaces/IUser";
-import { RolesEnum } from "../app/common/enums";
-import { createUser } from "../app/db/user.db";
+import { mode, mongoConnect, mongoDbName } from "../app/config";
 import * as path from "path";
+import { IUser } from "../app/common/interfaces/IUser";
+import { IPracticeServiceCreate, ITheory, ITheoryContent } from "../app/common/interfaces";
+import { RolesEnum } from "../app/common/enums";
+import { StorageSdkService } from "../app/services";
+import { createUser } from "../app/db/user.db";
 import { createRoles } from "../app/db/role.db";
 import { log, readDataFromFile } from "../app/common/constants";
 import { createDisciplines } from "../app/db/discipline.db";
 import { createMany as generatePractices } from "../app/db/practice.db";
-import { IPracticeServiceCreate } from "../app/common/interfaces";
+import { bulkCreateMany as generateContents } from "../app/db/content.db";
+import { bulkCreateMany as generateTheories } from "../app/db/theory.db";
 
 dotenv.config();
 
@@ -138,40 +143,119 @@ const generatePracticeItems = async (user_id: string) => {
     created_at: new Date(),
   }));
 
-  let counter = 0;
   let chunks = [];
 
-  while (counter !== data.length - 1) {
+  for await (const item of items) {
     if (chunks.length === 50) {
-      await generatePractices(items);
-      chunks = [];
+      await generatePractices(chunks);
       log.ok(`Practices chunk was added: ${chunks.length}`);
+      chunks = [];
     } else {
-      chunks.push(items[counter]);
-      counter++;
+      chunks.push(item);
     }
   }
-
-  // TODO: refactor with chunks by 50 or by bulkWrite
-  const practices = await generatePractices(items);
   log.ok(`Practices successfully added: ${data.length}`);
   return;
 };
 
+/*
+ * Function for saving images to AWS bucket, if in the content item is content_image field
+ * */
+const uploadMedia = async (name: string, discipline: string) => {
+  const filePath = path.join(__dirname, `./assets/${name}`);
+  const storageService = new  StorageSdkService();
+
+  const data = await promises.readFile(filePath);
+  const file = { name, data } as UploadedFile;
+  const uploaded = await storageService.saveImagesToStorage(discipline, { 0: file });
+  // @ts-ignore
+  return uploaded[0]?.imageUrl
+};
+
+/*
+ * Util function for generating map with disciplines in each theory item
+ * */
+const getDiscipline = async () => {
+  const fileName = path.join(__dirname, "./disciplines.json");
+  const data = await readDataFromFile(fileName);
+  return data[0].link_name;
+}
+
+/*
+ * Function for generating content items
+ * */
+const generateContentItems = async () => {
+  const fileName = path.join(__dirname, "./contents.json");
+  const data: ITheoryContent[] = await readDataFromFile(fileName);
+
+  const items = [...data];
+
+  const discipline = await getDiscipline();
+  for await (const item of items) {
+    if ("content_image" in item) {
+      const { content_image } = item;
+      item.content_image = await uploadMedia(content_image, discipline);
+      log.info(`Uploaded url: ${item.content_image}`);
+    }
+  }
+
+  let chunks = [];
+
+  for await (const item of items) {
+    if (chunks.length === 50) {
+      await generateContents(chunks);
+      log.ok(`Content chunk was added: ${chunks.length}`);
+      chunks = [];
+    } else {
+      chunks.push(item);
+    }
+  }
+  log.ok(`Contents successfully added: ${data.length}`);
+  return;
+}
+
+/*
+ * Generating theories items
+ * */
+const generateTheoryItems = async (user_id: string) => {
+  const fileName = path.join(__dirname, "./theories.json");
+  const data: ITheory[] = await readDataFromFile(fileName);
+
+  let chunks = [];
+
+  const items = data.map((el: Omit<ITheory, "created_by">) => ({
+    ...el,
+    created_by: new Types.ObjectId(user_id),
+    created_at: new Date(),
+  }))
+
+  for await (const item of items) {
+    if (chunks.length === 50) {
+      await generateTheories(chunks);
+      log.ok(`Theory chunk was added: ${chunks.length}`);
+      chunks = [];
+    } else {
+      chunks.push(item);
+    }
+  }
+  log.ok(`Theory successfully added: ${items.length}`);
+  return;
+};
+
 const startSeeding = async () => {
-  // TODO: refactor
-  // await clearDbCollections();
-  // const user_id = await createRootUser();
-  // await createUserRoles();
-  // await generateDisciplines();
+  await clearDbCollections();
+  const user_id = await createRootUser();
+  await createUserRoles();
+  await generateDisciplines();
 
   const isContentIncluded = process.argv[2] === "full";
   if (isContentIncluded) {
     log.info(
       `Content will be generated: theory with content items & practices, flag: ${process.argv[2]}`
     );
-    await generatePracticeItems("65e516514cdf2ad38f00b203");
-    // TODO: add theory and content (including pictures uploading)
+    await generatePracticeItems(user_id);
+    await generateTheoryItems(user_id);
+    await generateContentItems();
   }
 
   await disconnect()

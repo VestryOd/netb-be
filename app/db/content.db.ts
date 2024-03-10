@@ -9,6 +9,17 @@ export const createMany = async (
   return ContentModel.insertMany(contentData);
 };
 
+export const bulkCreateMany = async (
+  contentData: Omit<ITheoryContent, "_id">[]
+) => {
+  const bulkData = contentData.map((item) => ({
+    insertOne: {
+      document: item,
+    },
+  }));
+  return ContentModel.bulkWrite(bulkData);
+};
+
 export const createOne = async (contentData: Omit<ITheoryContent, "_id">) => {
   const newContent = await new ContentModel(contentData);
   await newContent.save();

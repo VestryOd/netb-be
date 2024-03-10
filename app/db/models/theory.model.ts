@@ -18,7 +18,7 @@ const theorySchema = new Schema(
         {
           resource_name: String,
           url: { type: String, required: true },
-          title: { type: String, required: true },
+          title: { type: String },
         },
       ],
       default: undefined,

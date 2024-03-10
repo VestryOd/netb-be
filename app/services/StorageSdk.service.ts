@@ -164,7 +164,7 @@ export class StorageSdkService {
 
   async saveImagesToStorage(
     discipline: string,
-    files: FileArray
+    files: Partial<FileArray>
   ): Promise<SaveImageToStorageType[]> {
     const bucketName = getBucketNameByDiscipline(discipline);
 

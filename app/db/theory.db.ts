@@ -89,3 +89,12 @@ export const deleteOne = async ({
 }: Partial<ITheoryService>) => {
   return TheoryModel.findOneAndRemove({ _id: theory_id, discipline });
 };
+
+export const bulkCreateMany = async (theories: ITheory[]) => {
+  const bulkData = theories.map((item) => ({
+    insertOne: {
+      document: item,
+    },
+  }));
+  return TheoryModel.bulkWrite(bulkData);
+};

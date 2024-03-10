@@ -5,7 +5,7 @@ export interface ITheoryLinks {
   _id?: Types.ObjectId;
   resource_name?: string;
   url: string;
-  title: string;
+  title?: string;
 }
 
 export interface ITheoryContent {

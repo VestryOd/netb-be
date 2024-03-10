@@ -63,9 +63,7 @@ export const createMany = async (practices: IPracticeServiceCreate[]) => {
       document: item,
     },
   }));
-  // TODO: refactor
   return PracticeModel.bulkWrite(bulkData);
-  // return PracticeModel.insertMany(practices, { limit });
 };
 
 export const deleteOne = async ({
