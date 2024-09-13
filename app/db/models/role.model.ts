@@ -2,6 +2,23 @@ import { Schema, model } from "mongoose";
 import { RolesEnum } from "@/common/enums";
 import { SchemaNames } from "@/common/constants";
 
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Role:
+ *       type: object
+ *       properties:
+ *         name:
+ *           $ref: '#/components/schemas/RoleTypes'
+ *           default: user
+ *         access_level:
+ *           type: number
+ *           default: 1
+ *       required:
+ *         - name
+ *         - access_level
+ */
 const roleSchema = new Schema(
   {
     name: {

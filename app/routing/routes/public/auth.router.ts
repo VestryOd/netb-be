@@ -7,7 +7,29 @@ import { authBodyValidator } from "../../validators";
 
 const authRouter = express.Router();
 const validator = createValidator();
-
+/**
+ * @swagger
+ * /login:
+ *   post:
+ *     summary: Авторизация пользователя
+ *     tags: [Authentication]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               username:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Успешный вход
+ *       400:
+ *         description: Неправильные данные
+ */
 authRouter.post(
   SubRoutes.Root,
   validator.body(authBodyValidator),

@@ -1,12 +1,19 @@
-import { defaultAWSRegion, devDefaultUrl, MODE } from "@/common/constants";
+import {
+  defaultAWSRegion,
+  devDefaultUrl,
+  MODE,
+  urlValidateMessage,
+  urlValidateRegexp,
+} from "@/common/constants";
 import * as dotenv from "dotenv";
 import * as joi from "joi";
 import { ValidationResult } from "joi";
-import { DisciplineEnum } from "../common/enums";
+import { DisciplineEnum } from "@/common/enums";
 
 dotenv.config();
 
 interface IEnvVarsSchema {
+  URL: string;
   NODE_ENV: string;
   PORT: string;
   AWS_REGION: string;
@@ -20,6 +27,11 @@ const envVarsSchema = joi
       .string()
       .valid(...Object.values(MODE))
       .required(),
+    URL: joi
+      .string()
+      .pattern(urlValidateRegexp)
+      .message(urlValidateMessage)
+      .default(devDefaultUrl),
     PORT: joi.number().positive().required(),
     AWS_REGION: joi.string().default(defaultAWSRegion),
     JWT_SECRET_KEY: joi.string().required(),
@@ -46,6 +58,7 @@ export const env = envVars.NODE_ENV;
 export const port = envVars.PORT;
 export const region = envVars.AWS_REGION;
 export const jwtSecret = envVars.JWT_SECRET_KEY;
+export const basicUrl = envVars.URL;
 
 export const mode = envVars.NODE_ENV;
 

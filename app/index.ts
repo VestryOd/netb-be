@@ -1,10 +1,13 @@
 import "module-alias/register";
-import * as express from "express";
-import * as fileUpload from "express-fileupload";
+import express from "express";
+import fileUpload from "express-fileupload";
 import * as httpContext from "express-http-context";
 import * as config from "@/config";
 import * as path from "path";
 import { connectToDB, closeConnection } from "@/db";
+import * as swaggerUi from "swagger-ui-express";
+import swaggerJsdoc from "swagger-jsdoc";
+import { swaggerOptions } from "./swagger/swaggerConfig";
 import {
   notFoundHandler,
   uncaughtExceptionHandler,
@@ -32,6 +35,10 @@ app.use(fileUpload());
 app.use(express.json());
 app.use(MainRoutes.Static, express.static(path.join(__dirname, "public")));
 app.use(httpContext.middleware);
+
+const swaggerSpec = swaggerJsdoc(swaggerOptions);
+
+app.use(MainRoutes.ApiDocs, swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use("*", eventLoggerMiddleware);
 routingSchema.forEach(({ prefix, middlewares, routes }) => {
