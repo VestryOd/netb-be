@@ -39,12 +39,10 @@ export const routingSchema = [
   },
   {
     prefix: MainRoutes.User,
-    // middlewares: authMiddleware,
     routes: protectedUserRouter,
   },
   {
     prefix: MainRoutes.Role,
-    // middlewares: authMiddleware,
     routes: protectedRoleRouter,
   },
   {

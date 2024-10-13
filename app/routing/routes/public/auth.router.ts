@@ -11,7 +11,7 @@ const validator = createValidator();
  * @swagger
  * /login:
  *   post:
- *     summary: Авторизация пользователя
+ *     summary: User login
  *     tags: [Authentication]
  *     requestBody:
  *       required: true
@@ -26,9 +26,11 @@ const validator = createValidator();
  *                 type: string
  *     responses:
  *       200:
- *         description: Успешный вход
+ *         description: Success
  *       400:
- *         description: Неправильные данные
+ *         description: User is not exist
+ *       401:
+ *        description: Unauthorized
  */
 authRouter.post(
   SubRoutes.Root,

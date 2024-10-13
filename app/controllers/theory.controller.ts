@@ -12,12 +12,12 @@ export const getAllTheoryItems = async (
   next: NextFunction
 ) => {
   const { discipline } = req.params;
-  const { limit, skip } = req.query;
+  const { limit, page } = req.query;
   try {
     const theoryItems = await theoryService.getAll({
       discipline,
       limit: +limit,
-      skip: +skip,
+      skip: +page * +limit,
     });
     res.send(theoryItems);
   } catch (err) {

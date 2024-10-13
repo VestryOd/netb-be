@@ -19,7 +19,7 @@ const validator = createValidator();
  * @swagger
  * /signup:
  *   post:
- *     summary: Регистрация нового пользователя
+ *     summary: Create a new user
  *     tags: [User]
  *     requestBody:
  *       required: true
@@ -28,15 +28,18 @@ const validator = createValidator();
  *           schema:
  *             type: object
  *             properties:
- *               email:
+ *               user_name:
  *                 type: string
- *               password:
+ *               user_email:
  *                 type: string
+ *               user_password:
+ *                 type: string
+ *                 minLength: 6
  *     responses:
  *       201:
- *         description: Успешная регистрация
+ *         description: Successfully created
  *       400:
- *         description: Ошибка валидации данных
+ *         description: User with email {user.user_email} is already exist
  */
 publicUserRouter.post(
   SubRoutes.Root,

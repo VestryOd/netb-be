@@ -8,7 +8,7 @@ import {
   updateOnePractice,
 } from "@/services";
 import { catchErrorHandler } from "@/common/helpers";
-import { AuthService } from "../services/Auth.service";
+import { AuthService } from "@/services/Auth.service";
 import {
   entityNotFoundMessage,
   NOT_FOUND,
@@ -21,12 +21,12 @@ export const getAllPracticeItems = async (
   next: NextFunction
 ) => {
   const { discipline } = req.params;
-  const { limit, skip } = req.query;
+  const { limit, page } = req.query;
   try {
     const practiceItems = await practiceAllHandler({
       discipline,
       limit: +limit,
-      skip: +skip,
+      skip: +page * +limit,
     });
     res.send(practiceItems);
   } catch (err) {
