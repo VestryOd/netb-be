@@ -41,11 +41,20 @@ const validator = createValidator({ passError: true });
  *       200:
  *         description: A list of practice tasks
  *         content:
- *             application/json:
- *               schema:
- *                 type: array
- *                 items:
- *                   $ref: '#/components/schemas/Practice'
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Practice'
+ *       404:
+ *         description: Entity was not found
+ *         content:
+ *           application/json:
+ *             examples:
+ *               disciplineNotFound:
+ *                 summary: Discipline was not found
+ *                 value:
+ *                   message: Discipline with provided name was not found
  */
 publicPracticeRouter.get(
   SubRoutes.Root,
@@ -84,7 +93,18 @@ publicPracticeRouter.get(
  *       400:
  *         description: Bad request, provided {practice_id} is not in correct format
  *       404:
- *         description: Practice with id {practice_id} not found
+ *         description: Entity was not found
+ *         content:
+ *           application/json:
+ *             examples:
+ *               disciplineNotFound:
+ *                 summary: Discipline was not found
+ *                 value:
+ *                   message: Discipline with provided name was not found
+ *               practiceNotFound:
+ *                 summary: Practice item was not found
+ *                 value:
+ *                   message: Practice item with {practice_id} was not found
  * */
 publicPracticeRouter.get(
   `${SubRoutes.Root}/:practice_id`,

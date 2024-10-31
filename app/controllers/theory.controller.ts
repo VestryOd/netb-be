@@ -17,7 +17,7 @@ export const getAllTheoryItems = async (
     const theoryItems = await theoryService.getAll({
       discipline,
       limit: +limit,
-      skip: +page * +limit,
+      skip: (+page - 1) * +limit,
     });
     res.send(theoryItems);
   } catch (err) {

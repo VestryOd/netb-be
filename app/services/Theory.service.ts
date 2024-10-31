@@ -6,7 +6,7 @@ import {
   getAll,
   deleteOne,
   updateOne,
-} from "../db/theory.db";
+} from "@/db/theory.db";
 import { MediaService } from "./Media.service";
 import { ContentService } from "./Content.service";
 import { UNKNOWN_ERROR } from "@/common/constants";

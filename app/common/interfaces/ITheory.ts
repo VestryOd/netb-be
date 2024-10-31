@@ -12,7 +12,7 @@ export interface ITheoryContent {
   _id?: Types.ObjectId;
   content_type: TheoryItemEnum;
   order: number;
-  parentId: Types.ObjectId;
+  parentId?: Types.ObjectId;
   content_data: string | [string] | [[string | number]];
   content_image?: string;
 }

@@ -26,7 +26,7 @@ export const getAllPracticeItems = async (
     const practiceItems = await practiceAllHandler({
       discipline,
       limit: +limit,
-      skip: +page * +limit,
+      skip: (+page - 1) * +limit,
     });
     res.send(practiceItems);
   } catch (err) {

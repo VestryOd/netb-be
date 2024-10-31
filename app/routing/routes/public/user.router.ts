@@ -17,7 +17,7 @@ const validator = createValidator();
 
 /**
  * @swagger
- * /signup:
+ * /sign-up:
  *   post:
  *     summary: Create a new user
  *     tags: [User]

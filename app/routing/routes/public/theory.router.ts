@@ -41,11 +41,13 @@ const validator = createValidator({ passError: true });
  *       200:
  *         description: A list of theoretical materials
  *         content:
- *             application/json:
- *               schema:
- *                 type: array
- *                 items:
- *                   $ref: '#/components/schemas/Theory'
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Theory'
+ *       404:
+ *         $ref: '#/components/responses/DisciplineNotFoundError'
  */
 publicTheoryRouter.get(
   SubRoutes.Root,
@@ -78,13 +80,20 @@ publicTheoryRouter.get(
  *       200:
  *         description: A certain theory material by id will be given
  *         content:
- *             application/json:
- *               schema:
- *                 $ref: '#/components/schemas/Theory'
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Theory'
  *       400:
- *         description: Bad request, provided {theory_id} is not in correct format
+ *         $ref: '#/components/responses/BadRequestByIdError'
  *       404:
- *         description: Theory with id {theory_id} not found
+ *         description: Entity was not found
+ *         content:
+ *           application/json:
+ *             examples:
+ *               disciplineNotFound:
+ *                 $ref: '#/components/responses/DisciplineNotFoundError'
+ *               theoryNotFound:
+ *                 $ref: '#/components/responses/NotFoundError'
  * */
 publicTheoryRouter.get(
   `${SubRoutes.Root}/:theory_id`,

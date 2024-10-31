@@ -5,7 +5,7 @@ import {
   createDiscipline,
   removeDiscipline,
   updateDiscipline,
-} from "../db/discipline.db";
+} from "@/db/discipline.db";
 
 export class DisciplineService {
   public getAllDisciplines() {

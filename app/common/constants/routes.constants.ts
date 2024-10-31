@@ -9,6 +9,7 @@ export enum MainRoutes {
   Role = "/role",
   Discipline = "/discipline",
   ApiDocs = "/api-docs",
+  Disciplines = "/disciplines",
 }
 
 export enum SubRoutes {

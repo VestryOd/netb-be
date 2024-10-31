@@ -3,6 +3,7 @@ import {
   authMiddleware,
   authMiddlewareByRole,
   disciplineMiddleware,
+  protectedDisciplineMiddleware,
 } from "@/middlewares";
 import authRouter from "./public/auth.router";
 import publicUserRouter from "./public/user.router";
@@ -24,17 +25,17 @@ export const routingSchema = [
   },
   {
     prefix: `/:${QueryParams.Discipline}`,
-    middlewares: disciplineMiddleware,
+    middlewares: [disciplineMiddleware],
     routes: publicDisciplineRouter,
   },
   {
     prefix: "*",
-    middlewares: authMiddleware,
+    middlewares: [authMiddleware],
     routes: (req: Request, res: Response, next: NextFunction) => next(),
   },
   {
     prefix: `/:${QueryParams.Discipline}`,
-    middlewares: disciplineMiddleware,
+    middlewares: [protectedDisciplineMiddleware],
     routes: protectedDisciplineRouter,
   },
   {
@@ -46,7 +47,7 @@ export const routingSchema = [
     routes: protectedRoleRouter,
   },
   {
-    prefix: MainRoutes.Discipline,
+    prefix: MainRoutes.Disciplines,
     middlewares: authMiddlewareByRole[RolesEnum.TEACHER],
     routes: protectedDisciplineHandleRouter,
   },

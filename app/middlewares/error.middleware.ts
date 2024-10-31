@@ -1,5 +1,4 @@
 import { Request, Response, NextFunction } from "express";
-// import { HttpError } from "http-errors";
 import { errorLogger } from "@/common/helpers";
 import { ExpressJoiError } from "express-joi-validation";
 

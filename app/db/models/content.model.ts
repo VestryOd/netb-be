@@ -14,8 +14,10 @@ import { SchemaNames } from "@/common/constants";
  *           default: text
  *         parentId:
  *           type: string
+ *           example: ""
  *         order:
  *           type: number
+ *           example: 0
  *         content_data:
  *           type: array
  *           items:
@@ -28,12 +30,13 @@ import { SchemaNames } from "@/common/constants";
  *                     - type: array
  *                       items:
  *                         type: string
+ *           example: []
  *         content_image:
  *           type: string
  *           format: url
+ *           default: null
  *       required:
  *         - content_type
- *         - parentId
  *         - order
  *         - content_data
  */
@@ -43,7 +46,7 @@ const contentSchema = new Schema(
       type: String,
       default: TheoryItemEnum.Text,
     },
-    parentId: { type: Schema.Types.ObjectId, required: true },
+    parentId: { type: Schema.Types.ObjectId },
     order: { type: Number, required: true },
     content_data: {
       type: Schema.Types.Mixed,

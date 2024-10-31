@@ -6,7 +6,7 @@ import { login } from "@/controllers/auth.controller";
 import { authBodyValidator } from "../../validators";
 
 const authRouter = express.Router();
-const validator = createValidator();
+const validator = createValidator({ passError: true });
 /**
  * @swagger
  * /login:
@@ -20,9 +20,9 @@ const validator = createValidator();
  *           schema:
  *             type: object
  *             properties:
- *               username:
+ *               user_email:
  *                 type: string
- *               password:
+ *               user_password:
  *                 type: string
  *     responses:
  *       200:
