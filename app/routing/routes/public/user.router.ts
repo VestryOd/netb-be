@@ -30,10 +30,19 @@ const validator = createValidator();
  *             properties:
  *               user_name:
  *                 type: string
+ *                 required: true
+ *                 example: John Dou
+ *                 minLength: 5
+ *                 maxLength: 100
  *               user_email:
  *                 type: string
+ *                 required: true
+ *                 format: email
+ *                 example: john@email.com
+ *                 pattern: '/^[\w_.]+@([\w-]+\.)+[\w-]{2,4}$/'
  *               user_password:
  *                 type: string
+ *                 required: true
  *                 minLength: 6
  *     responses:
  *       201:

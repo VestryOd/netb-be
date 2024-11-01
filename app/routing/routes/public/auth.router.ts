@@ -22,8 +22,13 @@ const validator = createValidator({ passError: true });
  *             properties:
  *               user_email:
  *                 type: string
+ *                 format: email
+ *                 example: john@email.com
+ *                 pattern: '/^[\w_.]+@([\w-]+\.)+[\w-]{2,4}$/'
  *               user_password:
  *                 type: string
+ *                 required: true
+ *                 minLength: 6
  *     responses:
  *       200:
  *         description: Success
