@@ -23,7 +23,7 @@ export const addNewRoleHandler = async (
 };
 
 export const getAllRolesHandler = async (
-  req: Request,
+  _: Request,
   res: Response,
   next: NextFunction
 ) => {
@@ -42,10 +42,10 @@ export const removeRoleHandler = async (
   next: NextFunction
 ) => {
   try {
-    const { roleId } = req.params;
-    const deleted = await roleService.removeRole(roleId);
+    const { role_id } = req.params;
+    const deleted = await roleService.removeRole(role_id);
     res.statusCode = deleted ? StatusCodes.ACCEPTED : StatusCodes.NOT_FOUND;
-    res.statusMessage = roleRemoveMessage(roleId);
+    res.statusMessage = roleRemoveMessage(role_id);
     res.send(deleted);
   } catch (err) {
     catchErrorHandler(err, next);

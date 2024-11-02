@@ -19,6 +19,14 @@ const swaggerDefinition: SwaggerDefinition = {
       name: "Practice",
       description: "Endpoints related to practice operations",
     },
+    {
+      name: "User",
+      description: "Endpoints related to user operations",
+    },
+    {
+      name: "Role",
+      description: "Endpoints related to role operations",
+    },
   ],
   servers: [
     {

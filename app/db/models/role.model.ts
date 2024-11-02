@@ -14,7 +14,7 @@ import { SchemaNames } from "@/common/constants";
  *           default: user
  *         access_level:
  *           type: number
- *           default: 1
+ *           default: 0
  *       required:
  *         - name
  *         - access_level
