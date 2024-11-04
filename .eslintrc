@@ -10,7 +10,8 @@
   "plugins": [
     "@typescript-eslint",
     "eslint-plugin-jsdoc",
-    "eslint-plugin-prefer-arrow"
+    "eslint-plugin-prefer-arrow",
+    "jsdoc"
   ],
   "extends": [
     "eslint:recommended",
@@ -146,7 +147,7 @@
     "id-match": "error",
     "indent": ["error", 2],
     "jsdoc/check-alignment": "error",
-    "jsdoc/check-indentation": "error",
+    "jsdoc/check-indentation": 1,
     "jsdoc/newline-after-description": "error",
     "max-classes-per-file": [
       "error",

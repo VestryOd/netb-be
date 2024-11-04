@@ -10,7 +10,7 @@ import {
   USER_NOT_EXIST,
 } from "@/common/constants";
 import { jwtSecret } from "@/config";
-import { RolesEnum } from "../common/enums";
+import { RolesEnum } from "@/common/enums";
 import { RoleService } from "./Role.service";
 
 export class AuthService {

@@ -17,7 +17,7 @@ export const userBasicSchema = Joi.object({
 });
 
 export const userParamsSchema = Joi.object({
-  userId: Joi.string().required().custom(isValidObjectId),
+  user_id: Joi.string().required().custom(isValidObjectId),
 });
 
 export const userRoleRequestSchema = Joi.object({

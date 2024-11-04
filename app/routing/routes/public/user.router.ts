@@ -8,6 +8,48 @@ import { errorHandlerMiddleware } from "@/middlewares";
 const publicUserRouter = express.Router();
 const validator = createValidator();
 
+/**
+ * @swagger
+ * tags:
+ *   name: User
+ *   description: API для управления пользователями
+ */
+
+/**
+ * @swagger
+ * /sign-up:
+ *   post:
+ *     summary: Create a new user
+ *     tags: [User]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               user_name:
+ *                 type: string
+ *                 required: true
+ *                 example: John Dou
+ *                 minLength: 5
+ *                 maxLength: 100
+ *               user_email:
+ *                 type: string
+ *                 required: true
+ *                 format: email
+ *                 example: john@email.com
+ *                 pattern: '/^[\w_.]+@([\w-]+\.)+[\w-]{2,4}$/'
+ *               user_password:
+ *                 type: string
+ *                 required: true
+ *                 minLength: 6
+ *     responses:
+ *       201:
+ *         description: Successfully created
+ *       400:
+ *         description: User with email {user.user_email} is already exist
+ */
 publicUserRouter.post(
   SubRoutes.Root,
   validator.body(userRequestSchema),

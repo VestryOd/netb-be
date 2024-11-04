@@ -1,13 +1,14 @@
 import { Types } from "mongoose";
-import { NOT_FOUND } from "../constants";
+import { IS_NOT_CORRECT_ID } from "../constants";
+import { IErrorInterface } from "@/common/interfaces";
 const ObjectId = Types.ObjectId;
 
-export const isValidObjectId = (id: string): string => {
+export const isValidObjectId = (id: string): IErrorInterface | string => {
   const isValid = ObjectId.isValid(id) && String(new ObjectId(id)) === id;
 
   if (isValid) {
     return id;
   } else {
-    throw NOT_FOUND(id);
+    throw IS_NOT_CORRECT_ID(id);
   }
 };

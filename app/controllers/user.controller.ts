@@ -44,9 +44,9 @@ export const getUserByIdHandler = async (
   res: Response,
   next: NextFunction
 ) => {
-  const { userId } = req.params;
+  const { user_id } = req.params;
   try {
-    const user = await userService.getUserById(userId);
+    const user = await userService.getUserById(user_id);
     res.statusCode = user ? StatusCodes.OK : StatusCodes.NOT_FOUND;
     res.send(user);
   } catch (err) {
@@ -59,9 +59,9 @@ export const deleteUserHandler = async (
   res: Response,
   next: NextFunction
 ) => {
-  const { userId } = req.params;
+  const { user_id } = req.params;
   try {
-    const deleted = await userService.deleteUser(userId);
+    const deleted = await userService.deleteUser(user_id);
     res.statusCode = deleted ? StatusCodes.ACCEPTED : StatusCodes.NOT_FOUND;
     res.send(deleted);
   } catch (err) {
@@ -74,9 +74,9 @@ export const updateUserHandler = async (
   res: Response,
   next: NextFunction
 ) => {
-  const { userId } = req.params;
+  const { user_id } = req.params;
   try {
-    const updatedUser = await userService.updateOneUser(userId, {
+    const updatedUser = await userService.updateOneUser(user_id, {
       ...req.body,
     });
     res.statusCode = updatedUser ? StatusCodes.OK : StatusCodes.NOT_FOUND;
@@ -91,10 +91,13 @@ export const updateUserRole = async (
   res: Response,
   next: NextFunction
 ) => {
-  const { userId } = req.params;
+  const { user_id } = req.params;
   const { user_role } = req.body;
   try {
-    const userWithNewRole = await userService.updateUserRole(userId, user_role);
+    const userWithNewRole = await userService.updateUserRole(
+      user_id,
+      user_role
+    );
     res.statusCode = userWithNewRole ? StatusCodes.OK : StatusCodes.NOT_FOUND;
     res.send(userWithNewRole);
   } catch (err) {

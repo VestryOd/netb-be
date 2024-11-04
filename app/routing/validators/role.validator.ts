@@ -2,7 +2,7 @@ import * as Joi from "joi";
 import { isValidObjectId } from "@/common/helpers";
 
 export const roleParamsSchema = Joi.object({
-  roleId: Joi.string().required().custom(isValidObjectId),
+  role_id: Joi.string().required().custom(isValidObjectId),
 });
 
 export const roleRequestSchema = Joi.object({

@@ -5,7 +5,7 @@ import {
   createDiscipline,
   removeDiscipline,
   updateDiscipline,
-} from "../db/discipline.db";
+} from "@/db/discipline.db";
 
 export class DisciplineService {
   public getAllDisciplines() {
@@ -36,18 +36,18 @@ export class DisciplineService {
   }
 
   public async updateDiscipline({
-    disciplineId,
+    discipline_id,
     name,
   }: {
-    disciplineId: string;
+    discipline_id: string;
     name: string;
   }) {
     const updatedDiscipline = await updateDiscipline({
-      _id: disciplineId,
+      _id: discipline_id,
       name,
     });
 
-    if (!updatedDiscipline) throw NOT_FOUND(disciplineId);
+    if (!updatedDiscipline) throw NOT_FOUND(discipline_id);
     return updatedDiscipline;
   }
 }

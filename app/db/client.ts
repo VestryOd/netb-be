@@ -1,5 +1,5 @@
 import { connection, disconnect, connect, set } from "mongoose";
-import { loggerHelper } from "../common/helpers";
+import { loggerHelper } from "@/common/helpers";
 import { mode, mongoConnect, mongoDbName } from "@/config";
 
 export const closeConnection = () => disconnect();

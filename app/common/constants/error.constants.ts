@@ -32,6 +32,12 @@ export const NOT_FOUND = (entityName?: string): IErrorInterface => ({
   status: StatusCodes.NOT_FOUND,
 });
 
+export const IS_NOT_CORRECT_ID = (id?: string) => ({
+  name: "Not found",
+  message: `ID ${id || "Record"} is not in correct format`,
+  status: StatusCodes.BAD_REQUEST,
+});
+
 export const ALREADY_EXIST = (entityName?: string): IErrorInterface => ({
   name: "Already existing entity",
   message: `${entityName || "Record"} is already exist`,
@@ -71,7 +77,5 @@ export const UNKNOWN_ERROR = (error?: null | string | IAwsError) => {
   }
 };
 
-export const entityNotFoundMessage = (
-  theory_id: MongoIdType,
-  entity: SchemaNames
-) => `${entity} with id ${theory_id} not found`;
+export const entityNotFoundMessage = (id: MongoIdType, entity: SchemaNames) =>
+  `${entity} with id ${id} not found`;

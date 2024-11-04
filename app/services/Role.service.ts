@@ -3,7 +3,7 @@ import {
   createRole,
   removeRole,
   getRoleByName,
-} from "../db/role.db";
+} from "@/db/role.db";
 import { IRole } from "@/common/interfaces/IRole";
 import { ALREADY_EXIST, NOT_FOUND } from "@/common/constants";
 
