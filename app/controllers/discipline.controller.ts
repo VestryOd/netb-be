@@ -41,8 +41,8 @@ export const deleteDiscipline = async (
   next: NextFunction
 ) => {
   try {
-    const { disciplineId } = req.params;
-    const deleted = await disciplineService.deleteDiscipline(disciplineId);
+    const { discipline_id } = req.params;
+    const deleted = await disciplineService.deleteDiscipline(discipline_id);
     res.statusCode = deleted ? StatusCodes.ACCEPTED : StatusCodes.NOT_FOUND;
     res.send(deleted);
   } catch (err) {
@@ -56,10 +56,10 @@ export const updateDiscipline = async (
   next: NextFunction
 ) => {
   try {
-    const { disciplineId } = req.params;
+    const { discipline_id } = req.params;
     const { name } = req.body;
     const updatedDiscipline = await disciplineService.updateDiscipline({
-      disciplineId,
+      discipline_id,
       name,
     });
     res.statusCode = updatedDiscipline ? StatusCodes.OK : StatusCodes.NOT_FOUND;

@@ -24,7 +24,7 @@ const validator = createValidator({ passError: true });
  *       - bearerAuth: []
  *     responses:
  *       200:
- *         description: A list of theoretical materials
+ *         description: A list of roles items
  *         content:
  *           application/json:
  *             schema:
