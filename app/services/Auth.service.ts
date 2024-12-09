@@ -1,6 +1,6 @@
 import * as bcrypt from "bcrypt";
 import * as jwt from "jsonwebtoken";
-import jwt_decode from "jwt-decode";
+import jwt_decode, { JwtPayload } from "jwt-decode";
 import { Request } from "express";
 import { IUser } from "@/common/interfaces/IUser";
 import { UserService } from "./User.service";
@@ -9,9 +9,24 @@ import {
   UNAUTHORIZED,
   USER_NOT_EXIST,
 } from "@/common/constants";
-import { jwtSecret } from "@/config";
+import {
+  accessSecret,
+  accessLifetime,
+  refreshSecret,
+  refreshLifetime,
+} from "@/config";
 import { RolesEnum } from "@/common/enums";
 import { RoleService } from "./Role.service";
+
+export type AuthPayload = Pick<IUser, "user_name" | "user_email" | "id">;
+export type AuthResult = {
+  accessToken: AuthToken;
+  refreshToken: AuthToken;
+};
+export type AuthToken = {
+  token: string;
+  exp: number;
+};
 
 export class AuthService {
   private userService: UserService;
@@ -30,7 +45,56 @@ export class AuthService {
     }
   }
 
-  static async authenticate(userInfo: Partial<IUser>) {
+  private static getExpiredTimestamp(tokenString: string): number {
+    const { exp } = jwt_decode<JwtPayload>(tokenString);
+    return exp * 1000;
+  }
+
+  private static generateToken(
+    user: AuthPayload,
+    secret: string,
+    lifeTime: string | number
+  ) {
+    return jwt.sign({ ...user }, secret, {
+      expiresIn: lifeTime,
+    });
+  }
+
+  private static generateAccessToken({
+    user_name,
+    user_email,
+    id,
+  }: AuthPayload): AuthToken {
+    const token = this.generateToken(
+      { user_name, user_email, id },
+      accessSecret,
+      accessLifetime
+    );
+    const exp = this.getExpiredTimestamp(token);
+    return {
+      token,
+      exp,
+    };
+  }
+
+  private static generateRefreshToken({
+    user_name,
+    user_email,
+    id,
+  }: AuthPayload): AuthToken {
+    const token = this.generateToken(
+      { user_name, user_email, id },
+      refreshSecret,
+      refreshLifetime
+    );
+    const exp = this.getExpiredTimestamp(token);
+    return {
+      token,
+      exp,
+    };
+  }
+
+  static async authenticate(userInfo: Partial<IUser>): Promise<AuthResult> {
     const { user_email, user_password } = userInfo;
 
     const candidate = await UserService.prototype.getByEmail(user_email);
@@ -42,10 +106,16 @@ export class AuthService {
     if (!match) throw UNAUTHORIZED(user_email);
 
     const { user_name, id } = candidate;
+    const accessToken = this.generateAccessToken({ user_name, user_email, id });
+    const refreshToken = this.generateRefreshToken({
+      user_name,
+      user_email,
+      id,
+    });
 
     return {
-      type: "token",
-      data: jwt.sign({ user_name, user_email, id }, jwtSecret),
+      accessToken,
+      refreshToken,
     };
   }
 
@@ -77,8 +147,30 @@ export class AuthService {
     const authHeaderData = headerAuthorization.split(" ");
     const isAuthorized =
       authHeaderData[0] === "Bearer" &&
-      jwt.verify(authHeaderData[1], jwtSecret);
+      jwt.verify(authHeaderData[1], accessSecret);
 
     if (!isAuthorized) throw UNAUTHORIZED();
+  }
+
+  public static async validateRefreshToken(
+    user_email: string,
+    refreshToken: string | undefined
+  ): Promise<AuthToken> {
+    if (!refreshToken) throw PERMISSION_DENIED;
+
+    const { id, user_name } = await UserService.prototype.getByEmail(
+      user_email
+    );
+
+    if (!id) throw USER_NOT_EXIST(user_email);
+
+    const isValidated = jwt.verify(refreshToken, refreshSecret);
+    if (!isValidated) throw PERMISSION_DENIED;
+
+    return this.generateAccessToken({
+      user_name,
+      id,
+      user_email,
+    });
   }
 }

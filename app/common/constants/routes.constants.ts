@@ -4,7 +4,7 @@ export enum MainRoutes {
   Practice = "/practice",
   User = "/user",
   Root = "",
-  Login = "/login",
+  Auth = "/auth",
   SignUp = "/sign-up",
   Role = "/role",
   Discipline = "/discipline",
@@ -14,6 +14,9 @@ export enum MainRoutes {
 
 export enum SubRoutes {
   Root = "",
+  RefreshToken = "/refresh-token",
+  SignUp = "/sign-up",
+  Login = "/login",
   DeleteUser = "/delete-user",
   GetAll = "/get-all",
   UpdateUser = "/update-user",
