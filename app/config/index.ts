@@ -18,6 +18,10 @@ interface IEnvVarsSchema {
   PORT: string;
   AWS_REGION: string;
   JWT_SECRET_KEY: string;
+  ACCESS_TOKEN_SECRET: string;
+  REFRESH_TOKEN_SECRET: string;
+  ACCESS_TOKEN_LIFETIME: string;
+  REFRESH_TOKEN_LIFETIME: string;
 }
 
 const envVarsSchema = joi
@@ -35,6 +39,10 @@ const envVarsSchema = joi
     PORT: joi.number().positive().required(),
     AWS_REGION: joi.string().default(defaultAWSRegion),
     JWT_SECRET_KEY: joi.string().required(),
+    ACCESS_TOKEN_SECRET: joi.string().required(),
+    REFRESH_TOKEN_SECRET: joi.string().required(),
+    ACCESS_TOKEN_LIFETIME: joi.string().required(),
+    REFRESH_TOKEN_LIFETIME: joi.string().required(),
   })
   .unknown();
 
@@ -59,6 +67,10 @@ export const port = envVars.PORT;
 export const region = envVars.AWS_REGION;
 export const jwtSecret = envVars.JWT_SECRET_KEY;
 export const basicUrl = envVars.URL;
+export const accessSecret = envVars.ACCESS_TOKEN_SECRET;
+export const refreshSecret = envVars.REFRESH_TOKEN_SECRET;
+export const accessLifetime = envVars.REFRESH_TOKEN_LIFETIME;
+export const refreshLifetime = envVars.REFRESH_TOKEN_LIFETIME;
 
 export const mode = envVars.NODE_ENV;
 

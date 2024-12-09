@@ -5,3 +5,7 @@ export const authBodyValidator = Joi.object({
   user_email: Joi.string().required().email(),
   user_password: Joi.string().required().min(userPasswordMinLength),
 });
+
+export const authRefreshToken = Joi.object({
+  user_email: Joi.string().required().email(),
+});

@@ -38,6 +38,39 @@ import { RolesEnum } from "@/common/enums";
  *         - user_email
  *         - user_password
  *         - user_role
+ *     UserResponse:
+ *       type: object
+ *       properties:
+ *         user_name:
+ *           type: string
+ *           example: John Dou
+ *           minLength: 5
+ *           maxLength: 100
+ *         user_email:
+ *           type: string
+ *           format: email
+ *           example: john@email.com
+ *           pattern: '/^[\w_.]+@([\w-]+\.)+[\w-]{2,4}$/'
+ *         user_role:
+ *           $ref: '#/components/schemas/RoleTypes'
+ *           default: user
+ *         id:
+ *           type: string
+ *       required:
+ *         - user_name
+ *         - user_email
+ *         - id
+ *         - user_role
+ *     AuthResponse:
+ *       type: object
+ *       properties:
+ *         token:
+ *           type: string
+ *         exp:
+ *           type: number
+ *       required:
+ *         - token
+ *         - exp
  */
 export const userSchema = new Schema(
   {

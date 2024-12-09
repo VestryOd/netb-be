@@ -1,5 +1,6 @@
 import "module-alias/register";
 import express from "express";
+import cookieParser from "cookie-parser";
 import fileUpload from "express-fileupload";
 import * as httpContext from "express-http-context";
 import * as config from "@/config";
@@ -33,6 +34,7 @@ const app: express.Application = express();
 app.use(fileUpload());
 
 app.use(express.json());
+app.use(cookieParser());
 app.use(MainRoutes.Static, express.static(path.join(__dirname, "public")));
 app.use(httpContext.middleware);
 
