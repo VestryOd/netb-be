@@ -3,7 +3,7 @@ import {
   IPracticeServiceCreate,
   IPracticeServiceItem,
   IPracticeServiceUpdate,
-} from "../common/interfaces";
+} from "@/common/interfaces";
 import { PracticeModel } from "./models";
 import {
   aggregateQuery,

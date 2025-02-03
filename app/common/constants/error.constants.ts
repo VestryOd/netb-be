@@ -78,4 +78,4 @@ export const UNKNOWN_ERROR = (error?: null | string | IAwsError) => {
 };
 
 export const entityNotFoundMessage = (id: MongoIdType, entity: SchemaNames) =>
-  `${entity} with id ${id} not found`;
+  `${entity} with id ${id}`;

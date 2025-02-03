@@ -4,3 +4,4 @@ export * from "./user.controller";
 export * from "./auth.controller";
 export * from "./role.controller";
 export * from "./discipline.controller";
+export * from "./quiz.controller";

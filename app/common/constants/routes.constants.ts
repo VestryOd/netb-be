@@ -10,6 +10,7 @@ export enum MainRoutes {
   Discipline = "/discipline",
   ApiDocs = "/api-docs",
   Disciplines = "/disciplines",
+  Quiz = "/quiz",
 }
 
 export enum SubRoutes {
@@ -27,6 +28,7 @@ export enum QueryParams {
   Discipline = "discipline",
   TheoryId = "theory_id",
   PracticeId = "practice_id",
+  QuizId = "quiz_id",
 }
 
 export enum SchemaNames {
