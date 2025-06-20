@@ -2,6 +2,7 @@ import "module-alias/register";
 import express from "express";
 import cookieParser from "cookie-parser";
 import fileUpload from "express-fileupload";
+import cors from "cors";
 import * as httpContext from "express-http-context";
 import * as config from "@/config";
 import * as path from "path";
@@ -30,6 +31,13 @@ process
   });
 
 const app: express.Application = express();
+
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL || "http://localhost:3000",
+    credentials: true,
+  })
+);
 
 app.use(fileUpload());
 

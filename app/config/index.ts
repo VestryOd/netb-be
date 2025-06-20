@@ -14,6 +14,7 @@ dotenv.config();
 
 interface IEnvVarsSchema {
   URL: string;
+  FRONTEND_URL: string;
   NODE_ENV: string;
   PORT: string;
   AWS_REGION: string;
@@ -36,6 +37,7 @@ const envVarsSchema = joi
       .pattern(urlValidateRegexp)
       .message(urlValidateMessage)
       .default(devDefaultUrl),
+    FRONTEND_URL: joi.string(),
     PORT: joi.number().positive().required(),
     AWS_REGION: joi.string().default(defaultAWSRegion),
     JWT_SECRET_KEY: joi.string().required(),
