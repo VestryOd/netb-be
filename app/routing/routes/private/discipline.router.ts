@@ -8,7 +8,6 @@ import {
 import {
   addNewDiscipline,
   deleteDiscipline,
-  getAllDisciplines,
   updateDiscipline,
 } from "@/controllers";
 import { errorHandlerMiddleware } from "@/middlewares";
@@ -17,35 +16,6 @@ export const protectedDisciplineHandleRouter = express.Router({
   mergeParams: true,
 });
 const validator = createValidator({ passError: true });
-/**
- * @swagger
- * /disciplines/get-all:
- *   get:
- *     summary: Get all existing disciplines
- *     description: Get all existing disciplines
- *     operationId: getDisciplines
- *     tags: [Discipline]
- *     security:
- *       - bearerAuth: []
- *     responses:
- *       200:
- *         description: A list of disciplines items
- *         content:
- *           application/json:
- *             schema:
- *               type: array
- *               items:
- *                 $ref: '#/components/schemas/Discipline'
- *       401:
- *         $ref: '#/components/responses/UnauthorizedError'
- *       403:
- *         $ref: '#/components/responses/PermissionDeniedError'
- * */
-protectedDisciplineHandleRouter.get(
-  SubRoutes.GetAll,
-  getAllDisciplines as express.RequestHandler,
-  errorHandlerMiddleware
-);
 /**
  * @swagger
  * /disciplines:

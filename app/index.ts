@@ -49,6 +49,10 @@ app.use(httpContext.middleware);
 const swaggerSpec = swaggerJsdoc(swaggerOptions);
 
 app.use(MainRoutes.ApiDocs, swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.get("/swagger/swagger.json", (req, res) => {
+  res.setHeader("Content-Type", "application/json");
+  res.send(swaggerSpec);
+});
 
 app.use("*", eventLoggerMiddleware);
 routingSchema.forEach(({ prefix, middlewares, routes }) => {
