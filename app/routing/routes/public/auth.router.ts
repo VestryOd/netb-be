@@ -3,11 +3,7 @@ import { createValidator } from "express-joi-validation";
 import { errorHandlerMiddleware } from "@/middlewares";
 import { SubRoutes } from "@/common/constants";
 import { login, refreshToken } from "@/controllers/auth.controller";
-import {
-  authBodyValidator,
-  authRefreshToken,
-  userRequestSchema,
-} from "../../validators";
+import { authBodyValidator, userRequestSchema } from "../../validators";
 import { addNewUserHandler } from "@/controllers";
 
 const authRouter = express.Router();
@@ -58,18 +54,6 @@ authRouter.post(
  *   post:
  *     summary: Refresh user's token
  *     tags: [Authentication]
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               user_email:
- *                 type: string
- *                 format: email
- *                 example: john@email.com
- *                 pattern: '/^[\w_.]+@([\w-]+\.)+[\w-]{2,4}$/'
  *     responses:
  *       200:
  *         description: Success
@@ -84,7 +68,6 @@ authRouter.post(
  */
 authRouter.post(
   SubRoutes.RefreshToken,
-  validator.body(authRefreshToken),
   refreshToken as express.RequestHandler,
   errorHandlerMiddleware
 );

@@ -5,6 +5,7 @@ import {
   disciplineMiddleware,
   protectedDisciplineMiddleware,
 } from "@/middlewares";
+import { publicDisciplineHandleRouter } from "@/routing/routes/public/discipline.router";
 import authRouter from "./public/auth.router";
 import { publicDisciplineRouter } from "./public";
 import { protectedDisciplineRouter, protectedUserRouter } from "./private";
@@ -17,6 +18,10 @@ export const routingSchema = [
   {
     prefix: MainRoutes.Auth,
     routes: authRouter,
+  },
+  {
+    prefix: MainRoutes.Disciplines,
+    routes: publicDisciplineHandleRouter,
   },
   {
     prefix: `/:${QueryParams.Discipline}`,

@@ -78,7 +78,7 @@ publicPracticeRouter.get(
  *           type: string
  *         description: A discipline for which it's needed to get practice task
  *       - in: path
- *         name: theory_id
+ *         name: practice_id
  *         required: true
  *         schema:
  *           type: string

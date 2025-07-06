@@ -1,7 +1,9 @@
+import { IUser } from "@/common/interfaces/IUser";
 import { Request, Response, NextFunction } from "express";
 import StatusCodes from "http-status-codes";
 import { AuthService } from "@/services/Auth.service";
 import { catchErrorHandler } from "@/common/helpers";
+import jwt_decode from "jwt-decode";
 
 export const login = async (
   req: Request,
@@ -34,8 +36,8 @@ export const refreshToken = async (
   res: Response,
   next: NextFunction
 ) => {
-  const { user_email } = req.body;
   const refreshToken = req.cookies.refreshToken;
+  const { user_email } = jwt_decode<Partial<IUser>>(refreshToken);
 
   try {
     const accessToken = await AuthService.validateRefreshToken(
