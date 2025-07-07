@@ -1,4 +1,5 @@
 import "module-alias/register";
+import { toJsonMiddleware } from "@/middlewares/toJson.middleware";
 import express from "express";
 import cookieParser from "cookie-parser";
 import fileUpload from "express-fileupload";
@@ -55,6 +56,7 @@ app.get("/swagger/swagger.json", (req, res) => {
 });
 
 app.use("*", eventLoggerMiddleware);
+app.use(toJsonMiddleware);
 routingSchema.forEach(({ prefix, middlewares, routes }) => {
   middlewares ? app.use(prefix, middlewares, routes) : app.use(prefix, routes);
 });

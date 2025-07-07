@@ -1,3 +1,7 @@
+import * as dotenv from "dotenv";
+import * as joi from "joi";
+import { ValidationResult } from "joi";
+import { DisciplineEnum } from "@/common/enums";
 import {
   defaultAWSRegion,
   devDefaultUrl,
@@ -5,10 +9,6 @@ import {
   urlValidateMessage,
   urlValidateRegexp,
 } from "@/common/constants";
-import * as dotenv from "dotenv";
-import * as joi from "joi";
-import { ValidationResult } from "joi";
-import { DisciplineEnum } from "@/common/enums";
 
 dotenv.config();
 

@@ -9,6 +9,8 @@ import { SchemaNames } from "@/common/constants";
  *     Content:
  *       type: object
  *       properties:
+ *         id:
+ *           type: string
  *         content_type:
  *           $ref: '#/components/schemas/TheoryItemTypes'
  *           default: text

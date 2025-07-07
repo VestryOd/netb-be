@@ -16,6 +16,8 @@ import { RolesEnum } from "@/common/enums";
  *     User:
  *       type: object
  *       properties:
+ *         id:
+ *           type: string
  *         user_name:
  *           type: string
  *           example: John Dou
