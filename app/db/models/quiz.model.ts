@@ -8,6 +8,8 @@ import { SchemaNames } from "@/common/constants";
  *     Quiz:
  *       type: object
  *       properties:
+ *         id:
+ *           type: string
  *         discipline:
  *           type: string
  *         tasks:

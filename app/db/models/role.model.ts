@@ -9,6 +9,8 @@ import { SchemaNames } from "@/common/constants";
  *     Role:
  *       type: object
  *       properties:
+ *         id:
+ *           type: string
  *         name:
  *           $ref: '#/components/schemas/RoleTypes'
  *           default: user

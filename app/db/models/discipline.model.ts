@@ -8,6 +8,8 @@ import { SchemaNames } from "@/common/constants";
  *     Discipline:
  *       type: object
  *       properties:
+ *         id:
+ *           type: string
  *         name:
  *           type: string
  *         link_name:

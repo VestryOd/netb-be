@@ -8,7 +8,7 @@ import { SchemaNames } from "@/common/constants";
  *     Theory:
  *       type: object
  *       properties:
- *         _id:
+ *         id:
  *           type: string
  *         discipline:
  *           type: string
@@ -49,7 +49,6 @@ import { SchemaNames } from "@/common/constants";
  */
 const theorySchema = new Schema(
   {
-    _id: Types.ObjectId,
     discipline: { type: String, required: true },
     title: { type: String, default: "" },
     content: [
