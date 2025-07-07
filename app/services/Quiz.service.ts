@@ -6,6 +6,7 @@ import {
   IQuizResponse,
   UpdateQuizPayload,
 } from "@/common/interfaces";
+import { IEntityResponse } from "@/common/interfaces/IEntityResponse";
 import {
   createQuiz,
   deleteQuiz,
@@ -21,7 +22,7 @@ export class QuizService {
     skip,
     finished_only,
     user_id,
-  }: GetAllQuizzes): Promise<IQuizResponse[]> {
+  }: GetAllQuizzes): Promise<IEntityResponse<IQuizResponse>> {
     return await getAllQuizzes({
       discipline,
       limit,

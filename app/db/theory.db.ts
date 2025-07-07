@@ -20,7 +20,14 @@ export const getAll = async ({
     skip,
   });
   // @ts-ignore
-  return TheoryModel.aggregate(query);
+  const data: ITheory[] = await TheoryModel.aggregate(query);
+  return {
+    items: data,
+    total: await TheoryModel.count(),
+    has_next: (await TheoryModel.count()) > +skip * +limit,
+    limit: +limit,
+    page: +skip / +limit + 1,
+  };
 };
 
 export const getById = async ({

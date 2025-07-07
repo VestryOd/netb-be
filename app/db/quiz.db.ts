@@ -39,8 +39,15 @@ export const getAllQuizzes = async ({
     finished_only,
     user_id,
   });
-
-  return QuizModel.aggregate(query);
+  // @ts-ignore
+  const data: IQuizResponse[] = await QuizModel.aggregate(query);
+  return {
+    items: data,
+    total: await QuizModel.count(),
+    has_next: (await PracticeModel.count()) > +skip * +limit,
+    limit: +limit,
+    page: +skip / +limit + 1,
+  };
 };
 
 export const getQuiz = async ({

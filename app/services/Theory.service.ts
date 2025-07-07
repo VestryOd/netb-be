@@ -1,4 +1,5 @@
 import { ITheory, ITheoryService } from "@/common/interfaces";
+import { IEntityResponse } from "@/common/interfaces/IEntityResponse";
 import { Types } from "mongoose";
 import {
   createOne,
@@ -24,7 +25,7 @@ export class TheoryService {
     discipline,
     limit,
     skip,
-  }: Partial<ITheoryService>): Promise<ITheory[]> {
+  }: Partial<ITheoryService>): Promise<IEntityResponse<ITheory>> {
     return await getAll({ discipline, limit, skip });
   }
 
