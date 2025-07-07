@@ -1,4 +1,5 @@
 import {
+  IPractice,
   IPracticeService,
   IPracticeServiceCreate,
   IPracticeServiceItem,
@@ -20,7 +21,14 @@ export const getAll = async ({ discipline, limit, skip }: IPracticeService) => {
     skip,
   });
   // @ts-ignore
-  return PracticeModel.aggregate(query);
+  const data: IPractice[] = await PracticeModel.aggregate(query);
+  return {
+    items: data,
+    total: await PracticeModel.count(),
+    has_next: (await PracticeModel.count()) > +skip * +limit,
+    limit: +limit,
+    page: +skip / +limit + 1,
+  };
 };
 
 export const getById = async ({

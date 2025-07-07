@@ -1,3 +1,4 @@
+import { IEntityResponse } from "@/common/interfaces/IEntityResponse";
 import {
   getAll,
   getById,
@@ -6,6 +7,7 @@ import {
   updateOne,
 } from "@/db/practice.db";
 import {
+  IPractice,
   IPracticeService,
   IPracticeServiceCreate,
   IPracticeServiceItem,
@@ -16,7 +18,7 @@ export const practiceAllHandler = async ({
   discipline,
   limit,
   skip,
-}: IPracticeService) => {
+}: IPracticeService): Promise<IEntityResponse<IPractice>> => {
   return await getAll({ discipline, limit, skip });
 };
 

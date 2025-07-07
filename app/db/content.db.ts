@@ -1,7 +1,7 @@
 import { ITheoryContent } from "@/common/interfaces";
 import { ContentModel } from "./models";
 import { Types } from "mongoose";
-import { MongoDeleteManyResultType } from "../common/types";
+import { MongoDeleteManyResultType } from "@/common/types";
 
 export const createMany = async (
   contentData: Omit<ITheoryContent, "_id">[]

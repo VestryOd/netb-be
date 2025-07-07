@@ -94,9 +94,9 @@ export const aggregateQuery = ({
   const $match = id
     ? { discipline, _id: new Types.ObjectId(id) }
     : { discipline };
-  const $skip = skip && limit ? +skip * +limit : undefined;
-  const $limit = limit ? +limit : undefined;
-  return $skip && $limit
+  const $skip = skip ? +skip : 0;
+  const $limit = limit ? +limit : 10;
+  return $limit
     ? [
         { $match },
         ...aggregateQueriesMap.get(schemaName),
@@ -127,9 +127,9 @@ export const aggregateQuizQuery = ({
     ? { ...baseMatch, _id: new Types.ObjectId(quiz_id) }
     : { ...baseMatch };
 
-  const $limit = limit ? +limit : undefined;
-  const $skip = skip && limit ? +skip * +limit : undefined;
-  return $limit && $skip
+  const $limit = limit ? +limit : 10;
+  const $skip = skip ? +skip : 0;
+  return $limit
     ? [
         { $match },
         { $skip },

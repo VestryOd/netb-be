@@ -43,9 +43,24 @@ const validator = createValidator({ passError: true });
  *         content:
  *           application/json:
  *             schema:
- *               type: array
- *               items:
- *                 $ref: '#/components/schemas/Theory'
+ *              type: object
+ *              properties:
+ *                total:
+ *                  type: integer
+ *                  example: 1
+ *                has_next:
+ *                  type: boolean
+ *                  example: true
+ *                page:
+ *                  type: integer
+ *                  example: 1
+ *                limit:
+ *                  type: integer
+ *                  example: 10
+ *                items:
+ *                  type: array
+ *                  items:
+ *                    $ref: '#/components/schemas/Theory'
  *       404:
  *         $ref: '#/components/responses/DisciplineNotFoundError'
  */
