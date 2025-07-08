@@ -10,6 +10,10 @@ export const transform = <T>(value: T): T => {
     return value.map((item) => transform(item)) as unknown as T;
   }
 
+  if (typeof (value as any).toObject === "function") {
+    return transform((value as any).toObject());
+  }
+
   if (isObject(value)) {
     const newObj: any = {};
     for (const key in value) {
