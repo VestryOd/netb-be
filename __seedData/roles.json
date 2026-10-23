@@ -1,0 +1,18 @@
+[
+  {
+    "name": "user",
+    "access_level": 0
+  },
+  {
+    "name": "admin",
+    "access_level": 9
+  },
+  {
+    "name": "teacher",
+    "access_level": 2
+  },
+  {
+    "name": "student",
+    "access_level": 1
+  }
+]

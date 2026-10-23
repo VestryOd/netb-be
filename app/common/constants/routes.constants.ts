@@ -1,0 +1,43 @@
+export enum MainRoutes {
+  Static = "/static",
+  Theory = "/theory",
+  Practice = "/practice",
+  User = "/user",
+  Root = "",
+  Auth = "/auth",
+  SignUp = "/sign-up",
+  Role = "/role",
+  Discipline = "/discipline",
+  ApiDocs = "/api-docs",
+  Disciplines = "/disciplines",
+  Quiz = "/quiz",
+}
+
+export enum SubRoutes {
+  Root = "",
+  RefreshToken = "/refresh-token",
+  SignUp = "/sign-up",
+  Login = "/login",
+  DeleteUser = "/delete-user",
+  GetAll = "/get-all",
+  UpdateUser = "/update-user",
+  UpdateRole = "/update-role",
+}
+
+export enum QueryParams {
+  Discipline = "discipline",
+  TheoryId = "theory_id",
+  PracticeId = "practice_id",
+  QuizId = "quiz_id",
+}
+
+export enum SchemaNames {
+  Theory = "Theory",
+  Practice = "Practice",
+  Content = "Content",
+  Image = "Image",
+  User = "User",
+  Role = "Role",
+  Discipline = "Discipline",
+  Quiz = "Quiz",
+}
